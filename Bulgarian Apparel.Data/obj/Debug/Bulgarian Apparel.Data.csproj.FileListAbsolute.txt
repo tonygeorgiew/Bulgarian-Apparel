@@ -1,0 +1,20 @@
+C:\Users\admin\source\repos\Bulgarian Apparel\Bulgarian Apparel.Data\bin\Debug\Bulgarian Apparel.Data.dll.config
+C:\Users\admin\source\repos\Bulgarian Apparel\Bulgarian Apparel.Data\bin\Debug\Bulgarian Apparel.Data.dll
+C:\Users\admin\source\repos\Bulgarian Apparel\Bulgarian Apparel.Data\bin\Debug\Bulgarian Apparel.Data.pdb
+C:\Users\admin\source\repos\Bulgarian Apparel\Bulgarian Apparel.Data\bin\Debug\Bulgarian Apparel.Data.Models.dll
+C:\Users\admin\source\repos\Bulgarian Apparel\Bulgarian Apparel.Data\bin\Debug\EntityFramework.dll
+C:\Users\admin\source\repos\Bulgarian Apparel\Bulgarian Apparel.Data\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\admin\source\repos\Bulgarian Apparel\Bulgarian Apparel.Data\bin\Debug\Microsoft.AspNet.Identity.Core.dll
+C:\Users\admin\source\repos\Bulgarian Apparel\Bulgarian Apparel.Data\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\admin\source\repos\Bulgarian Apparel\Bulgarian Apparel.Data\bin\Debug\Bulgarian Apparel.Data.Models.pdb
+C:\Users\admin\source\repos\Bulgarian Apparel\Bulgarian Apparel.Data\bin\Debug\Bulgarian Apparel.Data.Models.dll.config
+C:\Users\admin\source\repos\Bulgarian Apparel\Bulgarian Apparel.Data\bin\Debug\EntityFramework.xml
+C:\Users\admin\source\repos\Bulgarian Apparel\Bulgarian Apparel.Data\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\admin\source\repos\Bulgarian Apparel\Bulgarian Apparel.Data\bin\Debug\Microsoft.AspNet.Identity.Core.xml
+C:\Users\admin\source\repos\Bulgarian Apparel\Bulgarian Apparel.Data\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\admin\source\repos\Bulgarian Apparel\Bulgarian Apparel.Data\obj\Debug\Bulgarian Apparel.Data.csprojResolveAssemblyReference.cache
+C:\Users\admin\source\repos\Bulgarian Apparel\Bulgarian Apparel.Data\obj\Debug\Bulgarian Apparel.Data.csproj.CoreCompileInputs.cache
+C:\Users\admin\source\repos\Bulgarian Apparel\Bulgarian Apparel.Data\obj\Debug\Bulgarian Apparel.Data.dll
+C:\Users\admin\source\repos\Bulgarian Apparel\Bulgarian Apparel.Data\obj\Debug\Bulgarian Apparel.Data.pdb
+C:\Users\admin\source\repos\Bulgarian Apparel\Bulgarian Apparel.Data\obj\Debug\Bulgarian_Apparel.Data.Migrations.Initial.resources
+C:\Users\admin\source\repos\Bulgarian Apparel\Bulgarian Apparel.Data\obj\Debug\Bulgarian Apparel.Data.csproj.GenerateResource.Cache

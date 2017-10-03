@@ -3,9 +3,54 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26730.12
 MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bulgarian Apparel.Web", "Bulgarian Apparel.Web\Bulgarian Apparel.Web.csproj", "{82D69A21-6AA5-48CD-B2C1-B79DEB0F2541}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bulgarian Apparel.Web.Tests", "Bulgarian Apparel.Web.Tests\Bulgarian Apparel.Web.Tests.csproj", "{77055608-275A-4728-A6E3-F8F430C14672}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data", "Data", "{0893A691-8585-4EE3-A26F-5B66384FA489}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bulgarian Apparel.Data.Model", "Bulgarian Apparel.Data.Models\Bulgarian Apparel.Data.Model.csproj", "{2CD99073-7977-409B-A6B6-F5C29BF3E495}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bulgarian Apparel.Data", "Bulgarian Apparel.Data\Bulgarian Apparel.Data.csproj", "{EB20D9F1-E073-4E90-8161-2F90EA5F7355}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{B93338F7-2D3C-4151-A9EA-16FB82E362D6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bulgarian Apparel.Services", "Bulgarian Apparel.Services\Bulgarian Apparel.Services.csproj", "{DDAB7F6A-C358-42BF-A8BC-B9F700410B6A}"
+EndProject
 Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{82D69A21-6AA5-48CD-B2C1-B79DEB0F2541}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{82D69A21-6AA5-48CD-B2C1-B79DEB0F2541}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{82D69A21-6AA5-48CD-B2C1-B79DEB0F2541}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{82D69A21-6AA5-48CD-B2C1-B79DEB0F2541}.Release|Any CPU.Build.0 = Release|Any CPU
+		{77055608-275A-4728-A6E3-F8F430C14672}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{77055608-275A-4728-A6E3-F8F430C14672}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{77055608-275A-4728-A6E3-F8F430C14672}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{77055608-275A-4728-A6E3-F8F430C14672}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2CD99073-7977-409B-A6B6-F5C29BF3E495}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2CD99073-7977-409B-A6B6-F5C29BF3E495}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2CD99073-7977-409B-A6B6-F5C29BF3E495}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2CD99073-7977-409B-A6B6-F5C29BF3E495}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EB20D9F1-E073-4E90-8161-2F90EA5F7355}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EB20D9F1-E073-4E90-8161-2F90EA5F7355}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EB20D9F1-E073-4E90-8161-2F90EA5F7355}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EB20D9F1-E073-4E90-8161-2F90EA5F7355}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DDAB7F6A-C358-42BF-A8BC-B9F700410B6A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DDAB7F6A-C358-42BF-A8BC-B9F700410B6A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DDAB7F6A-C358-42BF-A8BC-B9F700410B6A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DDAB7F6A-C358-42BF-A8BC-B9F700410B6A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{2CD99073-7977-409B-A6B6-F5C29BF3E495} = {0893A691-8585-4EE3-A26F-5B66384FA489}
+		{EB20D9F1-E073-4E90-8161-2F90EA5F7355} = {0893A691-8585-4EE3-A26F-5B66384FA489}
+		{DDAB7F6A-C358-42BF-A8BC-B9F700410B6A} = {B93338F7-2D3C-4151-A9EA-16FB82E362D6}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {8890C59E-87BD-48E2-B23E-D28278FFACCB}
