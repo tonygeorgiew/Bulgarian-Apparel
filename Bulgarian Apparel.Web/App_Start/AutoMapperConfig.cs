@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using Bulgarian_Apparel.Web.Infrastructure;
+using Bulgarian_Apparel.Web.Models.Home;
 using System;
 using System.Collections.Generic;
 using System.Linq;

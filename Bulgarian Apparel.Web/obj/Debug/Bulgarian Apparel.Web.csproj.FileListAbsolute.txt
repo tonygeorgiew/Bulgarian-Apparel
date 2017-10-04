@@ -133,3 +133,5 @@ C:\Users\admin\source\repos\Bulgarian Apparel\Bulgarian Apparel.Web\bin\Ninject.
 C:\Users\admin\source\repos\Bulgarian Apparel\Bulgarian Apparel.Web\bin\Ninject.Web.Mvc.xml
 C:\Users\admin\source\repos\Bulgarian Apparel\Bulgarian Apparel.Web\bin\Bulgarian Apparel.Services.dll
 C:\Users\admin\source\repos\Bulgarian Apparel\Bulgarian Apparel.Web\bin\Bulgarian Apparel.Services.pdb
+C:\Users\admin\source\repos\Bulgarian Apparel\Bulgarian Apparel.Web\bin\AutoMapper.dll
+C:\Users\admin\source\repos\Bulgarian Apparel\Bulgarian Apparel.Web\bin\AutoMapper.xml

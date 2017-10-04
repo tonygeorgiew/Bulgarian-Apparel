@@ -18,6 +18,7 @@ namespace Bulgarian_Apparel.Web.App_Start
     using Bulgarian_Apparel.Services.Contracts;
     using AutoMapper;
     using Bulgarian_Apparel.Data.SaveContext;
+    using Bulgarian_Apparel.Web.Controllers;
 
     public static class NinjectWebCommon 
     {
@@ -86,7 +87,7 @@ namespace Bulgarian_Apparel.Web.App_Start
             kernel.Bind(typeof(DbContext), typeof(MsSqlDbContext)).To<MsSqlDbContext>().InRequestScope();
             kernel.Bind(typeof(IEfRepository<>)).To(typeof(EfRepository<>));
             kernel.Bind<ISaveContext>().To<SaveContext>();
-            kernel.Bind<IMapper>().To<Mapper>();
+            kernel.Bind<IMapper>().ToMethod(x => Mapper.Instance).InSingletonScope();
         }        
     }
 }

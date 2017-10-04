@@ -219,6 +219,7 @@
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Infrastructure\IHaveCustomMappings.cs" />
     <Compile Include="Models\Home\PostViewModel.cs" />
+    <Compile Include="Models\Home\ProductSliderViewModel.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
@@ -226,6 +227,29 @@
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Products\blueShirt.jpg" />
+    <Content Include="Content\Products\blueShirt1.jpg" />
+    <Content Include="Content\Products\blueShirtZoomed.jpg" />
+    <Content Include="Content\Products\flannelShirt.jpg" />
+    <Content Include="Content\Products\flannelShirt1.jpg" />
+    <Content Include="Content\Products\flannelShirtZoomed.jpg" />
+    <Content Include="Content\Products\lumberjackShirt.jpg" />
+    <Content Include="Content\Products\lumberjackShirt1.jpg" />
+    <Content Include="Content\Products\lumberjackShirtZoomed.jpg" />
+    <Content Include="Content\Products\patternShirt.jpg" />
+    <Content Include="Content\Products\patternShirt1.jpg" />
+    <Content Include="Content\Products\patternShirtZoomed.jpg" />
+    <Content Include="Content\Products\radHoodie.jpg" />
+    <Content Include="Content\Products\radHoodie1.jpg" />
+    <Content Include="Content\Products\radHoodie2.jpg" />
+    <Content Include="Content\Products\radHoodie3.jpg" />
+    <Content Include="Content\Products\stripedShirt.jpg" />
+    <Content Include="Content\Products\stripedShirt1.jpg" />
+    <Content Include="Content\Products\stripedShirtZoomed.jpg" />
+    <Content Include="Content\Products\whiteShirt.jpg" />
+    <Content Include="Content\Products\whiteShirt1.jpg" />
+    <Content Include="Content\Products\whiteShirtZoomed.jpg" />
+    <Content Include="Content\Styles\gallery.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
@@ -239,6 +263,7 @@
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\jQwery.cubeGalleryPlagin.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
@@ -278,6 +303,8 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Widgets\_Cube.cshtml" />
+    <Content Include="Views\Home\View1.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

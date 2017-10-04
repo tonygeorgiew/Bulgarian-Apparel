@@ -20,6 +20,8 @@ namespace Bulgarian_Apparel.Data
 
         }
 
+        public IDbSet<Product> Products { get; set; }
+
         public IDbSet<Post> Posts { get; set; }
 
         public override int SaveChanges()

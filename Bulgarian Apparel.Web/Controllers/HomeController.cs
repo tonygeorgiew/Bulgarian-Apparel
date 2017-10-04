@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using AutoMapper.QueryableExtensions;
 using Bulgarian_Apparel.Services;
 using Bulgarian_Apparel.Web.Models.Home;
 using System;
@@ -24,9 +25,10 @@ namespace Bulgarian_Apparel.Web.Controllers
         {
             var posts = this.postsService
                 .GetAll()
-                .Select(x=> Mapper.Map<PostViewModel>(x))
+                .ProjectTo<PostViewModel>()
                 .ToList();
 
+           
             return View(posts);
         }
 
@@ -41,6 +43,10 @@ namespace Bulgarian_Apparel.Web.Controllers
         {
             ViewBag.Message = "Your contact page.";
 
+            return View();
+        }
+        public ActionResult View1()
+        {
             return View();
         }
     }

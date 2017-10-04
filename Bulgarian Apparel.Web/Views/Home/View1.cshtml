@@ -1,0 +1,25 @@
+﻿
+@Styles.Render("~/Content/Styles/gallery.css")
+
+<div class="carusel">
+    <img class="figure" src="~/Content/Products/blueShirt.jpg">
+    <img class="figure" src="~/Content/Products/flannelShirt.jpg">
+    <img class="figure" src="~/Content/Products/lumberjackShirt.jpg">
+    <img class="figure" src="~/Content/Products/lumberjackShirt.jpg">
+    <img class="figure" src="~/Content/Products/patternShirt.jpg">
+    <img class="figure" src="~/Content/Products/whiteShirt.jpg">
+</div>
+<div class="btn_links">
+    <a href="#" class="button"></a>
+    <a href="#" class="button"></a>
+    <a href="#" class="button"></a>
+    <a href="#" class="button"></a>
+    <a href="#" class="button"></a>
+    <a href="#" class="button"></a>
+</div>
+
+
+@section scripts{
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    @Scripts.Render("~/bundles/jQwery.cubeGalleryPlagin.js")
+}
