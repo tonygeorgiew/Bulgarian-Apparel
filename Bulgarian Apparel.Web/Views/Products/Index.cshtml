@@ -1,0 +1,56 @@
+﻿@Styles.Render("~/Content/Styles/advanced.css")
+@Styles.Render("~/Content/Styles/bs-pagination.min.css")
+@model IEnumerable<Bulgarian_Apparel.Web.Models.Products.ProductViewModel>
+
+<div class="box">
+    <ul id="example-1" class="pagination"></ul>
+    <div class="show"></div>
+</div>
+<hr />
+
+
+<div id="container">
+    @foreach (var product in Model)
+    {
+        <div class="item">
+            <img src="@product.ImagePath" width="640" height="480" alt="" />
+            <div id="product-name">
+                @product.Name
+                <p>$ <span id="product-price">product.Price</span></p>
+            </div>
+            <button class="btn btn-primary">View product</button>
+            <button class="btn btn-primary">Add to wishlist</button>
+        </div>
+    }   
+</div>
+
+@section scripts{    
+    
+<script src="//code.jquery.com/jquery.min.js"></script>
+<script src="~/Scripts/jquery.wrecker.js"></script>
+<script src="~/Scripts/pagination.min.js"></script>
+<script type="text/javascript">
+    var path = "https://placeimg.com/640/480/animals"
+
+$('#example-1').pagination({
+    total: 100, // 总数据条数
+    current: 2, // 当前页码
+    length: 10, // 每页数据量
+    size: 2, // 显示按钮个数
+ 
+    click: function(options ,$target) {
+    	console.log(options);
+        $target.next(".show");
+
+        var jsonProduct = {
+            "Name": "PRODUCTNAME",
+            ""
+        };
+
+
+        $("#shop").append($("<img src='" + path + "' width=&quot;640&quot; height=&quot;480&quot;/>"));
+        $("#product-name").text("Hoodie");
+    }
+});
+</script>
+}

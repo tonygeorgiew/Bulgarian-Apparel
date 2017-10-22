@@ -212,6 +212,8 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\ProductsController.cs" />
+    <Compile Include="Models\Products\ProductViewModel.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -227,28 +229,30 @@
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
-    <Content Include="Content\Products\blueShirt.jpg" />
-    <Content Include="Content\Products\blueShirt1.jpg" />
-    <Content Include="Content\Products\blueShirtZoomed.jpg" />
-    <Content Include="Content\Products\flannelShirt.jpg" />
-    <Content Include="Content\Products\flannelShirt1.jpg" />
-    <Content Include="Content\Products\flannelShirtZoomed.jpg" />
-    <Content Include="Content\Products\lumberjackShirt.jpg" />
-    <Content Include="Content\Products\lumberjackShirt1.jpg" />
-    <Content Include="Content\Products\lumberjackShirtZoomed.jpg" />
-    <Content Include="Content\Products\patternShirt.jpg" />
-    <Content Include="Content\Products\patternShirt1.jpg" />
-    <Content Include="Content\Products\patternShirtZoomed.jpg" />
-    <Content Include="Content\Products\radHoodie.jpg" />
-    <Content Include="Content\Products\radHoodie1.jpg" />
-    <Content Include="Content\Products\radHoodie2.jpg" />
-    <Content Include="Content\Products\radHoodie3.jpg" />
-    <Content Include="Content\Products\stripedShirt.jpg" />
-    <Content Include="Content\Products\stripedShirt1.jpg" />
-    <Content Include="Content\Products\stripedShirtZoomed.jpg" />
-    <Content Include="Content\Products\whiteShirt.jpg" />
-    <Content Include="Content\Products\whiteShirt1.jpg" />
-    <Content Include="Content\Products\whiteShirtZoomed.jpg" />
+    <Content Include="Content\Products\1.jpg" />
+    <Content Include="Content\Products\2.jpg" />
+    <Content Include="Content\Products\3.jpg" />
+    <Content Include="Content\Products\4.jpg" />
+    <Content Include="Content\Products\5.jpg" />
+    <Content Include="Content\Products\6.jpg" />
+    <Content Include="Content\Products\7.jpg" />
+    <Content Include="Content\Products\8.jpg" />
+    <Content Include="Content\Products\9.jpg" />
+    <Content Include="Content\Products\10.jpg" />
+    <Content Include="Content\Products\11.jpg" />
+    <Content Include="Content\Products\12.jpg" />
+    <Content Include="Content\Products\13.jpg" />
+    <Content Include="Content\Products\14.jpg" />
+    <Content Include="Content\Products\15.jpg" />
+    <Content Include="Content\Products\16.jpg" />
+    <Content Include="Content\Products\17.jpg" />
+    <Content Include="Content\Products\18.jpg" />
+    <Content Include="Content\Products\19.jpg" />
+    <Content Include="Content\Products\20.jpg" />
+    <Content Include="Content\Products\21.jpg" />
+    <Content Include="Content\Products\22.jpg" />
+    <Content Include="Content\Styles\advanced.css" />
+    <Content Include="Content\Styles\bs-pagination.min.css" />
     <Content Include="Content\Styles\gallery.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
@@ -263,8 +267,12 @@
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\jquery.wrecker.js" />
+    <Content Include="Scripts\jquery.wrecker.min.js" />
     <Content Include="Scripts\jQwery.cubeGalleryPlagin.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\pagination.js" />
+    <Content Include="Scripts\pagination.min.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Web.config">
@@ -305,6 +313,7 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Widgets\_Cube.cshtml" />
     <Content Include="Views\Home\View1.cshtml" />
+    <Content Include="Views\Products\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -65,6 +65,10 @@
     <Compile Include="Migrations\201710040900308_productDataModel1.Designer.cs">
       <DependentUpon>201710040900308_productDataModel1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201710061035476_SeedProducts.cs" />
+    <Compile Include="Migrations\201710061035476_SeedProducts.Designer.cs">
+      <DependentUpon>201710061035476_SeedProducts.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="MsSqlDbContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -92,6 +96,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201710040900308_productDataModel1.resx">
       <DependentUpon>201710040900308_productDataModel1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710061035476_SeedProducts.resx">
+      <DependentUpon>201710061035476_SeedProducts.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

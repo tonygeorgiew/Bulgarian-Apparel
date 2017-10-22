@@ -23,6 +23,7 @@ namespace Bulgarian_Apparel.Data.Migrations
         {
             this.SeedUsers(context);
             this.SeedSampleData(context);
+            this.SeedSampleProducts(context);
 
             base.Seed(context);
         }
@@ -69,6 +70,23 @@ namespace Bulgarian_Apparel.Data.Migrations
 
                     context.Posts.Add(post);
                 }
+            }
+        }
+
+        private void SeedSampleProducts(MsSqlDbContext context)
+        {
+            var random = new Random();
+            for (int i = 1; i < 21; i++)
+            {
+                var product = new Product()
+                {
+                    Name = "Basic shirt",
+                    Price = random.Next(10, 50),
+                    ImagePath = string.Format("~/Content/Products/{0}", i),
+                    ProductTypeId = 1
+                };
+
+                context.Products.Add(product);
             }
         }
     }

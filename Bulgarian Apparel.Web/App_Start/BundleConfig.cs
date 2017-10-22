@@ -21,13 +21,16 @@ namespace Bulgarian_Apparel.Web
 
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
                       "~/Scripts/bootstrap.js",
-                      "~/Scripts/respond.js",
-                      "~/Scripts/jQwery.cubeGalleryPlagin.js"));
+                      "~/Scripts/respond.js"));
 
+         
+            
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
-                      "~/Content/site.css",
-                      "~/Content/gallery.css"));
+                      "~/Content/site.css"));
+
+            bundles.Add(new ScriptBundle("~/bundles/widgets").Include(
+                "~/Scripts/jQwery.cubeGalleryPlagin.js"));
         }
     }
 }

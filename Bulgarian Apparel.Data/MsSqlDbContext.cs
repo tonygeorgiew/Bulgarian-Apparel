@@ -1,6 +1,7 @@
 ﻿using Bulgarian_Apparel.Data.Models;
 using Bulgarian_Apparel.Data.Models.Abstracts;
 using Bulgarian_Apparel.Data.Models.Contracts;
+using Bulgarian_Apparel.Data.Models.Enumerations;
 using Microsoft.AspNet.Identity.EntityFramework;
 using System;
 using System.Collections.Generic;
@@ -19,6 +20,7 @@ namespace Bulgarian_Apparel.Data
         {
 
         }
+      
 
         public IDbSet<Product> Products { get; set; }
 

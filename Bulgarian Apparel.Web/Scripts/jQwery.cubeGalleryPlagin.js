@@ -13,7 +13,7 @@
         },options);
 
         return this.each(function() {
-        var element = $(this).find('img');
+        var element = $(this).find('.figure');
 
         var quantity = element.length;
         var angleRotation = 360 / quantity;
