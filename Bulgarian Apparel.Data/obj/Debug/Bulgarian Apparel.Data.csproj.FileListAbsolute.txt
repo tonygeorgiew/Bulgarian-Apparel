@@ -21,3 +21,5 @@ C:\Users\admin\source\repos\Bulgarian Apparel\Bulgarian Apparel.Data\obj\Debug\B
 C:\Users\admin\source\repos\Bulgarian Apparel\Bulgarian Apparel.Data\obj\Debug\Bulgarian_Apparel.Data.Migrations.productDataModel.resources
 C:\Users\admin\source\repos\Bulgarian Apparel\Bulgarian Apparel.Data\obj\Debug\Bulgarian_Apparel.Data.Migrations.productDataModel1.resources
 C:\Users\admin\source\repos\Bulgarian Apparel\Bulgarian Apparel.Data\obj\Debug\Bulgarian_Apparel.Data.Migrations.SeedProducts.resources
+C:\Users\admin\source\repos\Bulgarian Apparel\Bulgarian Apparel.Data\obj\Debug\Bulgarian_Apparel.Data.Migrations.CorrectPaths.resources
+C:\Users\admin\source\repos\Bulgarian Apparel\Bulgarian Apparel.Data\obj\Debug\Bulgarian_Apparel.Data.Migrations.CorrectPaths1.resources

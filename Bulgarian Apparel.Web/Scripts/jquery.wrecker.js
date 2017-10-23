@@ -18,8 +18,9 @@ $.Wrecker = function()
 	var element;
 	var previousColumnCount = 0;
 	var settings = {
-        itemSelector: "item wrecker-cell",
-        maxColumns: 2,
+		itemSelector      : "",
+		maxColumns        : 1,
+		responsiveColumns : [ /*{800:1}*/ ]	// Had to nest this way because not all browsers loop through objects in correct order
 	};
 	
 	

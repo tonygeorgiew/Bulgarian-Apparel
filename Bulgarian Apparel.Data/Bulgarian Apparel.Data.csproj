@@ -69,6 +69,14 @@
     <Compile Include="Migrations\201710061035476_SeedProducts.Designer.cs">
       <DependentUpon>201710061035476_SeedProducts.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201710221451038_CorrectPaths.cs" />
+    <Compile Include="Migrations\201710221451038_CorrectPaths.Designer.cs">
+      <DependentUpon>201710221451038_CorrectPaths.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201710221503287_CorrectPaths1.cs" />
+    <Compile Include="Migrations\201710221503287_CorrectPaths1.Designer.cs">
+      <DependentUpon>201710221503287_CorrectPaths1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="MsSqlDbContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -99,6 +107,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201710061035476_SeedProducts.resx">
       <DependentUpon>201710061035476_SeedProducts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710221451038_CorrectPaths.resx">
+      <DependentUpon>201710221451038_CorrectPaths.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710221503287_CorrectPaths1.resx">
+      <DependentUpon>201710221503287_CorrectPaths1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

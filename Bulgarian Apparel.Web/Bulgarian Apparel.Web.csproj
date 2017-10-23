@@ -267,7 +267,6 @@
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
-    <Content Include="Scripts\jquery.wrecker.js" />
     <Content Include="Scripts\jquery.wrecker.min.js" />
     <Content Include="Scripts\jQwery.cubeGalleryPlagin.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />

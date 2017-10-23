@@ -21,9 +21,9 @@ namespace Bulgarian_Apparel.Data.Migrations
 
         protected override void Seed(MsSqlDbContext context)
         {
-            this.SeedUsers(context);
-            this.SeedSampleData(context);
-            this.SeedSampleProducts(context);
+          //  this.SeedUsers(context);
+          //  this.SeedSampleData(context);
+          //  this.SeedSampleProducts(context);
 
             base.Seed(context);
         }
@@ -82,7 +82,7 @@ namespace Bulgarian_Apparel.Data.Migrations
                 {
                     Name = "Basic shirt",
                     Price = random.Next(10, 50),
-                    ImagePath = string.Format("~/Content/Products/{0}", i),
+                    ImagePath = string.Format("~/Content/Products/{0}.jpg", i),
                     ProductTypeId = 1
                 };
 
