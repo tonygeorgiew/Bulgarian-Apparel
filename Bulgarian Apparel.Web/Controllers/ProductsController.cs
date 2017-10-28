@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using AutoMapper.QueryableExtensions;
+using Bulgarian_Apparel.Data.Models;
 using Bulgarian_Apparel.Services;
 using Bulgarian_Apparel.Web.Models.Products;
 using System;
@@ -34,11 +35,19 @@ namespace Bulgarian_Apparel.Web.Controllers
             return View(products);
         }
 
-       // [HttpGet]
-       // public JsonResult GetProducts()
-       // {
-       //
-       //     return Json(products);
-       // }
+        // [HttpGet]
+        // public JsonResult GetProducts()
+        // {
+        //
+        //     return Json(products);
+        // }
+
+        public ActionResult Details(int? id)
+        {
+            var product = this.productsService.GetAll().Where(p => p.Id == id).SingleOrDefault();
+            var productVM = mapper.Map<ProductViewModel>(product);
+
+            return View(productVM);
+        }
     }
 }

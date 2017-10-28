@@ -9,5 +9,7 @@ namespace Bulgarian_Apparel.Web.Models.Products
         public string Name { get; set; }
         public double Price { get; set; }
         public string ImagePath { get; set; }
+        public string Sizes { get; set; }
+        public string Colors { get; set; }
     }
 }

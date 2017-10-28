@@ -3,6 +3,7 @@ using Bulgarian_Apparel.Data.Migrations;
 using Bulgarian_Apparel.Web.App_Start;
 using System.Data.Entity;
 using System.Reflection;
+using System.Web.Http;
 using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
@@ -14,6 +15,7 @@ namespace Bulgarian_Apparel.Web
         protected void Application_Start()
         {
             Database.SetInitializer(new MigrateDatabaseToLatestVersion<MsSqlDbContext, Configuration>());
+            GlobalConfiguration.Configure(WebApiConfig.Register);
 
             AreaRegistration.RegisterAllAreas();
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);

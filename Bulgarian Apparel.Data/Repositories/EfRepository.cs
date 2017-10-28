@@ -23,7 +23,7 @@ namespace Bulgarian_Apparel.Data.Repositories
         public IQueryable<T> All
         {
             get
-            {
+            {   
                 return this.context.Set<T>().Where(x => !x.IsDeleted);
             }
         }

@@ -135,3 +135,9 @@ C:\Users\admin\source\repos\Bulgarian Apparel\Bulgarian Apparel.Web\bin\Bulgaria
 C:\Users\admin\source\repos\Bulgarian Apparel\Bulgarian Apparel.Web\bin\Bulgarian Apparel.Services.pdb
 C:\Users\admin\source\repos\Bulgarian Apparel\Bulgarian Apparel.Web\bin\AutoMapper.dll
 C:\Users\admin\source\repos\Bulgarian Apparel\Bulgarian Apparel.Web\bin\AutoMapper.xml
+C:\Users\admin\source\repos\Bulgarian Apparel\Bulgarian Apparel.Web\bin\System.Net.Http.Formatting.dll
+C:\Users\admin\source\repos\Bulgarian Apparel\Bulgarian Apparel.Web\bin\System.Web.Http.dll
+C:\Users\admin\source\repos\Bulgarian Apparel\Bulgarian Apparel.Web\bin\System.Web.Http.WebHost.dll
+C:\Users\admin\source\repos\Bulgarian Apparel\Bulgarian Apparel.Web\bin\System.Net.Http.Formatting.xml
+C:\Users\admin\source\repos\Bulgarian Apparel\Bulgarian Apparel.Web\bin\System.Web.Http.xml
+C:\Users\admin\source\repos\Bulgarian Apparel\Bulgarian Apparel.Web\bin\System.Web.Http.WebHost.xml
