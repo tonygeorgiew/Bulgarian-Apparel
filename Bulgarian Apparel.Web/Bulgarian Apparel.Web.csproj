@@ -348,6 +348,10 @@
       <Project>{DDAB7F6A-C358-42BF-A8BC-B9F700410B6A}</Project>
       <Name>Bulgarian Apparel.Services</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Server\Bulgarian Apparel.Api\Bulgarian Apparel.Api.csproj">
+      <Project>{A94C932A-50C3-4E90-948A-5011F791B2E1}</Project>
+      <Name>Bulgarian Apparel.Api</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -7,9 +7,12 @@ using System.Web.Http;
 
 namespace Bulgarian_Apparel.Api.Controllers
 {
+    
     public class ValuesController : ApiController
     {
         // GET api/values
+        [HttpGet]
+        [Route("api/values")]
         public IEnumerable<string> Get()
         {
             return new string[] { "value1", "value2" };

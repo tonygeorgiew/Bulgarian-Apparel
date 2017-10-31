@@ -21,5 +21,10 @@ namespace Bulgarian_Apparel.Services
         {
             return this.productsRepo.All;
         }
+
+        public IQueryable<Product> ProductById(int id)
+        {
+            return this.productsRepo.All.Where(p => p.Id == id);
+        }
     }
 }

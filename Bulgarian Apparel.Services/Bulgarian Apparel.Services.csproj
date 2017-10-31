@@ -30,6 +30,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.AspNet.Identity.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" />
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -41,11 +43,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Contracts\IService.cs" />
-    <Compile Include="IPostsService.cs" />
-    <Compile Include="IProductsService.cs" />
+    <Compile Include="Contracts\IPostsService.cs" />
+    <Compile Include="Contracts\IProductsService.cs" />
+    <Compile Include="Contracts\IUsersService.cs" />
     <Compile Include="PostsService.cs" />
     <Compile Include="ProductsService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UsersService.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Bulgarian Apparel.Data.Models\Bulgarian Apparel.Data.Model.csproj">
