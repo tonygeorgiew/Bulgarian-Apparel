@@ -1,17 +1,12 @@
-﻿using Bulgarian_Apparel.Data.Models;
-using Bulgarian_Apparel.Data.Models.Abstracts;
-using Bulgarian_Apparel.Data.Models.Contracts;
-using Bulgarian_Apparel.Data.Models.Enumerations;
-using Microsoft.AspNet.Identity.EntityFramework;
-using System;
-using System.Collections.Generic;
-using System.Data.Entity;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Bulgarian_Apparel.Data
+﻿namespace Bulgarian_Apparel.Data
 {
+    using Bulgarian_Apparel.Data.Models;
+    using Bulgarian_Apparel.Data.Models.Contracts;
+    using Microsoft.AspNet.Identity.EntityFramework;
+    using System;
+    using System.Data.Entity;
+    using System.Linq;
+
     public class MsSqlDbContext : IdentityDbContext<User>
     {
         
@@ -23,6 +18,16 @@ namespace Bulgarian_Apparel.Data
       
 
         public IDbSet<Product> Products { get; set; }
+
+        public IDbSet<Item> Items { get; set; }
+
+        public IDbSet<Category> Categories { get; set; }
+
+        public IDbSet<Color> Colors { get; set; }
+
+        public IDbSet<Size> Sizes { get; set; }
+
+        public IDbSet<Image> Images { get; set; }
 
         public IDbSet<Post> Posts { get; set; }
         

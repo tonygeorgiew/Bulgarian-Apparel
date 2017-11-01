@@ -45,6 +45,7 @@
     <Compile Include="Contracts\IService.cs" />
     <Compile Include="Contracts\IPostsService.cs" />
     <Compile Include="Contracts\IProductsService.cs" />
+    <Compile Include="Contracts\ISizesAvailableService.cs" />
     <Compile Include="Contracts\IUsersService.cs" />
     <Compile Include="PostsService.cs" />
     <Compile Include="ProductsService.cs" />

@@ -15,8 +15,9 @@ namespace Bulgarian_Apparel.Data.Migrations
 
         public Configuration()
         {
-            this.AutomaticMigrationsEnabled = false;
-            this.AutomaticMigrationDataLossAllowed = false;
+            this.AutomaticMigrationsEnabled = true;
+            this.AutomaticMigrationDataLossAllowed = true;
+
         }
 
         protected override void Seed(MsSqlDbContext context)
@@ -76,18 +77,7 @@ namespace Bulgarian_Apparel.Data.Migrations
         private void SeedSampleProducts(MsSqlDbContext context)
         {
             var random = new Random();
-            for (int i = 1; i < 21; i++)
-            {
-                var product = new Product()
-                {
-                    Name = "Basic shirt",
-                    Price = random.Next(10, 50),
-                    ImagePath = string.Format("~/Content/Products/{0}.jpg", i),
-                    ProductTypeId = 1
-                };
-
-                context.Products.Add(product);
-            }
+           
         }
     }
 }

@@ -141,9 +141,3 @@ C:\Users\admin\source\repos\Bulgarian Apparel\Bulgarian Apparel.Web\bin\System.W
 C:\Users\admin\source\repos\Bulgarian Apparel\Bulgarian Apparel.Web\bin\System.Net.Http.Formatting.xml
 C:\Users\admin\source\repos\Bulgarian Apparel\Bulgarian Apparel.Web\bin\System.Web.Http.xml
 C:\Users\admin\source\repos\Bulgarian Apparel\Bulgarian Apparel.Web\bin\System.Web.Http.WebHost.xml
-C:\Users\admin\source\repos\Bulgarian Apparel\Bulgarian Apparel.Web\bin\ApplicationInsights.config
-C:\Users\admin\source\repos\Bulgarian Apparel\Bulgarian Apparel.Web\bin\Bulgarian Apparel.Api.dll
-C:\Users\admin\source\repos\Bulgarian Apparel\Bulgarian Apparel.Web\bin\System.Web.Http.Owin.dll
-C:\Users\admin\source\repos\Bulgarian Apparel\Bulgarian Apparel.Web\bin\Bulgarian Apparel.Api.pdb
-C:\Users\admin\source\repos\Bulgarian Apparel\Bulgarian Apparel.Web\bin\Bulgarian Apparel.Api.dll.config
-C:\Users\admin\source\repos\Bulgarian Apparel\Bulgarian Apparel.Web\bin\System.Web.Http.Owin.xml

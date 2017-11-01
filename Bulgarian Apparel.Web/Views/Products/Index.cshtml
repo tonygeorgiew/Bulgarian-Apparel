@@ -1,4 +1,4 @@
-﻿@model IEnumerable<Bulgarian_Apparel.Web.Models.Products.ProductViewModel>
+﻿@model Bulgarian_Apparel.Web.Models.Products.ProductsViewModel
 
 @Styles.Render("~/Content/Styles/advanced.css")
 @Styles.Render("~/Content/Styles/bs-pagination.min.css")
@@ -8,23 +8,25 @@
     <div class="show"></div>
 </div>
 
-@Html.Partial("~/Views/Widgets/_Popup.cshtml")
+
 <hr />
 
 
 <div id="container">
-    @foreach (var product in Model)
+    @for (int i = 0; i < Model.Products.Count; i++)
     {
         <div class="item">
-            <img src="@product.ImagePath" width="640" height="480" alt="" />
-            <div id="product-name">
-                @product.Name 
-                <p>$ <span id="product-price">@product.Price</span></p>
-            </div>
-            <button id="viewProduct" class="btn" data-jbox-content="@product.Id">click</button>
-            <button class="btn">Add to wishlist</button>
+        <img src="@Model.Products[i].ImagePath" width="640" height="480" alt="" />
+        <div id="product-name">
+            @Model.Products[i].Name
+            <p>$ <span>@Model.Products[i].Price</span></p>
         </div>
-    }   
+        <button id="viewProduct" class="btn view" data-id="@Model.Products[i].Id" data-path="@Model.Products[i].ImagePath" data-title="@Model.Products[i].Name" data-price="@Model.Products[i].Price">View product</button>
+        <button class="btn">Add to wishlist</button>
+        </div>
+    }
+   
+    
 </div>
 
 
@@ -34,33 +36,50 @@
 <script src="~/Scripts/jquery-1.10.2.min.js"></script>
 <script src="~/Scripts/jquery.wrecker.min.js"></script>
 <script src="~/Scripts/pagination.min.js"></script>
- <script src="~/Scripts/jBox.js"></script>
+<script src="~/Scripts/jBox.js"></script>
 <script type="text/javascript">
 
 
     $(document).ready(function () {
-        new jBox('Modal', {
-            attach: '#viewProduct',
-            ajax: {
-                url: '//ajaxresponse.com',
-                data: {
-                    id: 1
-                },
-                reload: 'strict'
-            }
+
+        $('.view').click(function () {
+            var id = $(this).data("id");
+            var path = $(this).data("path");
+            var title = $(this).data("title")
+            var price = $(this).data("price")
+
+
+            var myModal = new jBox('Modal', {
+                content:
+                '<div id="container">' +
+                    '<div>' +
+                    '<img src="'+ path+'" width="640" height="480" alt="" />' +
+                    '</div>' +
+                    '<div>' +
+                        "options"+
+                        '</hr>' +
+                        "sizes"+
+                        '</hr>' +
+                    '</div>'+
+                '</div>'
+            });
+
+            myModal.open();
         });
+
+
     });
 
 
 
 
 $('#example-1').pagination({
-    total: 10, 
-    current: 2, 
+    total: 10,
+    current: 2,
     length: 10,
-    size: 2, 
+    size: 2,
     prev: "&lt;",
-    next: "&gt;", 
+    next: "&gt;",
 click: function(options ,$target) {
 	console.log(options);
     $target.next(".show");

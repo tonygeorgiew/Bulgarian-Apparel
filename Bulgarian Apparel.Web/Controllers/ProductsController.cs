@@ -26,11 +26,14 @@ namespace Bulgarian_Apparel.Web.Controllers
         // GET: Products
         public ActionResult Index()
         {
-
-            var products = this.productsService
+            var products = new ProductsViewModel
+            {
+                Products = this.productsService
                 .GetAll()
                 .ProjectTo<ProductViewModel>()
-                .ToList();
+                .ToList()
+            };
+
 
             return View(products);
         }

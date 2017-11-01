@@ -1,13 +1,10 @@
-﻿using Bulgarian_Apparel.Data.Models;
-using Bulgarian_Apparel.Data.Models.Contracts;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Bulgarian_Apparel.Services
+﻿namespace Bulgarian_Apparel.Services
 {
+
+    using Bulgarian_Apparel.Data.Models;
+    using Bulgarian_Apparel.Data.Models.Contracts;
+    using System.Linq;
+
     public class ProductsService : IProductsService
     {
         private readonly IEfRepository<Product> productsRepo;
@@ -22,9 +19,9 @@ namespace Bulgarian_Apparel.Services
             return this.productsRepo.All;
         }
 
-        public IQueryable<Product> ProductById(int id)
+        public IQueryable<Product> GetCategory(int id)
         {
-            return this.productsRepo.All.Where(p => p.Id == id);
+            return null;
         }
     }
 }

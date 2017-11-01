@@ -1,5 +1,4 @@
-﻿using Bulgarian_Apparel.Api;
-using Microsoft.Owin;
+﻿using Microsoft.Owin;
 using Owin;
 
 [assembly: OwinStartupAttribute(typeof(Bulgarian_Apparel.Web.Startup))]
@@ -10,7 +9,6 @@ namespace Bulgarian_Apparel.Web
         public void Configuration(IAppBuilder app)
         {
             ConfigureAuth(app);
-            WebApiStartup.StartWebApi(app);
         }
     }
 }
