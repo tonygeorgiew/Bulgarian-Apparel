@@ -2,8 +2,11 @@
 {
     using System.ComponentModel.DataAnnotations;
     using System.Collections.Generic;
+    using Bulgarian_Apparel.Data.Models.Contracts;
+    using System;
+    using Bulgarian_Apparel.Data.Models.Abstracts;
 
-    public class Item
+    public class Item : DataModel
     {
 
         public Item()
@@ -11,11 +14,8 @@
             this.Sizes = new HashSet<Size>();
             this.Colors = new HashSet<Color>();
         }
-
-        public int Id { get; set; }
-
-        [Required]
-        public int ProductId { get; set; }
+        
+        public Guid ProductId { get; set; }
 
         public virtual ICollection<Size> Sizes { get; set; }
 

@@ -16,11 +16,19 @@ C:\Users\admin\source\repos\Bulgarian Apparel\Bulgarian Apparel.Data\obj\Debug\B
 C:\Users\admin\source\repos\Bulgarian Apparel\Bulgarian Apparel.Data\obj\Debug\Bulgarian Apparel.Data.csproj.CoreCompileInputs.cache
 C:\Users\admin\source\repos\Bulgarian Apparel\Bulgarian Apparel.Data\obj\Debug\Bulgarian Apparel.Data.dll
 C:\Users\admin\source\repos\Bulgarian Apparel\Bulgarian Apparel.Data\obj\Debug\Bulgarian Apparel.Data.pdb
-C:\Users\admin\source\repos\Bulgarian Apparel\Bulgarian Apparel.Data\obj\Debug\Bulgarian_Apparel.Data.Migrations.Initial.resources
+C:\Users\admin\source\repos\Bulgarian Apparel\Bulgarian Apparel.Data\obj\Debug\Bulgarian_Apparel.Data.Migrations.InitialDatabase.resources
 C:\Users\admin\source\repos\Bulgarian Apparel\Bulgarian Apparel.Data\obj\Debug\Bulgarian Apparel.Data.csproj.GenerateResource.Cache
-C:\Users\admin\source\repos\Bulgarian Apparel\Bulgarian Apparel.Data\obj\Debug\Bulgarian_Apparel.Data.Migrations.productDataModel.resources
-C:\Users\admin\source\repos\Bulgarian Apparel\Bulgarian Apparel.Data\obj\Debug\Bulgarian_Apparel.Data.Migrations.productDataModel1.resources
+C:\Users\admin\source\repos\Bulgarian Apparel\Bulgarian Apparel.Data\obj\Debug\Bulgarian_Apparel.Data.Migrations.SeedAdminAccount.resources
+C:\Users\admin\source\repos\Bulgarian Apparel\Bulgarian Apparel.Data\obj\Debug\Bulgarian_Apparel.Data.Migrations.SeedCategoriesColorsandSizes.resources
+C:\Users\admin\source\repos\Bulgarian Apparel\Bulgarian Apparel.Data\obj\Debug\Bulgarian_Apparel.Data.Migrations.SeedSuperCategory.resources
+C:\Users\admin\source\repos\Bulgarian Apparel\Bulgarian Apparel.Data\obj\Debug\Bulgarian_Apparel.Data.Migrations.SeedSuperCategoryBlazer.resources
+C:\Users\admin\source\repos\Bulgarian Apparel\Bulgarian Apparel.Data\obj\Debug\Bulgarian_Apparel.Data.Migrations.SeedSuperCategoryLongsleevedshirt.resources
+C:\Users\admin\source\repos\Bulgarian Apparel\Bulgarian Apparel.Data\obj\Debug\Bulgarian_Apparel.Data.Migrations.SeedImages.resources
+C:\Users\admin\source\repos\Bulgarian Apparel\Bulgarian Apparel.Data\obj\Debug\Bulgarian_Apparel.Data.Migrations.SeedImages2.resources
 C:\Users\admin\source\repos\Bulgarian Apparel\Bulgarian Apparel.Data\obj\Debug\Bulgarian_Apparel.Data.Migrations.SeedProducts.resources
-C:\Users\admin\source\repos\Bulgarian Apparel\Bulgarian Apparel.Data\obj\Debug\Bulgarian_Apparel.Data.Migrations.CorrectPaths.resources
-C:\Users\admin\source\repos\Bulgarian Apparel\Bulgarian Apparel.Data\obj\Debug\Bulgarian_Apparel.Data.Migrations.CorrectPaths1.resources
-C:\Users\admin\source\repos\Bulgarian Apparel\Bulgarian Apparel.Data\obj\Debug\Bulgarian_Apparel.Data.Migrations.DatabaseRemodeling.resources
+C:\Users\admin\source\repos\Bulgarian Apparel\Bulgarian Apparel.Data\obj\Debug\Bulgarian_Apparel.Data.Migrations.SeedOneItem.resources
+C:\Users\admin\source\repos\Bulgarian Apparel\Bulgarian Apparel.Data\obj\Debug\Bulgarian_Apparel.Data.Migrations.SeedOneItem2.resources
+C:\Users\admin\source\repos\Bulgarian Apparel\Bulgarian Apparel.Data\obj\Debug\Bulgarian_Apparel.Data.Migrations.SecondseedItem.resources
+C:\Users\admin\source\repos\Bulgarian Apparel\Bulgarian Apparel.Data\obj\Debug\Bulgarian_Apparel.Data.Migrations.SecondseedItem2.resources
+C:\Users\admin\source\repos\Bulgarian Apparel\Bulgarian Apparel.Data\obj\Debug\Bulgarian_Apparel.Data.Migrations.Seconditem.resources
+C:\Users\admin\source\repos\Bulgarian Apparel\Bulgarian Apparel.Data\obj\Debug\Bulgarian_Apparel.Data.Migrations.Updateblueshirtproduct.resources

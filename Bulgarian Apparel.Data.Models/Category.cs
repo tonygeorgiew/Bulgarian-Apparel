@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Bulgarian_Apparel.Data.Models.Abstracts;
+using Bulgarian_Apparel.Data.Models.Contracts;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -7,15 +9,11 @@ using System.Threading.Tasks;
 
 namespace Bulgarian_Apparel.Data.Models
 {
-    public class Category
+    public class Category : DataModel
     {
-        public int Id { get; set; }
-
         [Required]
         public string Name { get; set; }
 
-        public int SuperCategoryId { get; set; }
-
-        public int ProductId { get; set; }
+        public Guid SuperCategoryId { get; set; }
     }
 }

@@ -42,14 +42,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CategoriesService.cs" />
+    <Compile Include="Contracts\ICategoriesService.cs" />
     <Compile Include="Contracts\IService.cs" />
     <Compile Include="Contracts\IPostsService.cs" />
     <Compile Include="Contracts\IProductsService.cs" />
-    <Compile Include="Contracts\ISizesAvailableService.cs" />
+    <Compile Include="Contracts\ISizesService.cs" />
     <Compile Include="Contracts\IUsersService.cs" />
+    <Compile Include="IItemsService.cs" />
+    <Compile Include="ItemsService.cs" />
     <Compile Include="PostsService.cs" />
     <Compile Include="ProductsService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SizesService.cs" />
     <Compile Include="UsersService.cs" />
   </ItemGroup>
   <ItemGroup>

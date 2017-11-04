@@ -15,12 +15,13 @@ namespace Bulgarian_Apparel.Web
         protected void Application_Start()
         {
             Database.SetInitializer(new MigrateDatabaseToLatestVersion<MsSqlDbContext, Configuration>());
-            GlobalConfiguration.Configure(WebApiConfig.Register);
 
             AreaRegistration.RegisterAllAreas();
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
+            ViewEngines.Engines.Clear();
+            ViewEngines.Engines.Add(new RazorViewEngine());
 
             var mapper = new AutoMapperConfig();
             mapper.Execute(Assembly.GetExecutingAssembly());

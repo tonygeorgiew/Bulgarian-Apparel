@@ -1,11 +1,9 @@
-﻿using Bulgarian_Apparel.Data.Models;
+﻿using AutoMapper;
+using Bulgarian_Apparel.Data.Models;
 using Bulgarian_Apparel.Web.Infrastructure;
 using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Web;
-using AutoMapper;
+
 
 namespace Bulgarian_Apparel.Web.Models.Home
 {

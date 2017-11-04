@@ -15,27 +15,25 @@ namespace Bulgarian_Apparel.Web.Controllers
     {
 
         private readonly IProductsService productsService;
+        private readonly IItemsService itemsService;
         private readonly IMapper mapper;
 
-        public ProductsController(IProductsService productsService, IMapper mapper)
+        public ProductsController(IProductsService productsService, IItemsService itemsService, IMapper mapper)
         {
             this.productsService = productsService;
+            this.itemsService = itemsService;
             this.mapper = mapper;
         }
 
         // GET: Products
         public ActionResult Index()
         {
-            var products = new ProductsViewModel
-            {
-                Products = this.productsService
-                .GetAll()
-                .ProjectTo<ProductViewModel>()
-                .ToList()
-            };
+            var product = this.productsService.GetAll().Single();
+            var item = this.itemsService.GetAll().Single();
+            var viewModel = this.mapper.Map<ProductViewModel>(product);
+            viewModel = this.mapper.Map<ProductViewModel>(item);
 
-
-            return View(products);
+            return View(viewModel);
         }
 
         // [HttpGet]
@@ -45,12 +43,12 @@ namespace Bulgarian_Apparel.Web.Controllers
         //     return Json(products);
         // }
 
-        public ActionResult Details(int? id)
-        {
-            var product = this.productsService.GetAll().Where(p => p.Id == id).SingleOrDefault();
-            var productVM = mapper.Map<ProductViewModel>(product);
-
-            return View(productVM);
-        }
+       // public ActionResult Details(int? id)
+       // {
+       //     var product = this.productsService.GetAll().Where(p => p.Id == id).SingleOrDefault();
+       //     var productVM = mapper.Map<ProductViewModel>(product);
+       //
+       //     return View(productVM);
+       // }
     }
 }

@@ -1,4 +1,4 @@
-﻿@model Bulgarian_Apparel.Web.Models.Products.ProductsViewModel
+﻿@model Bulgarian_Apparel.Web.Models.Products.ProductViewModel
 
 @Styles.Render("~/Content/Styles/advanced.css")
 @Styles.Render("~/Content/Styles/bs-pagination.min.css")
@@ -13,20 +13,7 @@
 
 
 <div id="container">
-    @for (int i = 0; i < Model.Products.Count; i++)
-    {
-        <div class="item">
-        <img src="@Model.Products[i].ImagePath" width="640" height="480" alt="" />
-        <div id="product-name">
-            @Model.Products[i].Name
-            <p>$ <span>@Model.Products[i].Price</span></p>
-        </div>
-        <button id="viewProduct" class="btn view" data-id="@Model.Products[i].Id" data-path="@Model.Products[i].ImagePath" data-title="@Model.Products[i].Name" data-price="@Model.Products[i].Price">View product</button>
-        <button class="btn">Add to wishlist</button>
-        </div>
-    }
-   
-    
+@Model.ImageResources[0].Resource
 </div>
 
 
@@ -43,7 +30,7 @@
     $(document).ready(function () {
 
         $('.view').click(function () {
-            var id = $(this).data("id");
+           
             var path = $(this).data("path");
             var title = $(this).data("title")
             var price = $(this).data("price")

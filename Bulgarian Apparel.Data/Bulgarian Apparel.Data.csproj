@@ -31,10 +31,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.1.0\lib\net45\EntityFramework.dll</HintPath>
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.1.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.AspNet.Identity.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.1\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
@@ -53,41 +53,74 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Migrations\201710021415376_Initial.cs" />
-    <Compile Include="Migrations\201710021415376_Initial.Designer.cs">
-      <DependentUpon>201710021415376_Initial.cs</DependentUpon>
+    <Compile Include="IMsSqlDbContext.cs" />
+    <Compile Include="Migrations\201711031400332_Initial Database.cs" />
+    <Compile Include="Migrations\201711031400332_Initial Database.Designer.cs">
+      <DependentUpon>201711031400332_Initial Database.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201710040749263_productDataModel.cs" />
-    <Compile Include="Migrations\201710040749263_productDataModel.Designer.cs">
-      <DependentUpon>201710040749263_productDataModel.cs</DependentUpon>
+    <Compile Include="Migrations\201711031403428_Seed Admin Account.cs" />
+    <Compile Include="Migrations\201711031403428_Seed Admin Account.Designer.cs">
+      <DependentUpon>201711031403428_Seed Admin Account.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201710040900308_productDataModel1.cs" />
-    <Compile Include="Migrations\201710040900308_productDataModel1.Designer.cs">
-      <DependentUpon>201710040900308_productDataModel1.cs</DependentUpon>
+    <Compile Include="Migrations\201711031419044_Seed Categories, Colors and Sizes.cs" />
+    <Compile Include="Migrations\201711031419044_Seed Categories, Colors and Sizes.Designer.cs">
+      <DependentUpon>201711031419044_Seed Categories, Colors and Sizes.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201710061035476_SeedProducts.cs" />
-    <Compile Include="Migrations\201710061035476_SeedProducts.Designer.cs">
-      <DependentUpon>201710061035476_SeedProducts.cs</DependentUpon>
+    <Compile Include="Migrations\201711031434257_Seed SuperCategory.cs" />
+    <Compile Include="Migrations\201711031434257_Seed SuperCategory.Designer.cs">
+      <DependentUpon>201711031434257_Seed SuperCategory.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201710221451038_CorrectPaths.cs" />
-    <Compile Include="Migrations\201710221451038_CorrectPaths.Designer.cs">
-      <DependentUpon>201710221451038_CorrectPaths.cs</DependentUpon>
+    <Compile Include="Migrations\201711031442516_Seed SuperCategory Blazer.cs" />
+    <Compile Include="Migrations\201711031442516_Seed SuperCategory Blazer.Designer.cs">
+      <DependentUpon>201711031442516_Seed SuperCategory Blazer.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201710221503287_CorrectPaths1.cs" />
-    <Compile Include="Migrations\201710221503287_CorrectPaths1.Designer.cs">
-      <DependentUpon>201710221503287_CorrectPaths1.cs</DependentUpon>
+    <Compile Include="Migrations\201711031453174_Seed SuperCategory Long-sleeved shirt.cs" />
+    <Compile Include="Migrations\201711031453174_Seed SuperCategory Long-sleeved shirt.Designer.cs">
+      <DependentUpon>201711031453174_Seed SuperCategory Long-sleeved shirt.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201711011259001_Database Remodeling.cs" />
-    <Compile Include="Migrations\201711011259001_Database Remodeling.Designer.cs">
-      <DependentUpon>201711011259001_Database Remodeling.cs</DependentUpon>
+    <Compile Include="Migrations\201711031548396_Seed Images.cs" />
+    <Compile Include="Migrations\201711031548396_Seed Images.Designer.cs">
+      <DependentUpon>201711031548396_Seed Images.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201711031553000_Seed Images 2.cs" />
+    <Compile Include="Migrations\201711031553000_Seed Images 2.Designer.cs">
+      <DependentUpon>201711031553000_Seed Images 2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201711031600120_Seed Products.cs" />
+    <Compile Include="Migrations\201711031600120_Seed Products.Designer.cs">
+      <DependentUpon>201711031600120_Seed Products.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201711031639014_Seed One Item.cs" />
+    <Compile Include="Migrations\201711031639014_Seed One Item.Designer.cs">
+      <DependentUpon>201711031639014_Seed One Item.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201711031647523_Seed One Item 2.cs" />
+    <Compile Include="Migrations\201711031647523_Seed One Item 2.Designer.cs">
+      <DependentUpon>201711031647523_Seed One Item 2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201711031746449_Second seed Item.cs" />
+    <Compile Include="Migrations\201711031746449_Second seed Item.Designer.cs">
+      <DependentUpon>201711031746449_Second seed Item.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201711031748340_Second seed Item2.cs" />
+    <Compile Include="Migrations\201711031748340_Second seed Item2.Designer.cs">
+      <DependentUpon>201711031748340_Second seed Item2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201711031750409_Second item.cs" />
+    <Compile Include="Migrations\201711031750409_Second item.Designer.cs">
+      <DependentUpon>201711031750409_Second item.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201711041035236_Update blue shirt product.cs" />
+    <Compile Include="Migrations\201711041035236_Update blue shirt product.Designer.cs">
+      <DependentUpon>201711041035236_Update blue shirt product.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="MsSqlDbContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\EfRepository.cs" />
     <Compile Include="Repositories\IEfRepository.cs" />
-    <Compile Include="SaveContext\ISaveContext.cs" />
-    <Compile Include="SaveContext\SaveContext.cs" />
+    <Compile Include="UnitOfWork\IUnitOfWork.cs" />
+    <Compile Include="UnitOfWork\UnitOfWork.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Bulgarian Apparel.Data.Models\Bulgarian Apparel.Data.Model.csproj">
@@ -100,26 +133,50 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201710021415376_Initial.resx">
-      <DependentUpon>201710021415376_Initial.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201711031400332_Initial Database.resx">
+      <DependentUpon>201711031400332_Initial Database.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201710040749263_productDataModel.resx">
-      <DependentUpon>201710040749263_productDataModel.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201711031403428_Seed Admin Account.resx">
+      <DependentUpon>201711031403428_Seed Admin Account.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201710040900308_productDataModel1.resx">
-      <DependentUpon>201710040900308_productDataModel1.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201711031419044_Seed Categories, Colors and Sizes.resx">
+      <DependentUpon>201711031419044_Seed Categories, Colors and Sizes.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201710061035476_SeedProducts.resx">
-      <DependentUpon>201710061035476_SeedProducts.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201711031434257_Seed SuperCategory.resx">
+      <DependentUpon>201711031434257_Seed SuperCategory.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201710221451038_CorrectPaths.resx">
-      <DependentUpon>201710221451038_CorrectPaths.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201711031442516_Seed SuperCategory Blazer.resx">
+      <DependentUpon>201711031442516_Seed SuperCategory Blazer.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201710221503287_CorrectPaths1.resx">
-      <DependentUpon>201710221503287_CorrectPaths1.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201711031453174_Seed SuperCategory Long-sleeved shirt.resx">
+      <DependentUpon>201711031453174_Seed SuperCategory Long-sleeved shirt.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201711011259001_Database Remodeling.resx">
-      <DependentUpon>201711011259001_Database Remodeling.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201711031548396_Seed Images.resx">
+      <DependentUpon>201711031548396_Seed Images.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711031553000_Seed Images 2.resx">
+      <DependentUpon>201711031553000_Seed Images 2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711031600120_Seed Products.resx">
+      <DependentUpon>201711031600120_Seed Products.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711031639014_Seed One Item.resx">
+      <DependentUpon>201711031639014_Seed One Item.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711031647523_Seed One Item 2.resx">
+      <DependentUpon>201711031647523_Seed One Item 2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711031746449_Second seed Item.resx">
+      <DependentUpon>201711031746449_Second seed Item.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711031748340_Second seed Item2.resx">
+      <DependentUpon>201711031748340_Second seed Item2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711031750409_Second item.resx">
+      <DependentUpon>201711031750409_Second item.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711041035236_Update blue shirt product.resx">
+      <DependentUpon>201711041035236_Update blue shirt product.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
