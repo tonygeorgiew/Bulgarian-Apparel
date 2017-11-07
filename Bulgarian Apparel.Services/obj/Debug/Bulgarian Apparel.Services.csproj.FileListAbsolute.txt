@@ -14,3 +14,6 @@ C:\Users\admin\source\repos\Bulgarian Apparel\Bulgarian Apparel.Services\obj\Deb
 C:\Users\admin\source\repos\Bulgarian Apparel\Bulgarian Apparel.Services\obj\Debug\Bulgarian Apparel.Services.csproj.CoreCompileInputs.cache
 C:\Users\admin\source\repos\Bulgarian Apparel\Bulgarian Apparel.Services\obj\Debug\Bulgarian Apparel.Services.dll
 C:\Users\admin\source\repos\Bulgarian Apparel\Bulgarian Apparel.Services\obj\Debug\Bulgarian Apparel.Services.pdb
+C:\Users\admin\source\repos\Bulgarian Apparel\Bulgarian Apparel.Services\bin\Debug\Bulgarian Apparel.Services.dll.config
+C:\Users\admin\source\repos\Bulgarian Apparel\Bulgarian Apparel.Services\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\admin\source\repos\Bulgarian Apparel\Bulgarian Apparel.Services\bin\Debug\EntityFramework.SqlServer.xml

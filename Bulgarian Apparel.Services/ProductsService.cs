@@ -5,7 +5,10 @@
     using Bulgarian_Apparel.Data.Models.Contracts;
     using Bulgarian_Apparel.Data.SaveContext;
     using System;
+    using System.Collections.Generic;
+    using System.Data.Entity;
     using System.Linq;
+    using System.Threading.Tasks;
 
     public class ProductsService : IProductsService
     {
@@ -41,9 +44,22 @@
             return this.UoW.Commit();
         }
 
+        public IQueryable<Product> ProducttById(Guid id)
+        {
+            var query = this.productsRepo.All.Where(p => p.Id == id);
+
+            return query;
+        }
+
+
         public IQueryable<Product> GetAll()
         {
-            return this.productsRepo.All;
+            return this.productsRepo.All.Include(i => i.Images);
+        }
+
+        public IQueryable<Product> ProductWithImagesById(Guid id)
+        {
+            return this.ProducttById(id).Include(i=>i.Images);
         }
 
         public IQueryable<Product> GetProductsForCategoryGuid(Guid id)

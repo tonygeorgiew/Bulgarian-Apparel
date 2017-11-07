@@ -2,6 +2,7 @@
 using AutoMapper.QueryableExtensions;
 using Bulgarian_Apparel.Data.Models;
 using Bulgarian_Apparel.Services;
+using Bulgarian_Apparel.Services.Contracts;
 using Bulgarian_Apparel.Web.Models.Products;
 using System;
 using System.Collections.Generic;
@@ -16,12 +17,14 @@ namespace Bulgarian_Apparel.Web.Controllers
 
         private readonly IProductsService productsService;
         private readonly IItemsService itemsService;
+        private readonly ISizesService sizesService;
         private readonly IMapper mapper;
 
-        public ProductsController(IProductsService productsService, IItemsService itemsService, IMapper mapper)
+        public ProductsController(IProductsService productsService, IItemsService itemsService, ISizesService sizesService,IMapper mapper)
         {
             this.productsService = productsService;
             this.itemsService = itemsService;
+            this.sizesService = sizesService;
             this.mapper = mapper;
         }
 
@@ -31,9 +34,16 @@ namespace Bulgarian_Apparel.Web.Controllers
             var product = this.productsService.GetAll().Single();
             var item = this.itemsService.GetAll().Single();
             var viewModel = this.mapper.Map<ProductViewModel>(product);
-            viewModel = this.mapper.Map<ProductViewModel>(item);
+            this.mapper.Map(item, viewModel);
 
-            return View(viewModel);
+            var sizesAvailable = this.sizesService.GetAll();
+            var form = new ProductFormViewModel()
+            {
+                Product = viewModel
+            };
+
+
+            return View(form);
         }
 
         // [HttpGet]

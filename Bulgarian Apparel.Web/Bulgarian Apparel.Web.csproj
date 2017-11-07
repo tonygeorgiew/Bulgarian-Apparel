@@ -235,7 +235,10 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\OrdersController.cs" />
     <Compile Include="Controllers\ProductsController.cs" />
+    <Compile Include="Models\Products\OrderViewModel.cs" />
+    <Compile Include="Models\Products\ProductFormViewModel.cs" />
     <Compile Include="Models\Products\ProductsViewModel.cs" />
     <Compile Include="Models\Products\ProductViewModel.cs" />
     <Compile Include="Global.asax.cs">
@@ -360,6 +363,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Orders\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

@@ -1,28 +1,87 @@
-﻿@model Bulgarian_Apparel.Web.Models.Products.ProductViewModel
+﻿@model Bulgarian_Apparel.Web.Models.Products.ProductFormViewModel
 
 @Styles.Render("~/Content/Styles/advanced.css")
-@Styles.Render("~/Content/Styles/bs-pagination.min.css")
+@Styles.Render("~/Content/Styles/jBox.css")
 
-<div class="box">
-    <ul id="example-1" class="pagination"></ul>
-    <div class="show"></div>
-</div>
 
 
 <hr />
 
 
 <div id="container">
-@Model.ImageResources[0].Resource
+    <div class="item">
+        <img src="@Model.Product.ImageResources[0]" width="640" height="480" alt="" />
+        <div id="product-name">
+            @Model.Product.Name
+            <p>$ <span id="product-price">@Model.Product.Price</span></p>
+        </div>
+        <button class="btn btn-primary view" data-path="@Model.Product.ImageResources[0]" data-title="@Model.Product.Name" data-desc="@Model.Product.Description" data-price="@Model.Product.Price">View product</button>
+        <button class="btn btn-primary">Add to wishlist</button>                                                                                                
+    </div>                                                                                                                                                      
+                                                                                                                                                                
+    <div class="item">                                                                                                                                          
+        <img src="@Model.Product.ImageResources[1]" width="640" height="480" alt="" />                                                                          
+        <div id="product-name">                                                                                                                                 
+            @Model.Product.Name                                                                                                                                 
+            <p>$ <span id="product-price">@Model.Product.Price</span></p>                                                                                       
+        </div>                                                                                                                                                  
+        <button class="btn btn-primary view" data-path="@Model.Product.ImageResources[1]" data-title="@Model.Product.Name" data-desc="@Model.Product.Description" data-price="@Model.Product.Price">View product</button>
+        <button class="btn btn-primary">Add to wishlist</button>                                                                                                
+    </div>                                                                                                                                                      
+                                                                                                                                                                
+    <div class="item">                                                                                                                                          
+        <img src="@Model.Product.ImageResources[2]" width="640" height="480" alt="" />                                                                          
+        <div id="product-name">                                                                                                                                 
+            @Model.Product.Name                                                                                                                                 
+            <p>$ <span id="product-price">@Model.Product.Price</span></p>                                                                                       
+        </div>                                                                                                                                                  
+        <button class="btn btn-primary view" data-path="@Model.Product.ImageResources[2]" data-title="@Model.Product.Name" data-desc="@Model.Product.Description" data-price="@Model.Product.Price">View product</button>
+        <button class="btn btn-primary">Add to wishlist</button>                                                                                               
+    </div>                                                                                                                                                     
+                                                                                                                                                               
+    <div class="item">                                                                                                                                         
+        <img src="@Model.Product.ImageResources[2]" width="640" height="480" alt="" />                                                                         
+        <div id="product-name">                                                                                                                                
+            @Model.Product.Name                                                                                                                                
+            <p>$ <span id="product-price">@Model.Product.Price</span></p>                                                                                      
+        </div>                                                                                                                                                 
+        <button class="btn btn-primary view" data-path="@Model.Product.ImageResources[2]" data-title="@Model.Product.Name" data-desc="@Model.Product.Description" data-price="@Model.Product.Price">View product</button>
+        <button class="btn btn-primary">Add to wishlist</button>
+    </div>
 </div>
 
+
+<div style="display: none" id="viewBox">
+   
+    
+    @using (Html.BeginForm("MakeAnOrder", "Orders", FormMethod.Post, new {@class="form-vertical", role="form" }))
+   {
+        <div id="order-container">
+            <img id="order-image" src="" width="480" height="480" alt="" />
+            <hr />
+            <strong id="product-description"> </strong>     
+            <h2 id="order-price"></h2>
+            <hr />
+            <div class="form-group">
+                @Html.LabelFor(m => m.Order.SizeSelectedId)
+                @Html.DropDownListFor(m => m.Order.SizeSelectedId, new SelectList(Model.Product.Sizes, "Id", "Name"), "", new { @class = "form-control" })
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(m => m.Order.ColorSelectedId)
+                @Html.DropDownListFor(m => m.Order.ColorSelectedId, new SelectList(Model.Product.Colors, "Id", "Name"), "", new { @class = "form-control" })
+            </div>
+            @Html.AntiForgeryToken()
+            <button type="submit" class="btn btn-primary">Order now</button>
+        </div>
+   }
+
+</div>
 
 
 @section scripts{    
     
-<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script src="~/Scripts/jquery-3.2.1.min.js"></script>
 <script src="~/Scripts/jquery.wrecker.min.js"></script>
-<script src="~/Scripts/pagination.min.js"></script>
 <script src="~/Scripts/jBox.js"></script>
 <script type="text/javascript">
 
@@ -30,25 +89,19 @@
     $(document).ready(function () {
 
         $('.view').click(function () {
-           
+
             var path = $(this).data("path");
-            var title = $(this).data("title")
-            var price = $(this).data("price")
+            var title = $(this).data("title");
+            var price = $(this).data("price");
+            var desc = $(this).data("desc");
 
-
+            $("#order-image").attr("src", path);
+            $("#product-description").text("Description: " + desc);
+            $("#order-price").text(price + " $");  
+            
             var myModal = new jBox('Modal', {
-                content:
-                '<div id="container">' +
-                    '<div>' +
-                    '<img src="'+ path+'" width="640" height="480" alt="" />' +
-                    '</div>' +
-                    '<div>' +
-                        "options"+
-                        '</hr>' +
-                        "sizes"+
-                        '</hr>' +
-                    '</div>'+
-                '</div>'
+                title: title,
+                content: $('#viewBox')
             });
 
             myModal.open();
@@ -58,25 +111,9 @@
     });
 
 
-
-
-$('#example-1').pagination({
-    total: 10,
-    current: 2,
-    length: 10,
-    size: 2,
-    prev: "&lt;",
-    next: "&gt;",
-click: function(options ,$target) {
-	console.log(options);
-    $target.next(".show");
-
-}
-});
-
 $("#container").wrecker({
     itemSelector: ".item",
-    maxColumns: 4
+    maxColumns: 3
 });
 
 </script>
