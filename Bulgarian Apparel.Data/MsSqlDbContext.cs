@@ -29,6 +29,8 @@
 
         public IDbSet<Post> Posts { get; set; }
 
+        public IDbSet<Order> Orders { get; set; }
+
 
         public static MsSqlDbContext Create()
         {

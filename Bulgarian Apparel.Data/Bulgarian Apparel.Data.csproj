@@ -114,6 +114,10 @@
     <Compile Include="Migrations\201711041035236_Update blue shirt product.Designer.cs">
       <DependentUpon>201711041035236_Update blue shirt product.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201711091649537_Orders.cs" />
+    <Compile Include="Migrations\201711091649537_Orders.Designer.cs">
+      <DependentUpon>201711091649537_Orders.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="MsSqlDbContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -177,6 +181,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201711041035236_Update blue shirt product.resx">
       <DependentUpon>201711041035236_Update blue shirt product.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711091649537_Orders.resx">
+      <DependentUpon>201711091649537_Orders.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

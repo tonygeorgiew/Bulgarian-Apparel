@@ -1,0 +1,47 @@
+﻿@model Bulgarian_Apparel.Web.Models.Cart.CartViewModel
+@Styles.Render("~/Content/Styles/jquery.dataTables.min.css")
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Products in cart</h2>
+
+<table id="cart-details" class="display" cellspacing="0" width="100%">
+    <thead>
+        <tr>
+            <th id="product-name">Product Name</th>
+            <th id="product-brand">Brand</th>
+            <th id="product-size">Size</th>
+            <th id="product-color">Color</th>
+            <th id="product-shipping-address">Shipping address</th>
+            
+            <th id="product-price">Price</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var product in Model.ProductsOrdered)
+        {
+            <tr>
+                <td>@product.ProductName</td>
+                <td>@product.Brand</td>
+                <td>@product.Size</td>
+                <td>@product.Color</td>
+                <td>@product.ShippingAddress</td>
+               
+                <td>@product.Price</td>
+            </tr>
+        } 
+    </tbody>
+</table>
+
+<button>@Html.ActionLink("Proceed to checkout", "Checkout", "Cart")</button>
+
+@section scripts{
+<script src="~/Scripts/DataTables/jquery.dataTables.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('#cart-details').DataTable();
+    });
+</script>
+}

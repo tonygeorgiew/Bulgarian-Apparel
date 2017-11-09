@@ -75,3 +75,4 @@ C:\Users\admin\source\repos\Bulgarian Apparel\Bulgarian Apparel.Web.Tests\bin\De
 C:\Users\admin\source\repos\Bulgarian Apparel\Bulgarian Apparel.Web.Tests\bin\Debug\Castle.Core.dll
 C:\Users\admin\source\repos\Bulgarian Apparel\Bulgarian Apparel.Web.Tests\bin\Debug\Ninject.Web.Common.WebHost.xml
 C:\Users\admin\source\repos\Bulgarian Apparel\Bulgarian Apparel.Web.Tests\bin\Debug\Ninject.Extensions.Factory.xml
+C:\Users\admin\source\repos\Bulgarian Apparel\Bulgarian Apparel.Web.Tests\bin\Debug\Bulgarian Apparel.Services.dll.config

@@ -32,3 +32,4 @@ C:\Users\admin\source\repos\Bulgarian Apparel\Bulgarian Apparel.Data\obj\Debug\B
 C:\Users\admin\source\repos\Bulgarian Apparel\Bulgarian Apparel.Data\obj\Debug\Bulgarian_Apparel.Data.Migrations.SecondseedItem2.resources
 C:\Users\admin\source\repos\Bulgarian Apparel\Bulgarian Apparel.Data\obj\Debug\Bulgarian_Apparel.Data.Migrations.Seconditem.resources
 C:\Users\admin\source\repos\Bulgarian Apparel\Bulgarian Apparel.Data\obj\Debug\Bulgarian_Apparel.Data.Migrations.Updateblueshirtproduct.resources
+C:\Users\admin\source\repos\Bulgarian Apparel\Bulgarian Apparel.Data\obj\Debug\Bulgarian_Apparel.Data.Migrations.Orders.resources

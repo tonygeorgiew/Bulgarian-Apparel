@@ -13,10 +13,12 @@ namespace Bulgarian_Apparel.Data.Models
     public class User : IdentityUser, IAuditable, IDeletable
     {
         private ICollection<Post> posts;
+        private ICollection<Order> orders;
 
         public User()
         {
             this.posts = new HashSet<Post>();
+            this.orders = new HashSet<Order>();
         }
 
         [Index]
@@ -40,6 +42,18 @@ namespace Bulgarian_Apparel.Data.Models
             set
             {
                 this.posts = value;
+            }
+        }
+
+        public virtual ICollection<Order> Orders
+        {
+            get
+            {
+                return this.orders;
+            }
+            set
+            {
+                this.orders = value;
             }
         }
 

@@ -20,7 +20,7 @@ namespace Bulgarian_Apparel.Web.Controllers
         private readonly ISizesService sizesService;
         private readonly IMapper mapper;
 
-        public ProductsController(IProductsService productsService, IItemsService itemsService, ISizesService sizesService,IMapper mapper)
+        public ProductsController(IProductsService productsService, IItemsService itemsService, ISizesService sizesService, IMapper mapper)
         {
             this.productsService = productsService;
             this.itemsService = itemsService;
