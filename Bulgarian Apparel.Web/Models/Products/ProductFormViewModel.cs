@@ -11,7 +11,6 @@ namespace Bulgarian_Apparel.Web.Models.Products
 {
     public class ProductFormViewModel
     {
-        public IEnumerable<SelectListItem> SizesAvailable { get; set; }
         public ProductViewModel Product { get; set; }
         public OrderViewModel Order { get; set; }
     }

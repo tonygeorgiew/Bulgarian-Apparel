@@ -2,6 +2,7 @@
 using Bulgarian_Apparel.Data.Models.Contracts;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -29,7 +30,9 @@ namespace Bulgarian_Apparel.Services
 
         public IQueryable<Item> GetAll()
         {
-            return this.itemsRepo.All;
+            return this.itemsRepo.All
+                .Include(s => s.Sizes)
+                .Include(c => c.Colors);
         }
     }
 }

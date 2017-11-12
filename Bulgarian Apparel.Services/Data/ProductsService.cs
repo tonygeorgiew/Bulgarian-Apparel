@@ -41,6 +41,7 @@
         public int Add(Product product)
         {
             this.productsRepo.Add(product);
+
             return this.UoW.Commit();
         }
 

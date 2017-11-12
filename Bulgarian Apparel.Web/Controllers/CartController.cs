@@ -1,6 +1,12 @@
 ﻿using Bulgarian_Apparel.Data.Models;
+using Bulgarian_Apparel.Data.SaveContext;
+using Bulgarian_Apparel.Services;
+using Bulgarian_Apparel.Services.Contracts;
+using Bulgarian_Apparel.Web.Infrastructure;
 using Bulgarian_Apparel.Web.Models.Cart;
+using Bulgarian_Apparel.Web.Models.Orders;
 using Bulgarian_Apparel.Web.Models.Products;
+using Microsoft.AspNet.Identity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,39 +17,110 @@ namespace Bulgarian_Apparel.Web.Controllers
 {
     public class CartController : Controller
     {
+        private readonly IShoppingCartService shoppingCartService;
+        private readonly IColorsService colorsService;
+        private readonly ISizesService sizesService;
+        private readonly IPaymentTypesService paymentTypesService;
+        private readonly IUnitOfWork UoW;
+
+        public CartController(IShoppingCartService shoppingCartService, IColorsService colorsService, ISizesService sizesService ,IPaymentTypesService paymentTypesService, IUnitOfWork UoW)
+        {
+            this.shoppingCartService = shoppingCartService;
+            this.colorsService = colorsService;
+            this.sizesService = sizesService;
+            this.paymentTypesService = paymentTypesService;
+            this.UoW = UoW;
+        }
+
         // GET: Cart
         public ActionResult Index()
         {
             return View();
         }
 
+        [Authorize]
         public ActionResult Details()
         {
-            var cart = new CartViewModel
+            Guid userId = IdProccessor.GetGuidForStringId(User.Identity.GetUserId());
+            if (this.shoppingCartService.GetAll().Any(u => u.UserId == userId))
             {
-                ProductsOrdered = new List<CartItemViewModel>()
-            };
+                var userCart = this.shoppingCartService.GetAll().Where(o => o.IsDeleted == false).Single(c => c.UserId == userId);
 
-            var product = new CartItemViewModel
-            {
-                ProductName = "Casual shirt",
-                Brand = "H&M",
-                Size = "XL",
-                Color = "Blue",
-                Price = 100.00,
-                ShippingAddress = "Bulgaria, Sofia, Sofia-town, ul.Studentski grad blok 52-b, apartment number 216"
-            };
+                return View(userCart);
+            }
 
-            cart.ProductsOrdered.Add(product);
-            cart.ProductsOrdered.Add(product);
-            cart.ProductsOrdered.Add(product);
-
-            return View(cart);
+            return View("Empty");
         }
 
-        public ActionResult Checkout()
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult ProccessCart(ProductFormViewModel productForm, string checkout, string addtocart)
         {
-            return View();
+            //logic for adding order to orders repo
+            if (!string.IsNullOrEmpty(checkout))
+            {
+
+                return RedirectToAction("CheckoutForm");
+            }
+
+            if (!string.IsNullOrEmpty(addtocart))
+            {
+                var color = this.colorsService.GetColorForStringGuid(productForm.Order.ColorSelectedId);
+                var size = this.sizesService.GetSizeForStringGuid(productForm.Order.SizeSelectedId);
+
+                var cartProduct = new ShoppingCartProduct()
+                {
+                    ProductId = productForm.Product.Id,
+                    ProductColor = color.Name,
+                    ProductSize = size.Name,
+                    ProductPrice = productForm.Product.Price,
+                    PayedFor = false
+                };
+
+                var userId = IdProccessor.GetGuidForStringId(User.Identity.GetUserId());
+
+                //abstract this into a method called UserHasActiveCart(guid userid);
+                if (this.shoppingCartService.GetAll().Any(u => u.UserId == userId))
+                {
+                    var userCart = this.shoppingCartService.GetAll().Single(c => c.UserId == userId);
+                    cartProduct.ShoppingCartId = userCart.Id;
+                    userCart.ShoppingCartProducts.Add(cartProduct);
+
+                    this.shoppingCartService.Update(userCart);
+                }
+
+                else
+                {
+                    var userCart = new ShoppingCart()
+                    {
+                        UserId = userId
+                    };
+
+                    cartProduct.ShoppingCartId = userCart.Id;
+                    userCart.ShoppingCartProducts.Add(cartProduct);
+
+                    this.shoppingCartService.Add(userCart);
+                }
+                //end
+
+                return RedirectToAction("Index", "Products");
+            }
+
+            return Content("skipped ifs");
+        }
+
+        public ActionResult CheckoutForm()
+        {
+            var userGuid = IdProccessor.GetGuidForStringId(this.User.Identity.GetUserId());
+            var totalPrice = this.shoppingCartService.CalculateTotalPriceForCart(userGuid);
+            var paymentTypes = this.paymentTypesService.GetAll().ToList();
+            var orderForm = new CheckoutFormVM()
+            {
+                PaymentType = paymentTypes,
+                TotalPrice = totalPrice
+            };
+
+            return View(orderForm);
         }
 
         public ActionResult CheckoutNow(OrderViewModel order)

@@ -118,6 +118,14 @@
     <Compile Include="Migrations\201711091649537_Orders.Designer.cs">
       <DependentUpon>201711091649537_Orders.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201711110733117_Shopping cart.cs" />
+    <Compile Include="Migrations\201711110733117_Shopping cart.Designer.cs">
+      <DependentUpon>201711110733117_Shopping cart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201711120946533_Adding payment types.cs" />
+    <Compile Include="Migrations\201711120946533_Adding payment types.Designer.cs">
+      <DependentUpon>201711120946533_Adding payment types.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="MsSqlDbContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -184,6 +192,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201711091649537_Orders.resx">
       <DependentUpon>201711091649537_Orders.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711110733117_Shopping cart.resx">
+      <DependentUpon>201711110733117_Shopping cart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711120946533_Adding payment types.resx">
+      <DependentUpon>201711120946533_Adding payment types.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

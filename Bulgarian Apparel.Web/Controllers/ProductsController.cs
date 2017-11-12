@@ -35,8 +35,7 @@ namespace Bulgarian_Apparel.Web.Controllers
             var item = this.itemsService.GetAll().Single();
             var viewModel = this.mapper.Map<ProductViewModel>(product);
             this.mapper.Map(item, viewModel);
-
-            var sizesAvailable = this.sizesService.GetAll();
+                
             var form = new ProductFormViewModel()
             {
                 Product = viewModel

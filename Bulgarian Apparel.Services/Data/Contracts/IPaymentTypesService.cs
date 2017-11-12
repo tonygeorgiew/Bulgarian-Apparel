@@ -7,8 +7,8 @@ using System.Threading.Tasks;
 
 namespace Bulgarian_Apparel.Services.Contracts
 {
-    public interface ISizesService
+    public interface IPaymentTypesService
     {
-        IQueryable<Size> GetAll();
+        IQueryable<PaymentType> GetAll();
     }
 }

@@ -9,12 +9,12 @@ namespace Bulgarian_Apparel.Data.Models
 {
    public class Order : DataModel
     {
-        public DateTime OrderedOn { get; set; }
-        public string PaymentMethod { get; set; }
-        public double Payment { get; set; }
+        public Order()
+        {
+            this.OrderItems = new HashSet<OrderItem>();
+        }
+
         public virtual User Customer { get; set; }
-        public Guid ProductId { get; set; }
-        public string ProductSize { get; set; }
-        public string ProductColor { get; set; }
+        public ICollection<OrderItem> OrderItems { get; set; }
     }
 }

@@ -9,7 +9,7 @@
 <div style="display: none" id="viewBox">
 
 
-    @using (Html.BeginForm("MakeAnOrder", "Orders", FormMethod.Post, new { @class = "form-vertical", role = "form" }))
+    @using (Html.BeginForm("ProccessCart", "Cart", FormMethod.Post, new { @class = "form-vertical", role = "form" }))
     {
         <div id="order-container">
             <img id="order-image" src="" width="480" height="480" alt="" />
@@ -18,16 +18,18 @@
             <h2 id="order-price"></h2>
             <hr />
             <div class="form-group">
-                @Html.LabelFor(m => m.Order.SizeSelectedId)
+                @Html.DisplayNameFor(m => m.Order.SizeSelectedId)
                 @Html.DropDownListFor(m => m.Order.SizeSelectedId, new SelectList(Model.Product.Sizes, "Id", "Name"), "", new { @class = "form-control" })
             </div>
             <div class="form-group">
-                @Html.LabelFor(m => m.Order.ColorSelectedId)
+                @Html.DisplayNameFor(m => m.Order.ColorSelectedId)
                 @Html.DropDownListFor(m => m.Order.ColorSelectedId, new SelectList(Model.Product.Colors, "Id", "Name"), "", new { @class = "form-control" })
             </div>
             @Html.HiddenFor(m=>m.Product.Id)
+            @Html.HiddenFor(m=>m.Product.Price)
+            @Html.HiddenFor(m=>m.Product.Name)
             @Html.AntiForgeryToken()
-            <input class="btn btn-primary" type="submit" value="Order now" name="makeorder" />
+            <input class="btn btn-primary" type="submit" value="Checkout now" name="checkout" />
             <input class="btn btn-primary" type="submit" value="Add to cart" name="addtocart" />
         </div>
     }

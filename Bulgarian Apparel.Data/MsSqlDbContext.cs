@@ -31,6 +31,14 @@
 
         public IDbSet<Order> Orders { get; set; }
 
+        public IDbSet<OrderItem> OrderItems { get; set; }
+
+        public IDbSet<ShoppingCart> ShoppingCarts { get; set; }
+
+        public IDbSet<ShoppingCartProduct> ShoppingCartProducts { get; set; }
+
+        public IDbSet<PaymentType> PaymentTypes { get; set; }
+
 
         public static MsSqlDbContext Create()
         {

@@ -49,22 +49,31 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CategoriesService.cs" />
-    <Compile Include="Contracts\ICategoriesService.cs" />
-    <Compile Include="Contracts\IService.cs" />
-    <Compile Include="Contracts\IPostsService.cs" />
-    <Compile Include="Contracts\IProductsService.cs" />
-    <Compile Include="Contracts\ISizesService.cs" />
-    <Compile Include="Contracts\IUsersService.cs" />
-    <Compile Include="Contracts\IItemsService.cs" />
-    <Compile Include="Contracts\IOrdersService.cs" />
-    <Compile Include="ItemsService.cs" />
-    <Compile Include="OrdersService.cs" />
-    <Compile Include="PostsService.cs" />
-    <Compile Include="ProductsService.cs" />
+    <Compile Include="Common\Extensions\IdProccessor.cs" />
+    <Compile Include="Data\CategoriesService.cs" />
+    <Compile Include="Data\ColorsService.cs" />
+    <Compile Include="Data\Contracts\ICategoriesService.cs" />
+    <Compile Include="Data\Contracts\IOrdersItemsService.cs" />
+    <Compile Include="Data\Contracts\IPaymentTypesService.cs" />
+    <Compile Include="Common\IService.cs" />
+    <Compile Include="Data\Contracts\IPostsService.cs" />
+    <Compile Include="Data\Contracts\IProductsService.cs" />
+    <Compile Include="Data\Contracts\ISizesService.cs" />
+    <Compile Include="Data\Contracts\IUsersService.cs" />
+    <Compile Include="Data\Contracts\IItemsService.cs" />
+    <Compile Include="Data\Contracts\IOrdersService.cs" />
+    <Compile Include="Data\Contracts\IShoppingCartService.cs" />
+    <Compile Include="Data\Contracts\IColorsService.cs" />
+    <Compile Include="Data\Contracts\ItemsService.cs" />
+    <Compile Include="Data\OrdersItemsService.cs" />
+    <Compile Include="Data\OrdersService.cs" />
+    <Compile Include="Data\PaymentTypesService.cs" />
+    <Compile Include="Data\PostsService.cs" />
+    <Compile Include="Data\ProductsService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SizesService.cs" />
-    <Compile Include="UsersService.cs" />
+    <Compile Include="Data\ShoppingCartService.cs" />
+    <Compile Include="Data\SizesService.cs" />
+    <Compile Include="Data\UsersService.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Bulgarian Apparel.Data.Models\Bulgarian Apparel.Data.Model.csproj">
@@ -80,5 +89,6 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

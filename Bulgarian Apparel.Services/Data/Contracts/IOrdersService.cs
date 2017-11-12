@@ -6,5 +6,11 @@ namespace Bulgarian_Apparel.Services
     public interface IOrdersService
     {
         IQueryable<Order> GetAll();
+
+        int Add(Order order);
+
+        int Delete(Order order);
+
+        int Update(Order order);
     }
 }

@@ -21,7 +21,6 @@ namespace Bulgarian_Apparel.Web.Models.Products
 
         public void CreateMappings(IMapperConfigurationExpression configuration)
         {
-            //Problema e v tova che trqbva da se mapne cqlata koleciq(a celiq image, a ne samo image path) a ne prosto propertyto
             configuration.CreateMap<Product, ProductViewModel>()
                 .ForMember(productVM => productVM.ImageResources,
                            cfg => cfg.MapFrom(

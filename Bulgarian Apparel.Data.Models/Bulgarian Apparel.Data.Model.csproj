@@ -61,8 +61,12 @@
     <Compile Include="Customer.cs" />
     <Compile Include="Item.cs" />
     <Compile Include="Order.cs" />
+    <Compile Include="OrderItem.cs" />
+    <Compile Include="PaymentType.cs" />
     <Compile Include="Post.cs" />
     <Compile Include="Product.cs" />
+    <Compile Include="ShoppingCart.cs" />
+    <Compile Include="ShoppingCartProduct.cs" />
     <Compile Include="Size.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Image.cs" />

@@ -238,9 +238,9 @@
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\OrdersController.cs" />
     <Compile Include="Controllers\ProductsController.cs" />
-    <Compile Include="Infrastructure\MultipleButtonAttribute.cs" />
     <Compile Include="Models\Cart\CartItemViewModel.cs" />
     <Compile Include="Models\Cart\CartViewModel.cs" />
+    <Compile Include="Models\Orders\CheckoutFormVM.cs" />
     <Compile Include="Models\Orders\OrderViewModel.cs" />
     <Compile Include="Models\Products\ProductFormViewModel.cs" />
     <Compile Include="Models\Products\ProductsViewModel.cs" />
@@ -616,10 +616,13 @@
     <Content Include="Views\Products\Details.cshtml" />
     <Content Include="Views\Widgets\_Popup.cshtml" />
     <Content Include="Views\Cart\Details.cshtml" />
+    <Content Include="Views\Cart\Empty.cshtml" />
+    <Content Include="Views\Cart\CheckoutForm.cshtml" />
+    <Content Include="Views\Orders\Success.cshtml" />
+    <Content Include="Views\Orders\MyOrdersDetails.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Orders\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

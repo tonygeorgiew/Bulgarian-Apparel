@@ -1,0 +1,44 @@
+﻿@model List<Bulgarian_Apparel.Data.Models.OrderItem>
+
+@Styles.Render("~/Content/Styles/jquery.dataTables.min.css")
+@{
+    ViewBag.Title = "MyOrdersDetails";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>My Orders</h1>
+
+<table id="orders-details" class="display" cellspacing="0" width="100%">
+    <thead>
+        <tr>
+            <th id="order-item-id">Id</th>
+            <th id="order-item-size">Size</th>
+            <th id="order-item-color">Color</th>
+            <th id="order-item-price">Payment</th>
+            <th id="order-item-address">Shipping Address</th>
+            <th id="order-item-order-date">Ordered on</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Id</td>
+                <td>@item.ProductSize</td>
+                <td>@item.ProductColor</td>
+                <td>@item.Payment</td>
+                <td>@item.Address</td>
+                <td>@item.OrderedOn</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+@section scripts{
+    <script src="~/Scripts/DataTables/jquery.dataTables.min.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function() {
+        $('#orders-details').DataTable();
+    });
+    </script>
+}

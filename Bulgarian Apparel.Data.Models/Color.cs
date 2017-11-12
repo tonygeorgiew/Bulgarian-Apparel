@@ -16,8 +16,6 @@
         [Required]
         public string Name { get; set; }
 
-        //TO DO: Make the name of the color, its primary key
-
         public virtual ICollection<Item> Items { get; set; }
     }
 }

@@ -1,0 +1,37 @@
+﻿@model Bulgarian_Apparel.Web.Models.Orders.CheckoutFormVM
+
+@{
+    ViewBag.Title = "CheckoutForm";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Checkout</h2>
+@using (Html.BeginForm("ValidateOrder", "Orders", FormMethod.Post, new { @class = "form-vertical", role = "form" }))
+{
+    <div id="order-container">
+        <div class="form-group">
+            @Html.LabelFor(m => m.ShippingAddress)
+            @Html.EditorFor(m => m.ShippingAddress)
+        </div>
+        <hr />
+        <b>Total price of items in cart: @Model.TotalPrice</b>
+        <div class="form-group">
+            @Html.LabelFor(m => m.PreferedPayment)
+            @Html.DropDownListFor(m => m.PreferedPayment, new SelectList(Model.PaymentType, "Id", "Name"), "", new { @class = "form-control" })
+        </div>
+        <hr />
+        <div class="form-group">
+            @Html.LabelFor(m => m.CreditCardNumber)
+            @Html.EditorFor(m => m.CreditCardNumber)
+            @Html.LabelFor(m => m.CCV)
+            @Html.EditorFor(m => m.CCV)
+        </div>
+        <hr />
+        <div class="form-group">
+         
+        </div>
+        @Html.AntiForgeryToken()
+        <input class="btn btn-primary" type="submit" value="Submit"/>
+    </div>
+}
+

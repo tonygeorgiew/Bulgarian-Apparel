@@ -29,11 +29,20 @@ namespace Bulgarian_Apparel.Data.Migrations
             //  this.SeedSampleColors(context);
             //  this.SeedSampleSizes(context);
             //  this.SeedSampleImages(context);
-            //    this.SeedSampleProducts(context);
-           
+            //  this.SeedSampleProducts(context);
+           // this.seedPaymentTypes(context);
             //  this.SeedSampleItems(context);
 
             base.Seed(context);
+        }
+
+        private void seedPaymentTypes(MsSqlDbContext context)
+        {
+            var PayPal = new PaymentType() { Name = "PayPal" };
+            var CreditCard = new PaymentType() { Name = "Credit Card" };
+
+            context.PaymentTypes.Add(PayPal);
+            context.PaymentTypes.Add(CreditCard);
         }
 
         private void SeedUsers(MsSqlDbContext context)
