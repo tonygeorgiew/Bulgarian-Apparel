@@ -29,7 +29,9 @@ namespace Bulgarian_Apparel.Data.Models
         [Display(Name= "Picture Resource")]
         public ICollection<Image> Images { get; set; }
 
-        //TO DO: add bool available and int Stock properties
+        public int Stock { get; set; }
+
+        public bool Hot { get; set; }
 
         public string Description { get; set; }
     }

@@ -1,0 +1,67 @@
+﻿.mySlider {
+    overflow: hidden;
+    width: 100%;
+    position: relative;
+}
+
+    .mySlider ul {
+        overflow: hidden;
+        margin: 0;
+        zoom: 1;
+    }
+
+        .mySlider ul li {
+            float: left;
+        }
+
+            .mySlider ul li img {
+                width: 100%;
+            }
+
+.wrapper-1 {
+  width: 50%;
+  margin: 0 auto;
+}
+
+/*style for img in case of low download speed*/
+
+.example-1 {
+  overflow: hidden;
+  width: 100%;
+  position: relative;
+}
+
+.example-1 ul {
+  overflow: hidden;
+  margin: 0;
+  zoom: 1;
+}
+
+.example-1 ul li { float: left; }
+
+.example-1 ul li img { width: 100%; }
+
+/*style for dots*/
+
+
+.dots-1 {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+.dots-1 li {
+  display: inline-block;
+ *display: inline;
+ *zoom: 1;
+  width: 15px;
+  height: 15px;
+  margin: 0 5px;
+  background: #963;
+  cursor: pointer;
+}
+
+.dots-1 li:hover, .dots-1 li.active { background: #000; }

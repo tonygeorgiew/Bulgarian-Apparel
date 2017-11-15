@@ -100,7 +100,7 @@ namespace Bulgarian_Apparel.Web.Controllers
             {
 
                 //add order to User's(antonii.g) cart thats at the Cart/Details;
-                return Content(productForm.Product.Id.ToString());
+                return Content(productForm.Product.ProductId.ToString());
             }
 
             if (!string.IsNullOrEmpty(addtocart))

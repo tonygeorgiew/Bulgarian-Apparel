@@ -8,6 +8,8 @@ namespace Bulgarian_Apparel.Services
     {
         IQueryable<ShoppingCart> GetAll();
 
+        IQueryable<ShoppingCart> GetCartForUserId(string Id);
+
         int Add(ShoppingCart cart);
 
         int Delete(ShoppingCart cart);

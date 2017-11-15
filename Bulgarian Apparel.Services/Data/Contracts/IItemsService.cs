@@ -6,5 +6,11 @@ namespace Bulgarian_Apparel.Services
     public interface IItemsService
     {
         IQueryable<Item> GetAll();
+
+        int Add(Item item);
+
+        int Delete(Item item);
+
+        int Update(Item item);
     }
 }

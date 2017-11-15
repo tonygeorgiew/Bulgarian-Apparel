@@ -1,7 +1,9 @@
 ﻿using AutoMapper;
 using AutoMapper.QueryableExtensions;
+using Bulgarian_Apparel.Data.Models;
 using Bulgarian_Apparel.Services;
 using Bulgarian_Apparel.Web.Models.Home;
+using Bulgarian_Apparel.Web.Models.Products;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,24 +14,33 @@ namespace Bulgarian_Apparel.Web.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly IPostsService postsService;
+        private readonly IProductsService productsService;
         private readonly IMapper mapper;
 
-        public HomeController(IPostsService postsService, IMapper mapper)
+        public HomeController(IProductsService productsService, IMapper mapper)
         {
-            this.postsService = postsService;
+            this.productsService = productsService;
             this.mapper = mapper;
         }
 
         public ActionResult Index()
         {
-            var posts = this.postsService
+            //Needs refractoring
+            var hotProducts = this.productsService
                 .GetAll()
-                .ProjectTo<PostViewModel>()
+              //.Where(p => p.Hot == true)
                 .ToList();
 
-           
-            return View(posts);
+            var mappedHotProducts = new List<HotProductVM>();
+            foreach (var item in hotProducts)
+            {
+                mappedHotProducts.Add(mapper.Map<HotProductVM>(item));
+              
+            }
+            
+
+
+            return View(mappedHotProducts);
         }
 
         public ActionResult About()

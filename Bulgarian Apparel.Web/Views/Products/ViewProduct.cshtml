@@ -1,0 +1,81 @@
+﻿@model Bulgarian_Apparel.Web.Models.Products.ProductFormViewModel
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@Styles.Render("~/Content/Styles/advanced.css")
+@Styles.Render("~/Content/Styles/productviewboxslider.css")
+
+<h2></h2>
+
+
+
+
+<div class="container">    
+    <div class="item">
+        <h1>@Model.Product.Name</h1>
+        <i>by @Model.Product.Supplier</i>
+        <hr />
+        <strong id="product-summary">
+           Summary: @Model.Product.Description
+        </strong>
+        <hr />
+        @using (Html.BeginForm("ProccessCart", "Cart", FormMethod.Post, new { @class = "form-vertical", role = "form" }))
+        {
+            <div id="order-container">
+                <hr />
+                <div class="form-group">
+                    @Html.DisplayNameFor(m => m.Order.SizeSelectedId)
+                    @Html.DropDownListFor(m => m.Order.SizeSelectedId, new SelectList(Model.Product.Sizes, "Id", "Name"), "", new { @class = "form-control" })
+                </div>
+                <hr />
+                <div class="form-group">
+                    @Html.DisplayNameFor(m => m.Order.ColorSelectedId)
+                    @Html.DropDownListFor(m => m.Order.ColorSelectedId, new SelectList(Model.Product.Colors, "Id", "Name"), "", new { @class = "form-control" })
+                </div>
+                <hr />
+                <div class="form-group">
+                    @Html.HiddenFor(m => m.Product.ProductId)
+                    @Html.HiddenFor(m => m.Product.Price)
+                    @Html.HiddenFor(m => m.Product.Name)
+                </div>
+                @Html.AntiForgeryToken()
+                <input class="btn btn-primary" type="submit" value="Checkout now" name="checkout" />
+                <input class="btn btn-primary" type="submit" value="Add to cart" name="addtocart" />
+            </div>
+        }
+    </div>
+    <div class="item2">
+        <div class="wrapper-1">
+            <div class="example-1">
+                <ul>
+                    @foreach (var image in Model.Product.ImageResources)
+                    {
+                        <li><img src="@image" alt="@Model.Product.Name"></li>
+                    }
+                </ul>
+            </div>
+        </div>
+    </div>
+   
+</div>
+@section scripts{
+<script src="~/Scripts/jquery-3.2.1.js"></script>
+<script src="~/Scripts/simpleBanner.js"></script>
+<script src="~/Scripts/jquery.wrecker.min.js"></script>
+<script type="text/javascript">
+    $("#container").wrecker({
+        itemSelector: ".item",
+        maxColumns: 1
+    });
+</script>
+<script type="text/javascript">
+    $('.example-1').simpleBanner(
+        {
+            autoPlayDuration: 2000,
+            dots: 'dots-1',
+            eventType: 'mouseenter',
+            animation: 'slide'
+        });
+</script>
+    }

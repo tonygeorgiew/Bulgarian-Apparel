@@ -17,19 +17,23 @@
         </tr>
     </thead>
     <tbody>
-        @foreach (var product in Model.ShoppingCartProducts.ToList())
+        @if (Model.ShoppingCartProducts.Count > 0)
         {
-            <tr>
-                <td>@product.Id</td>
-                <td>@product.ProductSize</td>
-                <td>@product.ProductColor</td>
-                <td>@product.ProductPrice</td>
-            </tr>
-        } 
+            foreach (var product in Model.ShoppingCartProducts.ToList())
+            {
+                <tr>
+                    <td>@product.Id</td>
+                    <td>@product.ProductSize</td>
+                    <td>@product.ProductColor</td>
+                    <td>@product.ProductPrice</td>
+                </tr>
+            }
+        }
     </tbody>
 </table>
 
 <button>@Html.ActionLink("Proceed to checkout", "CheckoutForm", "Cart")</button>
+<button>@Html.ActionLink("Empty cart", "Empty", "Cart")</button>
 
 @section scripts{
 <script src="~/Scripts/DataTables/jquery.dataTables.min.js"></script>

@@ -8,6 +8,7 @@ using Bulgarian_Apparel.Data.Models.Contracts;
 using Bulgarian_Apparel.Data.SaveContext;
 using System.Data.Entity.Infrastructure;
 using System.Data.Entity;
+using Bulgarian_Apparel.Web.Infrastructure;
 
 namespace Bulgarian_Apparel.Services
 {
@@ -25,6 +26,14 @@ namespace Bulgarian_Apparel.Services
         public IQueryable<ShoppingCart> GetAll()
         {
             return this.shoppingCartRepo.All.Include(p => p.ShoppingCartProducts);
+        }
+
+        public IQueryable<ShoppingCart> GetCartForUserId(string Id)
+        {
+            var userGuid = IdProccessor.GetGuidForStringId(Id);
+            var query = this.shoppingCartRepo.All.Where(c => c.UserId == userGuid).Include(p => p.ShoppingCartProducts);
+
+            return query;
         }
 
         public int Add(ShoppingCart cart)
@@ -52,6 +61,7 @@ namespace Bulgarian_Apparel.Services
         {
             return this.shoppingCartRepo
                 .All
+                .Where(u => u.IsDeleted == false)
                 .Single(cart => cart.UserId == guid)
                 .ShoppingCartProducts.Sum(price => price.ProductPrice);
         }

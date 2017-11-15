@@ -143,8 +143,23 @@
       <HintPath>..\packages\System.Diagnostics.DiagnosticSource.4.4.0\lib\net46\System.Diagnostics.DiagnosticSource.dll</HintPath>
     </Reference>
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http, Version=4.1.1.2, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Net.Http.4.3.3\lib\net46\System.Net.Http.dll</HintPath>
+    </Reference>
     <Reference Include="System.Net.Http.Formatting, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Algorithms, Version=4.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Algorithms.4.3.0\lib\net461\System.Security.Cryptography.Algorithms.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Encoding, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Encoding.4.3.0\lib\net46\System.Security.Cryptography.Encoding.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Primitives, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Primitives.4.3.0\lib\net46\System.Security.Cryptography.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.X509Certificates, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.X509Certificates.4.3.0\lib\net461\System.Security.Cryptography.X509Certificates.dll</HintPath>
     </Reference>
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
@@ -170,8 +185,6 @@
     <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <Private>True</Private>
       <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Net.Http">
     </Reference>
     <Reference Include="System.Net.Http.WebRequest">
     </Reference>
@@ -242,6 +255,8 @@
     <Compile Include="Models\Cart\CartViewModel.cs" />
     <Compile Include="Models\Orders\CheckoutFormVM.cs" />
     <Compile Include="Models\Orders\OrderViewModel.cs" />
+    <Compile Include="Models\Products\HotProductVM.cs" />
+    <Compile Include="Models\Products\NewProductAddVM.cs" />
     <Compile Include="Models\Products\ProductFormViewModel.cs" />
     <Compile Include="Models\Products\ProductsViewModel.cs" />
     <Compile Include="Models\Products\ProductViewModel.cs" />
@@ -452,6 +467,7 @@
     <Content Include="Content\Styles\gallery.css" />
     <Content Include="Content\Styles\jBox.css" />
     <Content Include="Content\Styles\jquery.dataTables.min.css" />
+    <Content Include="Content\Styles\productviewboxslider.css" />
     <Content Include="Content\Styles\sliderResponsive.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -573,6 +589,7 @@
     <Content Include="Scripts\respond.matchmedia.addListener.js" />
     <Content Include="Scripts\respond.matchmedia.addListener.min.js" />
     <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\simpleBanner.js" />
     <Content Include="Scripts\sliderResponsive.js" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
@@ -613,16 +630,18 @@
     <Content Include="Views\Widgets\_Cube.cshtml" />
     <Content Include="Views\Home\View1.cshtml" />
     <Content Include="Views\Products\Index.cshtml" />
-    <Content Include="Views\Products\Details.cshtml" />
+    <Content Include="Views\Products\ViewProduct.cshtml" />
     <Content Include="Views\Widgets\_Popup.cshtml" />
     <Content Include="Views\Cart\Details.cshtml" />
     <Content Include="Views\Cart\Empty.cshtml" />
     <Content Include="Views\Cart\CheckoutForm.cshtml" />
     <Content Include="Views\Orders\Success.cshtml" />
     <Content Include="Views\Orders\MyOrdersDetails.cshtml" />
+    <Content Include="Views\Products\AddProduct.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\ProductsManager\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

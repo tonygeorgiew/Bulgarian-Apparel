@@ -64,7 +64,7 @@
     <Compile Include="Data\Contracts\IOrdersService.cs" />
     <Compile Include="Data\Contracts\IShoppingCartService.cs" />
     <Compile Include="Data\Contracts\IColorsService.cs" />
-    <Compile Include="Data\Contracts\ItemsService.cs" />
+    <Compile Include="Data\ItemsService.cs" />
     <Compile Include="Data\OrdersItemsService.cs" />
     <Compile Include="Data\OrdersService.cs" />
     <Compile Include="Data\PaymentTypesService.cs" />

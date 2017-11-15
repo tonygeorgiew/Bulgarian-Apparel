@@ -10,20 +10,20 @@
 {
     <div id="order-container">
         <div class="form-group">
-            @Html.LabelFor(m => m.ShippingAddress)
+            @Html.DisplayNameFor(m => m.ShippingAddress)
             @Html.EditorFor(m => m.ShippingAddress)
         </div>
         <hr />
         <b>Total price of items in cart: @Model.TotalPrice</b>
         <div class="form-group">
-            @Html.LabelFor(m => m.PreferedPayment)
+            @Html.DisplayNameFor(m => m.PreferedPayment)
             @Html.DropDownListFor(m => m.PreferedPayment, new SelectList(Model.PaymentType, "Id", "Name"), "", new { @class = "form-control" })
         </div>
         <hr />
         <div class="form-group">
-            @Html.LabelFor(m => m.CreditCardNumber)
+            @Html.DisplayNameFor(m => m.CreditCardNumber)
             @Html.EditorFor(m => m.CreditCardNumber)
-            @Html.LabelFor(m => m.CCV)
+            @Html.DisplayNameFor(m => m.CCV)
             @Html.EditorFor(m => m.CCV)
         </div>
         <hr />

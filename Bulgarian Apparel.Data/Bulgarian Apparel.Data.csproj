@@ -126,6 +126,42 @@
     <Compile Include="Migrations\201711120946533_Adding payment types.Designer.cs">
       <DependentUpon>201711120946533_Adding payment types.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201711130925576_added hot property and stock to products.cs" />
+    <Compile Include="Migrations\201711130925576_added hot property and stock to products.Designer.cs">
+      <DependentUpon>201711130925576_added hot property and stock to products.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201711141435211_PurpleShirtSeed.cs" />
+    <Compile Include="Migrations\201711141435211_PurpleShirtSeed.Designer.cs">
+      <DependentUpon>201711141435211_PurpleShirtSeed.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201711141437297_PurpleShirtSeed1.cs" />
+    <Compile Include="Migrations\201711141437297_PurpleShirtSeed1.Designer.cs">
+      <DependentUpon>201711141437297_PurpleShirtSeed1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201711141452516_Red shirt model.cs" />
+    <Compile Include="Migrations\201711141452516_Red shirt model.Designer.cs">
+      <DependentUpon>201711141452516_Red shirt model.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201711141500212_Brown shirt model.cs" />
+    <Compile Include="Migrations\201711141500212_Brown shirt model.Designer.cs">
+      <DependentUpon>201711141500212_Brown shirt model.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201711141511544_Purple Hoodie.cs" />
+    <Compile Include="Migrations\201711141511544_Purple Hoodie.Designer.cs">
+      <DependentUpon>201711141511544_Purple Hoodie.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201711141517407_Purple Hoodie2.cs" />
+    <Compile Include="Migrations\201711141517407_Purple Hoodie2.Designer.cs">
+      <DependentUpon>201711141517407_Purple Hoodie2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201711141519075_Purple Hoodie3.cs" />
+    <Compile Include="Migrations\201711141519075_Purple Hoodie3.Designer.cs">
+      <DependentUpon>201711141519075_Purple Hoodie3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201711141530291_Black and white shirt.cs" />
+    <Compile Include="Migrations\201711141530291_Black and white shirt.Designer.cs">
+      <DependentUpon>201711141530291_Black and white shirt.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="MsSqlDbContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -198,6 +234,33 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201711120946533_Adding payment types.resx">
       <DependentUpon>201711120946533_Adding payment types.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711130925576_added hot property and stock to products.resx">
+      <DependentUpon>201711130925576_added hot property and stock to products.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711141435211_PurpleShirtSeed.resx">
+      <DependentUpon>201711141435211_PurpleShirtSeed.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711141437297_PurpleShirtSeed1.resx">
+      <DependentUpon>201711141437297_PurpleShirtSeed1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711141452516_Red shirt model.resx">
+      <DependentUpon>201711141452516_Red shirt model.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711141500212_Brown shirt model.resx">
+      <DependentUpon>201711141500212_Brown shirt model.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711141511544_Purple Hoodie.resx">
+      <DependentUpon>201711141511544_Purple Hoodie.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711141517407_Purple Hoodie2.resx">
+      <DependentUpon>201711141517407_Purple Hoodie2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711141519075_Purple Hoodie3.resx">
+      <DependentUpon>201711141519075_Purple Hoodie3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711141530291_Black and white shirt.resx">
+      <DependentUpon>201711141530291_Black and white shirt.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

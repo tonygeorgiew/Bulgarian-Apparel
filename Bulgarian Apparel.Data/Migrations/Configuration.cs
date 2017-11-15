@@ -30,8 +30,9 @@ namespace Bulgarian_Apparel.Data.Migrations
             //  this.SeedSampleSizes(context);
             //  this.SeedSampleImages(context);
             //  this.SeedSampleProducts(context);
-           // this.seedPaymentTypes(context);
+            //  this.seedPaymentTypes(context);
             //  this.SeedSampleItems(context);
+            //  this.SeedNewProductModel(context);
 
             base.Seed(context);
         }
@@ -215,36 +216,57 @@ namespace Bulgarian_Apparel.Data.Migrations
         }
 
        
-        private void SeedSampleItems(MsSqlDbContext context)
+        private void SeedNewProductModel(MsSqlDbContext context)
         {
             var item = new Item()
             {
-                Price = 22.99
+                Price = 45.99,
             };
 
-            var purple = context.Colors.Where(c => c.Name == "Purple").Single();
+            var white = new Color()
+            {
+                Name = "White"
+            };
+
             var black = context.Colors.Where(c => c.Name == "Black").Single();
 
-            var svar = context.Sizes.Where(s => s.Name == "S").Single();
+
+            var xs = context.Sizes.Where(s => s.Name == "XS").Single();
+            var ss = context.Sizes.Where(s => s.Name == "S").Single();
             var m = context.Sizes.Where(s => s.Name == "M").Single();
             var l = context.Sizes.Where(s => s.Name == "L").Single();
             var xl = context.Sizes.Where(s => s.Name == "XL").Single();
-
-
-            item.Colors.Add(purple);
-            item.Colors.Add(black);
-
-            item.Sizes.Add(svar);
             item.Sizes.Add(m);
             item.Sizes.Add(l);
+            item.Sizes.Add(ss);
             item.Sizes.Add(xl);
+            item.Sizes.Add(xs);
+            item.Colors.Add(black);
+            item.Colors.Add(white);
 
+            var product = new Product()
+            {
+                Name = "Black and White shirt",
+                Description = "Comfortable and good looking for every kind of need.",
+                Supplier = "H&M",
+                CategoryId = Guid.Parse("C2C65225-C5B8-420C-95EF-1CA2B92D73FD"),
+                Stock = 14,
+                Hot = true,
+            };
+            var guid1 = Guid.Parse("34BB74F7-2059-490B-BBC9-34F2B071615F");
+            var guid2 = Guid.Parse("7B65EBB2-CA2E-48E0-B25F-920276AEE041");
+            var guid3 = Guid.Parse("C0F1972C-5FDB-42C9-9584-39D433E52123");
+            var image1 = context.Images.Single(i => i.Id == guid1);
+            var image2 = context.Images.Single(i => i.Id == guid2);
+            var image3 = context.Images.Single(i => i.Id == guid3);
+            product.Images.Add(image1);
+            product.Images.Add(image2);
+            product.Images.Add(image3);
+            product.ItemId = item.Id;
+            item.ProductId = product.Id;
 
             context.Items.Add(item);
-            
-
-
-            // product.Images.Add()
+            context.Products.Add(product);
         }
     }
 }

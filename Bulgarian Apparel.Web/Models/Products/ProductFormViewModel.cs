@@ -6,6 +6,7 @@ using System.Linq;
 using System.Web;
 using AutoMapper;
 using System.Web.Mvc;
+using Bulgarian_Apparel.Web.Infrastructure;
 
 namespace Bulgarian_Apparel.Web.Models.Products
 {

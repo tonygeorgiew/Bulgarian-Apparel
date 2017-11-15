@@ -4,6 +4,7 @@
     using Bulgarian_Apparel.Data.Models;
     using Bulgarian_Apparel.Data.Models.Contracts;
     using Bulgarian_Apparel.Data.SaveContext;
+    using Bulgarian_Apparel.Web.Infrastructure;
     using System;
     using System.Collections.Generic;
     using System.Data.Entity;
@@ -47,7 +48,22 @@
 
         public IQueryable<Product> ProducttById(Guid id)
         {
-            var query = this.productsRepo.All.Where(p => p.Id == id);
+            var query = this.productsRepo.All.Where(p => p.Id == id).Include( p => p.Images );
+
+            return query;
+        }
+
+        public IQueryable<Product> ProducttByStringId(string id)
+        {
+            Guid productGuid = IdProccessor.GetGuidForStringId(id);
+            var query = this.productsRepo.All.Where(p => p.Id == productGuid).Include(p => p.Images);
+
+            return query;
+        }
+
+        public IQueryable<Product> GetHotProducts()
+        {
+            var query = this.productsRepo.All.Where(p => p.Hot == true);
 
             return query;
         }
@@ -63,11 +79,18 @@
             return this.ProducttById(id).Include(i=>i.Images);
         }
 
-        public IQueryable<Product> GetProductsForCategoryGuid(Guid id)
+        public int Delete(Product product)
         {
-            var products = this.productsRepo.All.Where(p => p.CategoryId == id);
+            this.productsRepo.Delete(product);
 
-            return products;
+            return this.UoW.Commit();
+        }
+
+        public int Update(Product product)
+        {
+            this.productsRepo.Update(product);
+
+            return this.UoW.Commit();
         }
     }
 }

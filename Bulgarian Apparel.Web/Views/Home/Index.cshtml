@@ -1,14 +1,47 @@
-﻿@using Bulgarian_Apparel.Web.Models.Home
-@model ICollection<PostViewModel>
+﻿@model IList<Bulgarian_Apparel.Web.Models.Products.HotProductVM>
 @{
     ViewBag.Title = "Home Page";
 }
 
+@Styles.Render("~/Content/Styles/gallery.css")
+@Styles.Render("~/Content/Styles/jBox.css")
+@Styles.Render("~/Content/Styles/productviewboxslider.css")
+
+<div style="display: none" id="viewBox">
+   
+</div>
 <div class="jumbotron">
     <h1>Bulgarian Apprael</h1>
     <div class="rotator-container">
-            @Html.Partial("~/Views/Widgets/_Cube.cshtml")
+        <section class="caruselcontainer">
+            <div class="carusel">
+                @foreach (var product in Model)
+                {
+                    <img class="figure view" onclick="window.location.pathname='@Url.Action("ViewProduct", "Products", new { id = product.Id })'" data-id="@product.Id" data-description="@product.Description" data-image="@product.Image[0]" src="@product.Image[0]">
+                }
+            </div>
+            <div class="btn_links">
+                <a href="#" class="caruselbutton"></a>
+                <a href="#" class="caruselbutton"></a>
+                <a href="#" class="caruselbutton"></a>
+                <a href="#" class="caruselbutton"></a>
+                <a href="#" class="caruselbutton"></a>
+                <a href="#" class="caruselbutton"></a>
+            </div>
+        </section>
+
     </div>
-    <p><a href="https://asp.net" class="btn btn-primary btn-lg">View products</a></p>
+    <p><a href="@Url.Action("Index", "Products")" class="btn btn-primary btn-lg">View products</a></p>
 </div>
 
+
+
+
+@section scripts{
+<script type="text/javascript">
+    $('.view').click(function () { 
+       
+    });
+</script>
+
+    }
