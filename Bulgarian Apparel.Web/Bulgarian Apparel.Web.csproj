@@ -253,8 +253,13 @@
     <Compile Include="Controllers\ProductsController.cs" />
     <Compile Include="Models\Cart\CartItemViewModel.cs" />
     <Compile Include="Models\Cart\CartViewModel.cs" />
+    <Compile Include="Models\Common\ColorViewModel.cs" />
+    <Compile Include="Models\Common\SizeViewModel.cs" />
     <Compile Include="Models\Orders\CheckoutFormVM.cs" />
     <Compile Include="Models\Orders\OrderViewModel.cs" />
+    <Compile Include="Models\Products\CatalogueViewModel.cs" />
+    <Compile Include="Models\Products\CategoryViewModel.cs" />
+    <Compile Include="Models\Products\DeleteProductVM.cs" />
     <Compile Include="Models\Products\HotProductVM.cs" />
     <Compile Include="Models\Products\NewProductAddVM.cs" />
     <Compile Include="Models\Products\ProductFormViewModel.cs" />
@@ -469,6 +474,7 @@
     <Content Include="Content\Styles\jquery.dataTables.min.css" />
     <Content Include="Content\Styles\productviewboxslider.css" />
     <Content Include="Content\Styles\sliderResponsive.css" />
+    <Content Include="Content\Styles\superSimpleTableStyle.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -483,6 +489,7 @@
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\category-filter.js" />
     <Content Include="Scripts\DataTables\autoFill.bootstrap.js" />
     <Content Include="Scripts\DataTables\autoFill.bootstrap.min.js" />
     <Content Include="Scripts\DataTables\autoFill.bootstrap4.js" />
@@ -570,6 +577,8 @@
     <Content Include="Scripts\jquery-3.2.1.slim.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
     <Content Include="Scripts\jquery.mycart.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
@@ -638,10 +647,15 @@
     <Content Include="Views\Orders\Success.cshtml" />
     <Content Include="Views\Orders\MyOrdersDetails.cshtml" />
     <Content Include="Views\Products\AddProduct.cshtml" />
+    <Content Include="Views\Products\RemoveProduct.cshtml" />
+    <Content Include="Views\Shared\_ProductsResult.cshtml" />
+    <Content Include="Views\Products\UpdateProduct.cshtml" />
+    <Content Include="Views\Shared\_ProductInformation.cshtml" />
+    <Content Include="Views\Shared\_ProductsCatalogue.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\ProductsManager\" />
+    <Folder Include="bin\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

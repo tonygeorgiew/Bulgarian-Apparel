@@ -10,5 +10,7 @@ namespace Bulgarian_Apparel.Services.Contracts
     public interface ICategoriesService
     {
         IQueryable<Category> GetAll();
+
+        IQueryable<Category> CategoryByStringId(string id);
     }
 }

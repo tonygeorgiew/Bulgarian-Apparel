@@ -33,7 +33,7 @@ namespace Bulgarian_Apparel.Data.Migrations
             //  this.seedPaymentTypes(context);
             //  this.SeedSampleItems(context);
             //  this.SeedNewProductModel(context);
-
+            
             base.Seed(context);
         }
 
@@ -249,7 +249,7 @@ namespace Bulgarian_Apparel.Data.Migrations
                 Name = "Black and White shirt",
                 Description = "Comfortable and good looking for every kind of need.",
                 Supplier = "H&M",
-                CategoryId = Guid.Parse("C2C65225-C5B8-420C-95EF-1CA2B92D73FD"),
+                //CategoryId = Guid.Parse("C2C65225-C5B8-420C-95EF-1CA2B92D73FD"),
                 Stock = 14,
                 Hot = true,
             };

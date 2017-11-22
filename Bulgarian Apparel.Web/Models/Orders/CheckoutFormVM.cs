@@ -14,7 +14,7 @@ namespace Bulgarian_Apparel.Web.Models.Orders
         [Display(Name = "Ship my products to: ")]
         public string ShippingAddress { get; set; }
         public IList<PaymentType> PaymentType { get; set; }
-        public int PaymentTypeId { get; set; }
+        public string PaymentTypeId { get; set; }
         [Display(Name = "Prefered method of payment")]
         public string PreferedPayment { get; set; }
         [Display(Name = "Credit card number")]

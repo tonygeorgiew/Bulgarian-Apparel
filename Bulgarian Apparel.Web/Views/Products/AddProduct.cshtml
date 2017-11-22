@@ -10,7 +10,7 @@
     {
         @Html.AntiForgeryToken()
         <div class="form-horizontal">
-            <div>
+            
                 <div class="form-group">
                     @Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "control-label col-md-2" })
                     <div class="col-md-10">
@@ -46,20 +46,24 @@
                         @Html.ValidationMessageFor(model => model.Stock, "", new { @class = "text-danger" })
                     </div>
                 </div>
-            </div>
-          <div>
+           
               <div class="form-group">
                   @Html.LabelFor(m => m.SelectedSizes)
                   <div class="col-md-10">
-                      @Html.ListBoxFor(m => m.SelectedSizes, new MultiSelectList(Model.Sizes, "Id", "Name"), null)
+                      @Html.ListBoxFor(m => m.SelectedSizes, Model.Sizes, new { size = 5 })
                   </div>
               </div>
               <div class="form-group">
                   @Html.LabelFor(m => m.SelectedColors)
                   <div class="col-md-10">
-                      @Html.ListBoxFor(m => m.SelectedColors, new MultiSelectList(Model.Colors, "Id", "Name"), null)
+                      @Html.ListBoxFor(m => m.SelectedColors, Model.Colors, new { size = 5 })
                   </div>
               </div>
+              <div class="form-group">
+                  @Html.DisplayNameFor(m => m.Categories)
+                  @Html.DropDownListFor(m => m.CategoriesId, new SelectList(Model.Categories, "Id", "Name"), "", new { @class = "form-control" })
+              </div>
+
               <div class="form-group">
                   <div class="col-md-10">
                       @Html.LabelFor(m => m.Images)
@@ -71,10 +75,7 @@
                       @Html.ValidationMessageFor(model => model.Images, "", new { @class = "text-danger" })
                   </div>
               </div>
-          </div>
-           
-
-
+          
             <div class="form-group">
                 <div class="col-md-offset-2 col-md-10">
                     <input type="submit" value="Submit" class="btn btn-success" />
@@ -82,19 +83,7 @@
             </div>
         </div>
     }
-   
 </div>
-
-
-
-
-
-
-
-
-
-
-
 
 @section Scripts {
 @Scripts.Render("~/bundles/jqueryval")

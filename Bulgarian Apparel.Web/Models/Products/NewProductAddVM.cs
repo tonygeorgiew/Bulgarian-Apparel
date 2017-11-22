@@ -7,6 +7,7 @@ using System.Linq;
 using System.Web;
 using AutoMapper;
 using System.ComponentModel.DataAnnotations;
+using System.Web.Mvc;
 
 namespace Bulgarian_Apparel.Web.Models.Products
 {
@@ -30,15 +31,19 @@ namespace Bulgarian_Apparel.Web.Models.Products
 
         [Required]
         [Display(Name = "Product is available in what colors (Ctrl + left mouse click for multiple selection)")]
-        public IList<string> SelectedColors { get; set; }
-
-        public virtual List<Color> Colors { get; set; }
+        public IEnumerable<string> SelectedColors { get; set; }
+        public IEnumerable<SelectListItem> Colors { get; set; }
 
         [Required]
         [Display(Name = "Product is available in what sizes (Ctrl + left mouse click for multiple selection)")]
-        public IList<string> SelectedSizes { get; set; }
+        public IEnumerable<string> SelectedSizes { get; set; }
+        public IEnumerable<SelectListItem> Sizes { get; set; }
 
-        public virtual List<Size> Sizes{ get; set; }
+        [Display(Name = "Choose a single category")]
+        public IList<Category> Categories { get; set; }
+
+        [Required]
+        public string CategoriesId { get; set; }
 
         [Required]
         public double Price { get; set; }

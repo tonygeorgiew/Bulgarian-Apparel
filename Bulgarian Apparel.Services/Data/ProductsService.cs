@@ -71,7 +71,7 @@
 
         public IQueryable<Product> GetAll()
         {
-            return this.productsRepo.All.Include(i => i.Images);
+            return this.productsRepo.All.Include(i => i.Images).Include(c=>c.Category);
         }
 
         public IQueryable<Product> ProductWithImagesById(Guid id)

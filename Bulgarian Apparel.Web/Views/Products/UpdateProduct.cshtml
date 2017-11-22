@@ -1,0 +1,31 @@
+﻿@using Bulgarian_Apparel.Web.Models.Products
+@model List<DeleteProductVM>
+@{
+    ViewBag.Title = "RemoveProduct";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<hr />
+@using (Ajax.BeginForm("Search", null,
+                            new AjaxOptions
+                            {
+                                UpdateTargetId = "results",
+                                InsertionMode = InsertionMode.Replace,
+                                HttpMethod = "POST"
+                            }, new { id = "searchForm" }))
+{
+    <input type="text" name="query" oninput="changed()" />
+    <input type="submit" />
+}
+<hr />
+
+<div id="results">
+    @Html.Partial("_ProductInformation", Model)
+</div>
+
+@section scripts{
+<script>
+function changed() {
+    $("#searchForm").submit();
+}
+</script>
+}

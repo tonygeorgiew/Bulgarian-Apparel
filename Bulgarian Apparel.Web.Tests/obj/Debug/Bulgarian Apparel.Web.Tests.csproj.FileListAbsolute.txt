@@ -64,8 +64,6 @@ C:\Users\admin\source\repos\Bulgarian Apparel\Bulgarian Apparel.Web.Tests\bin\De
 C:\Users\admin\source\repos\Bulgarian Apparel\Bulgarian Apparel.Web.Tests\bin\Debug\Ninject.Web.Common.xml
 C:\Users\admin\source\repos\Bulgarian Apparel\Bulgarian Apparel.Web.Tests\bin\Debug\Ninject.xml
 C:\Users\admin\source\repos\Bulgarian Apparel\Bulgarian Apparel.Web.Tests\bin\Debug\Ninject.Extensions.Conventions.xml
-C:\Users\admin\source\repos\Bulgarian Apparel\Bulgarian Apparel.Web.Tests\bin\Debug\AutoMapper.dll
-C:\Users\admin\source\repos\Bulgarian Apparel\Bulgarian Apparel.Web.Tests\bin\Debug\AutoMapper.xml
 C:\Users\admin\source\repos\Bulgarian Apparel\Bulgarian Apparel.Web.Tests\bin\Debug\System.Web.Http.dll
 C:\Users\admin\source\repos\Bulgarian Apparel\Bulgarian Apparel.Web.Tests\bin\Debug\System.Net.Http.Formatting.dll
 C:\Users\admin\source\repos\Bulgarian Apparel\Bulgarian Apparel.Web.Tests\bin\Debug\System.Web.Http.xml
@@ -76,3 +74,4 @@ C:\Users\admin\source\repos\Bulgarian Apparel\Bulgarian Apparel.Web.Tests\bin\De
 C:\Users\admin\source\repos\Bulgarian Apparel\Bulgarian Apparel.Web.Tests\bin\Debug\Ninject.Web.Common.WebHost.xml
 C:\Users\admin\source\repos\Bulgarian Apparel\Bulgarian Apparel.Web.Tests\bin\Debug\Ninject.Extensions.Factory.xml
 C:\Users\admin\source\repos\Bulgarian Apparel\Bulgarian Apparel.Web.Tests\bin\Debug\Bulgarian Apparel.Services.dll.config
+C:\Users\admin\source\repos\Bulgarian Apparel\Bulgarian Apparel.Web.Tests\bin\Debug\WebGrease.dll

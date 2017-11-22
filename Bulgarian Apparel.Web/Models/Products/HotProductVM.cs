@@ -17,8 +17,6 @@ namespace Bulgarian_Apparel.Web.Models.Products
 
         public void CreateMappings(IMapperConfigurationExpression configuration)
         {
-            
-
             configuration.CreateMap<Product, HotProductVM>()
                 .ForMember(productVM => productVM.Id, cfg => cfg.MapFrom(src => src.Id))
                 .ForMember(productVM => productVM.Description, cfg => cfg.MapFrom(src => src.Description));

@@ -13,6 +13,16 @@
         <dt>My orders: </dt>
         <dd>@Html.ActionLink("See all details", "MyOrdersDetails", "Orders")
         </dd>
+        <dt>Products operations: </dt>
+        <dd>
+            @Html.ActionLink("Add new", "AddProduct", "Products")
+        </dd>
+        <dd>
+            @Html.ActionLink("Delete existing", "RemoveProduct", "Products")
+        </dd>
+        <dd>
+            @Html.ActionLink("Update existing", "UpdateProduct", "Products")
+        </dd>
         <dt>Password:</dt>
         <dd>
             [

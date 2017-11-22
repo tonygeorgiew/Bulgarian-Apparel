@@ -1,43 +1,61 @@
-﻿@model List<Bulgarian_Apparel.Web.Models.Products.ProductViewModel>
+﻿@using Bulgarian_Apparel.Web.Models.Products
+@model CatalogueViewModel
 
-@Styles.Render("~/Content/Styles/advanced.css")
-@Styles.Render("~/Content/Styles/jBox.css")
+@Styles.Render("~/Content/Styles/advanced.css") 
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
 
 <hr />
-Category
-Men's clothing > Shirts > T-shirts 
-
-<hr/>
-
-
+<button class="category-button" data-filter="all">All</button>
+@foreach (var category in Model.Categories)
+{
+    <button class="category-button" data-filter="@category.CategoryName.ToLowerInvariant()">@category.CategoryName</button>
+}
+<hr />
 <div id="container">
-    @foreach (var item in Model)
+    @foreach (var item in Model.Products)
     {
-        <div class="item">
+        <div class="item filter @item.Category.CategoryName.ToLowerInvariant()">
             <img src="@item.ImageResources[1]" width="640" height="480" alt="" />
             <div id="product-name">
                 @item.Name
                 <p>$ <span id="product-price">@item.Price</span></p>
             </div>
-            <button class="btn btn-primary view" data-id="@item.ProductId" data-name="@item.Name" data-summary="@item.Description" data-price="@item.Price" data-image="@item.ImageResources[2]">View product</button>
+            <button class="btn btn-primary view" data-id="@item.ProductId" data-name="@item.Name" data-summary="@item.Description" data-price="@item.Price" data-image="@item.ImageResources[2]" data-category="@item.Category.CategoryName">View product</button>
             <button class="btn btn-primary">Add to wishlist</button>
             <button class="btn btn-primary" onclick="window.location.pathname='@Url.Action("ViewProduct", "Products", new { id = item.ProductId })'">Details</button>
         </div>
     }
-</div>
 
-@section scripts{    
-    
-<script src="~/Scripts/jquery-3.2.1.js"></script>
+</div>
+@section scripts{   
+    <script src="~/Scripts/jquery-3.2.1.min.js"></script>
 <script src="~/Scripts/jquery.wrecker.min.js"></script>
-<script src="~/Scripts/jBox.js"></script>
+<script src="~/Scripts/jquery.unobtrusive-ajax.js"></script>
+<script src="~/Scripts/category-filter.js"></script>
 <script type="text/javascript">
-      
+
+    $('.category-button').click(function () {
+        var filter = $(this).data("filter");
+        var count = $("." + filter).length;
 
         $("#container").wrecker({
             itemSelector: ".item",
-            maxColumns: 3
-        });
-       
+            maxColumns: count
+        });  
+
+    });
+
+    $('.category-button').categoryFilter();
+
+            $("#container").wrecker({
+                itemSelector: ".item",
+                maxColumns: 4
+            });  
+
+
 </script>
 }

@@ -16,7 +16,7 @@ namespace Bulgarian_Apparel.Data.Models
             this.Images = new HashSet<Image>();
         }
       
-        public Guid CategoryId { get; set; }
+        public Category Category { get; set; }
 
         public Guid ItemId { get; set; }
 

@@ -15,7 +15,7 @@ namespace Bulgarian_Apparel.Web.Models.Products
         public string Supplier { get; set; }
         public double Price { get; set; }
         public string Description { get; set; }
-        public Category Category { get; set; }
+        public CategoryViewModel Category { get; set; }
         public IList<string> ImageResources { get; set; }
         public IList<Size> Sizes { get; set; }
         public IList<Color> Colors { get; set; }
@@ -26,8 +26,7 @@ namespace Bulgarian_Apparel.Web.Models.Products
                 .ForMember(productVM => productVM.ProductId, cfg=>cfg.MapFrom(product=>product.Id))
                 .ForMember(productVM => productVM.ImageResources,
                            cfg => cfg.MapFrom(
-                               src => src.Images.Select(child => child.Resource).ToArray()));
-           
+                               src => src.Images.Select(child => child.Resource).ToArray())); 
 
             configuration.CreateMap<Item, ProductViewModel>()
                 .ForMember(productVM => productVM.Price, cfg => cfg.MapFrom(item => item.Price))

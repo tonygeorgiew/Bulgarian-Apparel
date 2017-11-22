@@ -15,5 +15,7 @@ namespace Bulgarian_Apparel.Data.Models
         public string Name { get; set; }
 
         public Guid SuperCategoryId { get; set; }
+
+        public string SuperCategoryName { get; set; }
     }
 }

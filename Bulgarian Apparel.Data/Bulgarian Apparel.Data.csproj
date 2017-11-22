@@ -162,6 +162,14 @@
     <Compile Include="Migrations\201711141530291_Black and white shirt.Designer.cs">
       <DependentUpon>201711141530291_Black and white shirt.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201711210907430_update product data model with Category.cs" />
+    <Compile Include="Migrations\201711210907430_update product data model with Category.Designer.cs">
+      <DependentUpon>201711210907430_update product data model with Category.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201711210934265_Categories with super name.cs" />
+    <Compile Include="Migrations\201711210934265_Categories with super name.Designer.cs">
+      <DependentUpon>201711210934265_Categories with super name.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="MsSqlDbContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -261,6 +269,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201711141530291_Black and white shirt.resx">
       <DependentUpon>201711141530291_Black and white shirt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711210907430_update product data model with Category.resx">
+      <DependentUpon>201711210907430_update product data model with Category.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711210934265_Categories with super name.resx">
+      <DependentUpon>201711210934265_Categories with super name.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
