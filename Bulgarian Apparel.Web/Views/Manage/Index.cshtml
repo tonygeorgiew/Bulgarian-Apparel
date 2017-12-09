@@ -15,13 +15,13 @@
         </dd>
         <dt>Products operations: </dt>
         <dd>
-            @Html.ActionLink("Add new", "AddProduct", "Products")
+           @Html.ActionLink("Add new", "AddProduct", "ProductManagement", new { Area = "Admin" }, new { })
         </dd>
         <dd>
-            @Html.ActionLink("Delete existing", "RemoveProduct", "Products")
+            @Html.ActionLink("Update existing", "UpdateProduct", "ProductManagement", new { Area = "Admin" }, new { })
         </dd>
         <dd>
-            @Html.ActionLink("Update existing", "UpdateProduct", "Products")
+            @Html.ActionLink("Remove existing", "RemoveProduct", "ProductManagement", new { Area = "Admin" }, new { })
         </dd>
         <dt>Password:</dt>
         <dd>

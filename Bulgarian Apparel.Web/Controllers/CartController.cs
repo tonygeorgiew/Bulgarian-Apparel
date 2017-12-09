@@ -150,7 +150,7 @@ namespace Bulgarian_Apparel.Web.Controllers
             var userGuid = IdProccessor.GetGuidForStringId(this.User.Identity.GetUserId());
             var totalPrice = this.shoppingCartService.CalculateTotalPriceForCart(userGuid);
             var paymentTypes = this.paymentTypesService.GetAll().ToList();
-            var orderForm = new CheckoutFormVM()
+            var orderForm = new CheckoutFormViewModel()
             {
                 PaymentType = paymentTypes,
                 TotalPrice = totalPrice

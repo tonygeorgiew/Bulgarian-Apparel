@@ -31,10 +31,10 @@ namespace Bulgarian_Apparel.Web.Controllers
               //.Where(p => p.Hot == true)
                 .ToList();
 
-            var mappedHotProducts = new List<HotProductVM>();
+            var mappedHotProducts = new List<HotProductViewModel>();
             foreach (var item in hotProducts)
             {
-                mappedHotProducts.Add(mapper.Map<HotProductVM>(item));
+                mappedHotProducts.Add(mapper.Map<HotProductViewModel>(item));
               
             }
             

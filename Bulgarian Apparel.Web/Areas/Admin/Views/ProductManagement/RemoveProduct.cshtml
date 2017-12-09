@@ -1,0 +1,44 @@
+﻿@using Bulgarian_Apparel.Web.Areas.Admin.Models
+@model List<DeleteProductViewModel>
+@Styles.Render("~/Content/Styles/superSimpleTableStyle.css")
+
+
+@{
+    ViewBag.Title = "RemoveProduct";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div id="log"></div>
+<hr />
+
+@using (Ajax.BeginForm("Search", new { area = "Admin" },
+                            new AjaxOptions
+                            {
+                                UpdateTargetId = "results",
+                                InsertionMode = InsertionMode.Replace,
+                                HttpMethod = "GET"
+                            },  new { id = "searchForm" }))
+{
+    <input type="text" name="query" onclick="changed()" />
+    <input type="submit" />
+}
+
+<hr />
+
+<div id="results">
+    @Html.Partial("_ProductsResult", Model)
+</div>
+
+
+@section scripts{
+
+<script src="~/Scripts/jquery-3.2.1.min.js"></script>
+<script src="~/Scripts/jquery.unobtrusive-ajax.js"></script>
+<script>
+function changed() {
+    $("#searchForm").submit();
+
+}
+
+</script>
+}

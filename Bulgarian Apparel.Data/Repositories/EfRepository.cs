@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Bulgarian_Apparel.Data.Repositories
 {
-    //not really repository pattern, actually context wrap/adapter pattern
+  
     public class EfRepository<T> : IEfRepository<T>
         where T : class, IDeletable
     {

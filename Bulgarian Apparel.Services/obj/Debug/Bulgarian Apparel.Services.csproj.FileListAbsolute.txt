@@ -19,3 +19,5 @@ C:\Users\admin\source\repos\Bulgarian Apparel\Bulgarian Apparel.Services\bin\Deb
 C:\Users\admin\source\repos\Bulgarian Apparel\Bulgarian Apparel.Services\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\admin\source\repos\Bulgarian Apparel\Bulgarian Apparel.Services\bin\Debug\AutoMapper.dll
 C:\Users\admin\source\repos\Bulgarian Apparel\Bulgarian Apparel.Services\bin\Debug\AutoMapper.xml
+C:\Users\admin\source\repos\Bulgarian Apparel\Bulgarian Apparel.Services\bin\Debug\System.ValueTuple.dll
+C:\Users\admin\source\repos\Bulgarian Apparel\Bulgarian Apparel.Services\bin\Debug\System.ValueTuple.xml

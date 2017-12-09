@@ -46,7 +46,7 @@ namespace Bulgarian_Apparel.Web.Controllers
         }
 
         // GET: Orders
-        public ActionResult ValidateOrder(CheckoutFormVM orderForm)
+        public ActionResult ValidateOrder(CheckoutFormViewModel orderForm)
         {
             if (ModelState.IsValid)
             {

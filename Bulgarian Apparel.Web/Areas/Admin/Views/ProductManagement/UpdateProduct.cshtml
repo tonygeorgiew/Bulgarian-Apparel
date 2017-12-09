@@ -1,0 +1,38 @@
+﻿@using Bulgarian_Apparel.Web.Areas.Admin.Models
+@model UpdateProductInformationViewModel
+@{
+    ViewBag.Title = "Update existing";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<hr />
+@using (Ajax.BeginForm("GetProductToUpdateByGuid", new { area = "Admin" },
+                                        new AjaxOptions
+                                        {
+                                            UpdateTargetId = "results",
+                                            InsertionMode = InsertionMode.Replace,
+                                            HttpMethod = "GET",
+                                            Confirm = "Search for product?"
+                                            
+                                        }, new { id = "searchForm" }))
+{
+    <input type="text" name="id"/>
+    <input type="submit" onclick="changed()" />
+}
+<hr />
+
+<div id="results">
+    @Html.Partial("_ProductInformation", Model)
+</div>
+    
+
+@section scripts{
+<script src="~/Scripts/jquery-3.2.1.min.js"></script>
+<script src="~/Scripts/jquery.unobtrusive-ajax.js"></script>
+@Scripts.Render("~/bundles/jqueryval")
+<script>
+function changed() {
+    $("#searchForm").submit();
+}
+    
+</script>
+}

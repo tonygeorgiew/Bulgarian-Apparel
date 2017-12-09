@@ -1,0 +1,147 @@
+﻿@using Bulgarian_Apparel.Web.Areas.Admin.Models
+@model UpdateProductInformationViewModel
+@Styles.Render("~/Content/Styles/superSimpleTableStyle.css")
+
+<table style="width:100%">
+    <tr>
+        <th>Guid</th>
+        <th>Name</th>
+        <th>Brand</th>
+        <th>Price</th>
+        <th>Stock</th>
+        <th>Sizes</th>
+        <th>Colors</th>
+        <th>Description</th>
+        <th>Category</th>
+        <th>Image Resources</th>
+        <th>Update</th>
+    </tr>
+    <tr>
+        @if (!Model.ProductInformation.Id.IsEmpty())
+        {
+            <td id="product-id">@Model.ProductInformation.Id</td>
+            <td id="product-name">@Model.ProductInformation.Name</td>
+            <td id="product-supplier">@Model.ProductInformation.Supplier</td>
+            <td>
+                @Model.ProductInformation.Price
+            </td>
+            <td>
+                @Model.ProductInformation.Stock
+            </td>
+            <td id="product-sizes">
+                @foreach (string item in Model.ProductInformation.Sizes)
+                {
+                    <p>@item</p>
+                }
+            </td>
+            <td id="product-resources">
+                @foreach (string item in Model.ProductInformation.Colors)
+                {
+                    <p>@item</p>
+                }
+            </td>
+            <td>
+                @Model.ProductInformation.Description
+            </td>
+            <td>
+                @if(!string.IsNullOrWhiteSpace(Model.ProductInformation.Category.Name))
+                {
+                    @Model.ProductInformation.Category.Name
+                }
+            </td>
+            <td id="product-resources">
+                @foreach (string item in Model.ProductInformation.Images)
+                {
+                    <p>@item</p>
+                }
+            </td>
+            <td>
+
+            </td>
+        }
+        else
+        {
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        }
+    </tr>
+    <tr>
+        <td></td>
+        @using (Html.BeginForm("UpdateProduct", "ProductManagement", new {area = "Admin" }, FormMethod.Post))
+        {
+            @Html.AntiForgeryToken()
+            <td>
+                
+                    
+                        @Html.EditorFor(model => model.UpdateProduct.Name, new { htmlAttributes = new { @class = "form-control" } })
+                      
+            </td>
+            <td>
+                
+                    
+                        @Html.EditorFor(model => model.UpdateProduct.Supplier, new { htmlAttributes = new { @class = "form-control" } })
+                       
+                
+                </td>
+                <td>
+                    
+                            @Html.EditorFor(model => model.UpdateProduct.Price, new { htmlAttributes = new { @class = "form-control" } })
+                           
+                </td>
+                <td>
+                  
+                            @Html.EditorFor(model => model.UpdateProduct.Stock, new { htmlAttributes = new { @class = "form-control" } })
+                           
+                </td>
+                <td>
+                   
+                            @Html.ListBoxFor(m => m.UpdateProduct.SelectedSizes, Model.UpdateProduct.Sizes, new { size = 5 })
+                        
+                </td>
+                <td>
+                  
+                            @Html.ListBoxFor(m => m.UpdateProduct.SelectedColors, Model.UpdateProduct.Colors, new { size = 5 })
+                       
+                </td>
+                <td>
+                    
+                            @Html.EditorFor(model => model.UpdateProduct.Description, new { htmlAttributes = new { @class = "form-control" } })
+                          
+                </td>
+                <td>
+                   
+                            @Html.DisplayNameFor(m => m.UpdateProduct.Categories)
+                           
+                </td>
+                <td>
+                    
+                            @Html.LabelFor(m => m.UpdateProduct.Images)
+                            @Html.EditorFor(m => m.UpdateProduct.Images[0], new { htmlAttributes = new { @class = "form-control" } })
+                           
+                            @Html.EditorFor(m => m.UpdateProduct.Images[1], new { htmlAttributes = new { @class = "form-control" } })
+                         
+                            @Html.EditorFor(m => m.UpdateProduct.Images[2], new { htmlAttributes = new { @class = "form-control" } })
+                          
+                </td>
+
+                <td>
+                    <div class="form-group">
+                        <div class="col-md-offset-2 col-md-10">
+                            <input type="submit" value="Submit" class="btn btn-success" />
+                        </div>
+                    </div>
+                </td>
+        }
+    </tr>
+
+</table>

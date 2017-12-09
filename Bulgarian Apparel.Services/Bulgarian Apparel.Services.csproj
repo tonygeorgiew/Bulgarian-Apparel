@@ -45,6 +45,9 @@
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ValueTuple, Version=4.0.2.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.4.0\lib\net461\System.ValueTuple.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -53,7 +56,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Common\Extensions\ColorComparer.cs" />
     <Compile Include="Common\Extensions\IdProccessor.cs" />
+    <Compile Include="Common\Extensions\SizesComparer.cs" />
     <Compile Include="Data\CategoriesService.cs" />
     <Compile Include="Data\ColorsService.cs" />
     <Compile Include="Data\Contracts\ICategoriesService.cs" />
