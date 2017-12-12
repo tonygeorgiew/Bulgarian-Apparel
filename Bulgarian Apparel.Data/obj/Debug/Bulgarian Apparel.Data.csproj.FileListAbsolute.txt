@@ -2,22 +2,28 @@ C:\Users\admin\source\repos\Bulgarian Apparel\Bulgarian Apparel.Data\bin\Debug\B
 C:\Users\admin\source\repos\Bulgarian Apparel\Bulgarian Apparel.Data\bin\Debug\Bulgarian Apparel.Data.dll
 C:\Users\admin\source\repos\Bulgarian Apparel\Bulgarian Apparel.Data\bin\Debug\Bulgarian Apparel.Data.pdb
 C:\Users\admin\source\repos\Bulgarian Apparel\Bulgarian Apparel.Data\bin\Debug\Bulgarian Apparel.Data.Models.dll
+C:\Users\admin\source\repos\Bulgarian Apparel\Bulgarian Apparel.Data\bin\Debug\Bulgarian Apparel.Providers.dll
 C:\Users\admin\source\repos\Bulgarian Apparel\Bulgarian Apparel.Data\bin\Debug\EntityFramework.dll
 C:\Users\admin\source\repos\Bulgarian Apparel\Bulgarian Apparel.Data\bin\Debug\EntityFramework.SqlServer.dll
 C:\Users\admin\source\repos\Bulgarian Apparel\Bulgarian Apparel.Data\bin\Debug\Microsoft.AspNet.Identity.Core.dll
 C:\Users\admin\source\repos\Bulgarian Apparel\Bulgarian Apparel.Data\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\admin\source\repos\Bulgarian Apparel\Bulgarian Apparel.Data\bin\Debug\Microsoft.Owin.dll
+C:\Users\admin\source\repos\Bulgarian Apparel\Bulgarian Apparel.Data\bin\Debug\Microsoft.Owin.Host.SystemWeb.dll
+C:\Users\admin\source\repos\Bulgarian Apparel\Bulgarian Apparel.Data\bin\Debug\Microsoft.AspNet.Identity.Owin.dll
+C:\Users\admin\source\repos\Bulgarian Apparel\Bulgarian Apparel.Data\bin\Debug\Owin.dll
 C:\Users\admin\source\repos\Bulgarian Apparel\Bulgarian Apparel.Data\bin\Debug\Bulgarian Apparel.Data.Models.pdb
 C:\Users\admin\source\repos\Bulgarian Apparel\Bulgarian Apparel.Data\bin\Debug\Bulgarian Apparel.Data.Models.dll.config
+C:\Users\admin\source\repos\Bulgarian Apparel\Bulgarian Apparel.Data\bin\Debug\Bulgarian Apparel.Providers.pdb
+C:\Users\admin\source\repos\Bulgarian Apparel\Bulgarian Apparel.Data\bin\Debug\Bulgarian Apparel.Providers.dll.config
 C:\Users\admin\source\repos\Bulgarian Apparel\Bulgarian Apparel.Data\bin\Debug\EntityFramework.xml
 C:\Users\admin\source\repos\Bulgarian Apparel\Bulgarian Apparel.Data\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\admin\source\repos\Bulgarian Apparel\Bulgarian Apparel.Data\bin\Debug\Microsoft.AspNet.Identity.Core.xml
 C:\Users\admin\source\repos\Bulgarian Apparel\Bulgarian Apparel.Data\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\admin\source\repos\Bulgarian Apparel\Bulgarian Apparel.Data\bin\Debug\Microsoft.Owin.xml
+C:\Users\admin\source\repos\Bulgarian Apparel\Bulgarian Apparel.Data\bin\Debug\Microsoft.Owin.Host.SystemWeb.xml
+C:\Users\admin\source\repos\Bulgarian Apparel\Bulgarian Apparel.Data\bin\Debug\Microsoft.AspNet.Identity.Owin.xml
 C:\Users\admin\source\repos\Bulgarian Apparel\Bulgarian Apparel.Data\obj\Debug\Bulgarian Apparel.Data.csprojResolveAssemblyReference.cache
-C:\Users\admin\source\repos\Bulgarian Apparel\Bulgarian Apparel.Data\obj\Debug\Bulgarian Apparel.Data.csproj.CoreCompileInputs.cache
-C:\Users\admin\source\repos\Bulgarian Apparel\Bulgarian Apparel.Data\obj\Debug\Bulgarian Apparel.Data.dll
-C:\Users\admin\source\repos\Bulgarian Apparel\Bulgarian Apparel.Data\obj\Debug\Bulgarian Apparel.Data.pdb
 C:\Users\admin\source\repos\Bulgarian Apparel\Bulgarian Apparel.Data\obj\Debug\Bulgarian_Apparel.Data.Migrations.InitialDatabase.resources
-C:\Users\admin\source\repos\Bulgarian Apparel\Bulgarian Apparel.Data\obj\Debug\Bulgarian Apparel.Data.csproj.GenerateResource.Cache
 C:\Users\admin\source\repos\Bulgarian Apparel\Bulgarian Apparel.Data\obj\Debug\Bulgarian_Apparel.Data.Migrations.SeedAdminAccount.resources
 C:\Users\admin\source\repos\Bulgarian Apparel\Bulgarian Apparel.Data\obj\Debug\Bulgarian_Apparel.Data.Migrations.SeedCategoriesColorsandSizes.resources
 C:\Users\admin\source\repos\Bulgarian Apparel\Bulgarian Apparel.Data\obj\Debug\Bulgarian_Apparel.Data.Migrations.SeedSuperCategory.resources
@@ -46,3 +52,9 @@ C:\Users\admin\source\repos\Bulgarian Apparel\Bulgarian Apparel.Data\obj\Debug\B
 C:\Users\admin\source\repos\Bulgarian Apparel\Bulgarian Apparel.Data\obj\Debug\Bulgarian_Apparel.Data.Migrations.Blackandwhiteshirt.resources
 C:\Users\admin\source\repos\Bulgarian Apparel\Bulgarian Apparel.Data\obj\Debug\Bulgarian_Apparel.Data.Migrations.updateproductdatamodelwithCategory.resources
 C:\Users\admin\source\repos\Bulgarian Apparel\Bulgarian Apparel.Data\obj\Debug\Bulgarian_Apparel.Data.Migrations.Categorieswithsupername.resources
+C:\Users\admin\source\repos\Bulgarian Apparel\Bulgarian Apparel.Data\obj\Debug\Bulgarian_Apparel.Data.Migrations.orderitemnowhasorderid.resources
+C:\Users\admin\source\repos\Bulgarian Apparel\Bulgarian Apparel.Data\obj\Debug\Bulgarian_Apparel.Data.Migrations.orderitemnowhasorderid2.resources
+C:\Users\admin\source\repos\Bulgarian Apparel\Bulgarian Apparel.Data\obj\Debug\Bulgarian Apparel.Data.csproj.GenerateResource.Cache
+C:\Users\admin\source\repos\Bulgarian Apparel\Bulgarian Apparel.Data\obj\Debug\Bulgarian Apparel.Data.csproj.CoreCompileInputs.cache
+C:\Users\admin\source\repos\Bulgarian Apparel\Bulgarian Apparel.Data\obj\Debug\Bulgarian Apparel.Data.dll
+C:\Users\admin\source\repos\Bulgarian Apparel\Bulgarian Apparel.Data\obj\Debug\Bulgarian Apparel.Data.pdb

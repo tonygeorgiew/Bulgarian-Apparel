@@ -18,8 +18,8 @@ namespace Bulgarian_Apparel.Web.Models.Products
         public void CreateMappings(IMapperConfigurationExpression configuration)
         {
             configuration.CreateMap<Category, CategoryViewModel>()
-                .ForMember(catVM => catVM.CategoryName, cfg => cfg.MapFrom(cat => cat.Name))
-                .ForMember(catVM => catVM.SuperCategoryName, cfg => cfg.MapFrom(cat=>cat.SuperCategoryName));
+                .ForMember(catVM => catVM.CategoryName, cfg => cfg.MapFrom(cat => (cat.Name.Contains(" ") ? cat.Name.Replace(' ', '-') : cat.Name)))
+                .ForMember(catVM => catVM.SuperCategoryName, cfg => cfg.MapFrom(cat => cat.SuperCategoryName ?? ""));
         }
     }
 }

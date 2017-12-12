@@ -10,7 +10,7 @@ namespace Bulgarian_Apparel.Web.Models.Products
         public Guid ProductId { get; set; }
         public string ProductName { get; set; }
         public string Brand { get; set; }
-        public string Size { get; set; }
+        public string Size { get; set; }    
         [Display(Name = "Available sizes")]
         public string SizeSelectedId { get; set; }
         public string Color { get; set; }

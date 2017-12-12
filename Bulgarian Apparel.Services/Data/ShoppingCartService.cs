@@ -57,13 +57,13 @@ namespace Bulgarian_Apparel.Services
             return this.UoW.Commit();
         }
 
-        public double CalculateTotalPriceForCart(Guid guid)
+        public double CalculateTotalPriceForCart(string guid)
         {
-            return this.shoppingCartRepo
-                .All
-                .Where(u => u.IsDeleted == false)
-                .Single(cart => cart.UserId == guid)
-                .ShoppingCartProducts.Sum(price => price.ProductPrice);
+            double price = 0;
+            var userCart = this.GetCartForUserId(guid).Single();
+            price = userCart.ShoppingCartProducts.Sum(product => product.ProductPrice);
+
+            return price;
         }
     }
 }

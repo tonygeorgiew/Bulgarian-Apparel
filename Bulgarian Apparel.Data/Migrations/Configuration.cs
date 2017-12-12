@@ -1,12 +1,10 @@
 namespace Bulgarian_Apparel.Data.Migrations
 {
     using Bulgarian_Apparel.Data.Models;
+    using Bulgarian_Apparel.Providers.Contracts;
     using Microsoft.AspNet.Identity;
     using Microsoft.AspNet.Identity.EntityFramework;
     using System;
-    using System.Collections;
-    using System.Collections.Generic;
-    using System.Data.Entity;
     using System.Data.Entity.Migrations;
     using System.Linq;
 
@@ -37,7 +35,7 @@ namespace Bulgarian_Apparel.Data.Migrations
             base.Seed(context);
         }
 
-        private void seedPaymentTypes(MsSqlDbContext context)
+        private void SeedPaymentTypes(MsSqlDbContext context)
         {
             var PayPal = new PaymentType() { Name = "PayPal" };
             var CreditCard = new PaymentType() { Name = "Credit Card" };

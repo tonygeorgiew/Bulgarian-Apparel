@@ -50,16 +50,13 @@ namespace Bulgarian_Apparel.Web.Controllers
                 Categories = new List<CategoryViewModel>(),
             };
 
-
             foreach (var product in products)
             {
                 var catalogueProduct = this.mapper.Map<ProductViewModel>(product);
-                catalogueProduct.Category.CategoryName = !product.Category.Name.IsNullOrWhiteSpace() ? (product.Category.Name.Contains(" ") ? product.Category.Name.Replace(' ', '-') : product.Category.Name) : "";
-                catalogueProduct.Category.SuperCategoryName = product.Category.SuperCategoryName ?? null;
+                catalogueProduct.Category = this.mapper.Map<CategoryViewModel>(product.Category);
                 this.mapper.Map(items.Single(i => i.ProductId == catalogueProduct.ProductId), catalogueProduct);
                 catalogue.Products.Add(catalogueProduct);
             }
-
 
             catalogue.Categories = catalogue.Products.Select(p=>p.Category).DistinctBy(c=>c.CategoryName).ToList();
 

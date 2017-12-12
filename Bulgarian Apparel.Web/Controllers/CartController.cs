@@ -88,7 +88,7 @@ namespace Bulgarian_Apparel.Web.Controllers
                     {
                         UserId = userId
                     };
-
+                        
                     cartProduct.ShoppingCartId = userCart.Id;
                     userCart.ShoppingCartProducts.Add(cartProduct);
 
@@ -147,7 +147,7 @@ namespace Bulgarian_Apparel.Web.Controllers
 
         public ActionResult CheckoutForm()
         {
-            var userGuid = IdProccessor.GetGuidForStringId(this.User.Identity.GetUserId());
+            var userGuid = this.User.Identity.GetUserId();
             var totalPrice = this.shoppingCartService.CalculateTotalPriceForCart(userGuid);
             var paymentTypes = this.paymentTypesService.GetAll().ToList();
             var orderForm = new CheckoutFormViewModel()

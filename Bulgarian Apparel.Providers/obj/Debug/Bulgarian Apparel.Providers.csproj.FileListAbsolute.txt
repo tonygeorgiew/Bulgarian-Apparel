@@ -1,0 +1,24 @@
+C:\Users\admin\source\repos\Bulgarian Apparel\Bulgarian Apparel.Providers\bin\Debug\Bulgarian Apparel.Providers.dll.config
+C:\Users\admin\source\repos\Bulgarian Apparel\Bulgarian Apparel.Providers\bin\Debug\Bulgarian Apparel.Providers.dll
+C:\Users\admin\source\repos\Bulgarian Apparel\Bulgarian Apparel.Providers\bin\Debug\Bulgarian Apparel.Providers.pdb
+C:\Users\admin\source\repos\Bulgarian Apparel\Bulgarian Apparel.Providers\bin\Debug\Microsoft.AspNet.Identity.Core.dll
+C:\Users\admin\source\repos\Bulgarian Apparel\Bulgarian Apparel.Providers\bin\Debug\Microsoft.AspNet.Identity.Owin.dll
+C:\Users\admin\source\repos\Bulgarian Apparel\Bulgarian Apparel.Providers\bin\Debug\Microsoft.Owin.dll
+C:\Users\admin\source\repos\Bulgarian Apparel\Bulgarian Apparel.Providers\bin\Debug\Microsoft.Owin.Host.SystemWeb.dll
+C:\Users\admin\source\repos\Bulgarian Apparel\Bulgarian Apparel.Providers\bin\Debug\Microsoft.Owin.Security.Cookies.dll
+C:\Users\admin\source\repos\Bulgarian Apparel\Bulgarian Apparel.Providers\bin\Debug\Microsoft.Owin.Security.dll
+C:\Users\admin\source\repos\Bulgarian Apparel\Bulgarian Apparel.Providers\bin\Debug\Microsoft.Owin.Security.OAuth.dll
+C:\Users\admin\source\repos\Bulgarian Apparel\Bulgarian Apparel.Providers\bin\Debug\Newtonsoft.Json.dll
+C:\Users\admin\source\repos\Bulgarian Apparel\Bulgarian Apparel.Providers\bin\Debug\Owin.dll
+C:\Users\admin\source\repos\Bulgarian Apparel\Bulgarian Apparel.Providers\bin\Debug\Microsoft.AspNet.Identity.Core.xml
+C:\Users\admin\source\repos\Bulgarian Apparel\Bulgarian Apparel.Providers\bin\Debug\Microsoft.AspNet.Identity.Owin.xml
+C:\Users\admin\source\repos\Bulgarian Apparel\Bulgarian Apparel.Providers\bin\Debug\Microsoft.Owin.xml
+C:\Users\admin\source\repos\Bulgarian Apparel\Bulgarian Apparel.Providers\bin\Debug\Microsoft.Owin.Host.SystemWeb.xml
+C:\Users\admin\source\repos\Bulgarian Apparel\Bulgarian Apparel.Providers\bin\Debug\Microsoft.Owin.Security.xml
+C:\Users\admin\source\repos\Bulgarian Apparel\Bulgarian Apparel.Providers\bin\Debug\Microsoft.Owin.Security.Cookies.xml
+C:\Users\admin\source\repos\Bulgarian Apparel\Bulgarian Apparel.Providers\bin\Debug\Microsoft.Owin.Security.OAuth.xml
+C:\Users\admin\source\repos\Bulgarian Apparel\Bulgarian Apparel.Providers\bin\Debug\Newtonsoft.Json.xml
+C:\Users\admin\source\repos\Bulgarian Apparel\Bulgarian Apparel.Providers\obj\Debug\Bulgarian Apparel.Providers.csprojResolveAssemblyReference.cache
+C:\Users\admin\source\repos\Bulgarian Apparel\Bulgarian Apparel.Providers\obj\Debug\Bulgarian Apparel.Providers.csproj.CoreCompileInputs.cache
+C:\Users\admin\source\repos\Bulgarian Apparel\Bulgarian Apparel.Providers\obj\Debug\Bulgarian Apparel.Providers.dll
+C:\Users\admin\source\repos\Bulgarian Apparel\Bulgarian Apparel.Providers\obj\Debug\Bulgarian Apparel.Providers.pdb

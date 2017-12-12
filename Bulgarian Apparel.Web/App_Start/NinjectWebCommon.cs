@@ -20,6 +20,8 @@ namespace Bulgarian_Apparel.Web.App_Start
     using Bulgarian_Apparel.Data.SaveContext;
     using Bulgarian_Apparel.Web.Controllers;
     using Ninject.Web.Common.WebHost;
+    using Bulgarian_Apparel.Auth;
+    using Bulgarian_Apparel.Providers.Contracts;
 
     public static class NinjectWebCommon 
     {
@@ -55,7 +57,7 @@ namespace Bulgarian_Apparel.Web.App_Start
                 kernel.Bind<Func<IKernel>>().ToMethod(ctx => () => new Bootstrapper().Kernel);
                 kernel.Bind<IHttpModule>().To<HttpApplicationInitializationHttpModule>();
 
-                RegisterServices(kernel);
+                RegisterServicesAndProviders(kernel);
                 return kernel;
             }
             catch
@@ -69,22 +71,22 @@ namespace Bulgarian_Apparel.Web.App_Start
         /// Load your modules or register your services here!
         /// </summary>
         /// <param name="kernel">The kernel.</param>
-        private static void RegisterServices(IKernel kernel)
+        private static void RegisterServicesAndProviders(IKernel kernel)
         {
-            kernel.Bind(x =>
-            {
-                x.FromThisAssembly()
-                 .SelectAllClasses()
-                 .BindDefaultInterface();
-            });
-
             kernel.Bind(x =>
             {
                 x.FromAssemblyContaining(typeof(IService))
                  .SelectAllClasses()
                  .BindDefaultInterface();
             });
-            
+
+            kernel.Bind(x =>
+            {
+                x.FromAssemblyContaining(typeof(IProvider))
+                 .SelectAllClasses()
+                 .BindDefaultInterface();
+            });
+
             kernel.Bind(typeof(DbContext), typeof(MsSqlDbContext)).To<MsSqlDbContext>().InRequestScope();
             kernel.Bind(typeof(IEfRepository<>)).To(typeof(EfRepository<>));
             kernel.Bind<IUnitOfWork>().To<UnitOfWork>();

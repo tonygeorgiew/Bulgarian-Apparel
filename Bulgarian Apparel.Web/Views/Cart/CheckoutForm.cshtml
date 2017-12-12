@@ -1,5 +1,5 @@
-﻿@model Bulgarian_Apparel.Web.Models.Orders.CheckoutFormVM
-
+﻿@using Bulgarian_Apparel.Web.Models.Orders
+@model CheckoutFormViewModel
 @{
     ViewBag.Title = "CheckoutForm";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -27,9 +27,7 @@
             @Html.EditorFor(m => m.CCV)
         </div>
         <hr />
-        <div class="form-group">
-         
-        </div>
+        
         @Html.AntiForgeryToken()
         <input class="btn btn-primary" type="submit" value="Submit"/>
     </div>

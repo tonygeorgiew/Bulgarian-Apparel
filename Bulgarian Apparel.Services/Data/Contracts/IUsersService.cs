@@ -1,13 +1,18 @@
 ﻿using Bulgarian_Apparel.Data.Models;
 using System.Linq;
-using System.Threading.Tasks;
 
 namespace Bulgarian_Apparel.Services
 {
     public interface IUsersService
     {
         IQueryable<User> ByUsername(string username);
+        IQueryable<User> GetAll();
+        IQueryable<User> GetUserById(string id);
 
-        IQueryable<User> All();
+        int Add(User product);
+
+        int Delete(User product);
+                   
+        int Update(User product);
     }
 }

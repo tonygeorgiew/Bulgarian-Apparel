@@ -1,7 +1,3 @@
-C:\Users\admin\source\repos\Bulgarian Apparel\Bulgarian Apparel.Data.Models\obj\Debug\Bulgarian Apparel.Data.Model.csprojResolveAssemblyReference.cache
-C:\Users\admin\source\repos\Bulgarian Apparel\Bulgarian Apparel.Data.Models\obj\Debug\Bulgarian Apparel.Data.Model.csproj.CoreCompileInputs.cache
-C:\Users\admin\source\repos\Bulgarian Apparel\Bulgarian Apparel.Data.Models\obj\Debug\Bulgarian Apparel.Data.Models.dll
-C:\Users\admin\source\repos\Bulgarian Apparel\Bulgarian Apparel.Data.Models\obj\Debug\Bulgarian Apparel.Data.Models.pdb
 C:\Users\admin\source\repos\Bulgarian Apparel\Bulgarian Apparel.Data.Models\bin\Debug\Bulgarian Apparel.Data.Models.dll.config
 C:\Users\admin\source\repos\Bulgarian Apparel\Bulgarian Apparel.Data.Models\bin\Debug\Bulgarian Apparel.Data.Models.dll
 C:\Users\admin\source\repos\Bulgarian Apparel\Bulgarian Apparel.Data.Models\bin\Debug\Bulgarian Apparel.Data.Models.pdb
@@ -13,3 +9,7 @@ C:\Users\admin\source\repos\Bulgarian Apparel\Bulgarian Apparel.Data.Models\bin\
 C:\Users\admin\source\repos\Bulgarian Apparel\Bulgarian Apparel.Data.Models\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\admin\source\repos\Bulgarian Apparel\Bulgarian Apparel.Data.Models\bin\Debug\Microsoft.AspNet.Identity.Core.xml
 C:\Users\admin\source\repos\Bulgarian Apparel\Bulgarian Apparel.Data.Models\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\admin\source\repos\Bulgarian Apparel\Bulgarian Apparel.Data.Models\obj\Debug\Bulgarian Apparel.Data.Model.csprojResolveAssemblyReference.cache
+C:\Users\admin\source\repos\Bulgarian Apparel\Bulgarian Apparel.Data.Models\obj\Debug\Bulgarian Apparel.Data.Model.csproj.CoreCompileInputs.cache
+C:\Users\admin\source\repos\Bulgarian Apparel\Bulgarian Apparel.Data.Models\obj\Debug\Bulgarian Apparel.Data.Models.dll
+C:\Users\admin\source\repos\Bulgarian Apparel\Bulgarian Apparel.Data.Models\obj\Debug\Bulgarian Apparel.Data.Models.pdb

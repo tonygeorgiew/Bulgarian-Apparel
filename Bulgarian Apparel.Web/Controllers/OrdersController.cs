@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using AutoMapper.QueryableExtensions;
 using Bulgarian_Apparel.Data.Models;
 using Bulgarian_Apparel.Services;
 using Bulgarian_Apparel.Services.Contracts;
@@ -14,15 +15,19 @@ namespace Bulgarian_Apparel.Web.Controllers
 {
     public class OrdersController : Controller
     {
+        private readonly IProductsService productsService;
         private readonly IOrdersService ordersService;
+        private readonly IOrdersItemsService orderItemsService;
         private readonly IShoppingCartService shoppingCartService;
         private readonly IPaymentTypesService paymentTypesService;
         private readonly IUsersService usersService;
         private readonly IMapper mapper;
 
-        public OrdersController(IOrdersService ordersService, IShoppingCartService shoppingCartService, IUsersService usersService, IPaymentTypesService paymentTypesService, IMapper mapper)
+        public OrdersController(IProductsService productsService, IOrdersService ordersService, IOrdersItemsService orderItemsService,IShoppingCartService shoppingCartService, IUsersService usersService, IPaymentTypesService paymentTypesService, IMapper mapper)
         {
+            this.productsService = productsService;
             this.ordersService = ordersService;
+            this.orderItemsService = orderItemsService;
             this.shoppingCartService = shoppingCartService;
             this.paymentTypesService = paymentTypesService;
             this.usersService = usersService;
@@ -38,7 +43,7 @@ namespace Bulgarian_Apparel.Web.Controllers
         public ActionResult MyOrdersDetails()
         {
             var userId = this.User.Identity.GetUserId();
-            var myOrders = this.ordersService.GetAll().Where(o => o.Customer.Id == userId).SelectMany(c=>c.OrderItems).ToList();
+            var myOrders = this.orderItemsService.All().Where(oi=>oi.Customer.Id==userId).ProjectTo<OrderItemDetailsViewModel>().ToList();
 
 
 
@@ -52,7 +57,7 @@ namespace Bulgarian_Apparel.Web.Controllers
             {
                 var userId = this.User.Identity.GetUserId();
                 var userGuid = Guid.Parse(userId);
-                var user = this.usersService.All().Single(u => u.Id == userId);
+                var user = this.usersService.GetAll().Single(u => u.Id == userId);
                 var paymentId = Guid.Parse(orderForm.PreferedPayment);
                 var chosenPaymentMethod = this.paymentTypesService.GetAll().Single(p=>p.Id == paymentId);
                 
@@ -71,7 +76,7 @@ namespace Bulgarian_Apparel.Web.Controllers
                         Address = orderForm.ShippingAddress,
                         Customer = user,
                         PaymentType = chosenPaymentMethod,
-                        ProductId = item.ProductId,
+                        Product = this.productsService.GetAll().Single(p=>p.Id==item.ProductId),
                         ProductColor = item.ProductColor,
                         ProductSize = item.ProductSize,
                         Payment = item.ProductPrice

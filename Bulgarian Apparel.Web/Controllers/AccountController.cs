@@ -10,6 +10,7 @@ using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using Bulgarian_Apparel.Web.Models;
 using Bulgarian_Apparel.Data.Models;
+using Bulgarian_Apparel.Auth.Managers;
 
 namespace Bulgarian_Apparel.Web.Controllers
 {

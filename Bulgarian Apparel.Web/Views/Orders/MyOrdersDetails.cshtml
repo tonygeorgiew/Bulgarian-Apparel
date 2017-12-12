@@ -1,5 +1,5 @@
-﻿@model List<Bulgarian_Apparel.Data.Models.OrderItem>
-
+﻿@using Bulgarian_Apparel.Web.Models.Orders
+@model List<OrderItemDetailsViewModel>
 @Styles.Render("~/Content/Styles/jquery.dataTables.min.css")
 @{
     ViewBag.Title = "MyOrdersDetails";
@@ -12,6 +12,8 @@
     <thead>
         <tr>
             <th id="order-item-id">Id</th>
+            <th id="order-item-name">Name</th>
+            <th id="order-item-brand">Brand</th>
             <th id="order-item-size">Size</th>
             <th id="order-item-color">Color</th>
             <th id="order-item-price">Payment</th>
@@ -23,11 +25,13 @@
         @foreach (var item in Model)
         {
             <tr>
-                <td>@item.Id</td>
-                <td>@item.ProductSize</td>
-                <td>@item.ProductColor</td>
-                <td>@item.Payment</td>
-                <td>@item.Address</td>
+                <td>@item.OrderId</td>
+                <td>@item.ProductName</td>
+                <td>@item.Brand</td>
+                <td>@item.Size</td>
+                <td>@item.Color</td>
+                <td>@item.Price</td>
+                <td>@item.ShippingAddress</td>
                 <td>@item.OrderedOn</td>
             </tr>
         }

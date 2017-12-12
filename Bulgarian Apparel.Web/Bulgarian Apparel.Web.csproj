@@ -247,9 +247,11 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
     <Compile Include="Areas\Admin\Controllers\ProductManagementController.cs" />
+    <Compile Include="Areas\Admin\Controllers\UsersManagerController.cs" />
     <Compile Include="Areas\Admin\Models\ProductInformationViewModel.cs" />
     <Compile Include="Areas\Admin\Models\UpdateProductInformationViewModel.cs" />
     <Compile Include="Areas\Admin\Models\UpdateProductViewModel.cs" />
+    <Compile Include="Models\Users\UserViewModel.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\CartController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -261,6 +263,7 @@
     <Compile Include="Models\Common\ColorViewModel.cs" />
     <Compile Include="Models\Common\SizeViewModel.cs" />
     <Compile Include="Models\Orders\CheckoutFormViewModel.cs" />
+    <Compile Include="Models\Orders\OrderItemDetailsViewModel.cs" />
     <Compile Include="Models\Orders\OrderViewModel.cs" />
     <Compile Include="Models\Products\CatalogueViewModel.cs" />
     <Compile Include="Models\Common\CategoryViewModel.cs" />
@@ -580,6 +583,7 @@
     <Content Include="Areas\Admin\Views\Shared\_ProductsResult.cshtml" />
     <Content Include="Areas\Admin\Views\ProductManagement\RemoveProduct.cshtml" />
     <Content Include="Areas\Admin\Views\Shared\_ProductInformation.cshtml" />
+    <Content Include="Areas\Admin\Views\UsersManager\Index.cshtml" />
     <None Include="Scripts\jquery-3.2.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.2.1.js" />
     <Content Include="Scripts\jquery-3.2.1.min.js" />
@@ -668,6 +672,10 @@
     <Content Include="Scripts\jquery-3.2.1.min.map" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Bulgarian Apparel.Auth\Bulgarian Apparel.Auth.csproj">
+      <Project>{1870BA7A-F320-4F90-A63A-FA751B4D5AB1}</Project>
+      <Name>Bulgarian Apparel.Auth</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Bulgarian Apparel.Data.Models\Bulgarian Apparel.Data.Model.csproj">
       <Project>{2CD99073-7977-409B-A6B6-F5C29BF3E495}</Project>
       <Name>Bulgarian Apparel.Data.Model</Name>
@@ -675,6 +683,10 @@
     <ProjectReference Include="..\Bulgarian Apparel.Data\Bulgarian Apparel.Data.csproj">
       <Project>{eb20d9f1-e073-4e90-8161-2f90ea5f7355}</Project>
       <Name>Bulgarian Apparel.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Bulgarian Apparel.Providers\Bulgarian Apparel.Providers.csproj">
+      <Project>{08A8ED1F-7E4A-46B8-9728-35279911EEE8}</Project>
+      <Name>Bulgarian Apparel.Providers</Name>
     </ProjectReference>
     <ProjectReference Include="..\Bulgarian Apparel.Services\Bulgarian Apparel.Services.csproj">
       <Project>{DDAB7F6A-C358-42BF-A8BC-B9F700410B6A}</Project>

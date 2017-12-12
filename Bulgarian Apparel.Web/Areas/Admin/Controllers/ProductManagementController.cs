@@ -149,7 +149,7 @@ namespace Bulgarian_Apparel.Web.Areas.Admin.Controllers
             this.productsService.Add(productdbModel);
             this.itemsService.Add(itemdbModel);
 
-            return this.RedirectToAction("ViewProduct", new { id = productdbModel.Id });
+            return this.RedirectToAction("ViewProduct", "Products", new {area = "", id = productdbModel.Id });
 
         }
 

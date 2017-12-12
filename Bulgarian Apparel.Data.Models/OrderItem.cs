@@ -9,14 +9,14 @@ namespace Bulgarian_Apparel.Data.Models
 {
     public class OrderItem : DataModel
     {
+        public Order Order { get; set; }
         public DateTime OrderedOn { get; set; }
         public virtual PaymentType PaymentType { get; set; }
         public double Payment { get; set; }
         public virtual User Customer { get; set; }
         public string Address { get; set; }
-        public Guid ProductId { get; set; }
+        public Product Product { get; set; }
         public string ProductSize { get; set; }
         public string ProductColor { get; set; }
-
     }
 }

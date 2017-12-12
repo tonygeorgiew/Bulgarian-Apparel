@@ -16,6 +16,6 @@ namespace Bulgarian_Apparel.Services
 
         int Update(ShoppingCart cart);
 
-        double CalculateTotalPriceForCart(Guid guid);
+        double CalculateTotalPriceForCart(string guid);
     }
 }

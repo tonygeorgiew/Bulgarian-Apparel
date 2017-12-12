@@ -8,6 +8,7 @@ using Owin;
 using Bulgarian_Apparel.Web.Models;
 using Bulgarian_Apparel.Data.Models;
 using Bulgarian_Apparel.Data;
+using Bulgarian_Apparel.Auth.Managers;
 
 namespace Bulgarian_Apparel.Web
 {

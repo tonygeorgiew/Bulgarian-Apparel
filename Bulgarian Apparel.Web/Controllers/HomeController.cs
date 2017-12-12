@@ -32,13 +32,11 @@ namespace Bulgarian_Apparel.Web.Controllers
                 .ToList();
 
             var mappedHotProducts = new List<HotProductViewModel>();
-            foreach (var item in hotProducts)
+            var randomProductPicker = new Random();
+            while (mappedHotProducts.Count <= 6)
             {
-                mappedHotProducts.Add(mapper.Map<HotProductViewModel>(item));
-              
+                mappedHotProducts.Add(mapper.Map<HotProductViewModel>(hotProducts[randomProductPicker.Next(0, hotProducts.Count)]));
             }
-            
-
 
             return View(mappedHotProducts);
         }

@@ -170,6 +170,14 @@
     <Compile Include="Migrations\201711210934265_Categories with super name.Designer.cs">
       <DependentUpon>201711210934265_Categories with super name.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201712101552520_order item now has order id.cs" />
+    <Compile Include="Migrations\201712101552520_order item now has order id.Designer.cs">
+      <DependentUpon>201712101552520_order item now has order id.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201712101632441_order item now has order id 2.cs" />
+    <Compile Include="Migrations\201712101632441_order item now has order id 2.Designer.cs">
+      <DependentUpon>201712101632441_order item now has order id 2.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="MsSqlDbContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -182,6 +190,10 @@
     <ProjectReference Include="..\Bulgarian Apparel.Data.Models\Bulgarian Apparel.Data.Model.csproj">
       <Project>{2CD99073-7977-409B-A6B6-F5C29BF3E495}</Project>
       <Name>Bulgarian Apparel.Data.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Bulgarian Apparel.Providers\Bulgarian Apparel.Providers.csproj">
+      <Project>{08A8ED1F-7E4A-46B8-9728-35279911EEE8}</Project>
+      <Name>Bulgarian Apparel.Providers</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
@@ -275,6 +287,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201711210934265_Categories with super name.resx">
       <DependentUpon>201711210934265_Categories with super name.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712101552520_order item now has order id.resx">
+      <DependentUpon>201712101552520_order item now has order id.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712101632441_order item now has order id 2.resx">
+      <DependentUpon>201712101632441_order item now has order id 2.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

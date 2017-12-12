@@ -11,13 +11,13 @@ namespace Bulgarian_Apparel.Data.Repositories
 {
   
     public class EfRepository<T> : IEfRepository<T>
-        where T : class, IDeletable
+        where T : class, IDeletable, IAuditable
     {
         private readonly MsSqlDbContext context;
 
         public EfRepository(MsSqlDbContext context)
         {
-            this.context = context;
+            this.context = context ?? throw new ArgumentNullException(nameof(context));
         }
 
         public IQueryable<T> All
@@ -68,6 +68,11 @@ namespace Bulgarian_Apparel.Data.Repositories
             }
 
             entry.State = EntityState.Modified;
+        }
+
+        public T GetById(object id)
+        {
+            return this.context.Set<T>().Find(id.ToString());
         }
     }
 }
