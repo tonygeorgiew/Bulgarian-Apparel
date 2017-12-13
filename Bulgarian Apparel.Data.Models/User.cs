@@ -14,11 +14,13 @@ namespace Bulgarian_Apparel.Data.Models
     {
         private ICollection<Post> posts;
         private ICollection<Order> orders;
-
+        private ICollection<WishlistItem> wishlistItems;
+        
         public User()
         {
             this.posts = new HashSet<Post>();
             this.orders = new HashSet<Order>();
+            this.wishlistItems = new HashSet<WishlistItem>();
         }
 
         [Index]
@@ -32,6 +34,18 @@ namespace Bulgarian_Apparel.Data.Models
 
         [DataType(DataType.DateTime)]
         public DateTime? ModifiedOn { get; set; }
+
+        public virtual ICollection<WishlistItem> WishlistItems
+        {
+            get
+            {
+                return this.wishlistItems;
+            }
+            set
+            {
+                this.wishlistItems = value;
+            }
+        }
 
         public virtual ICollection<Post> Posts
         {

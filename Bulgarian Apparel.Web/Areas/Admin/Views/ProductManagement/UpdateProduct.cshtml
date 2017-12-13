@@ -4,6 +4,7 @@
     ViewBag.Title = "Update existing";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+
 <hr />
 @using (Ajax.BeginForm("GetProductToUpdateByGuid", new { area = "Admin" },
                                         new AjaxOptions
@@ -18,12 +19,16 @@
     <input type="text" name="id"/>
     <input type="submit" onclick="changed()" />
 }
+
 <hr />
 
 <div id="results">
     @Html.Partial("_ProductInformation", Model)
 </div>
-    
+
+<div>
+    @Html.ActionLink("Back to Products Management Menu", "Index", "ProductManagement", null, new { @class = "btn btn-default" })
+</div>
 
 @section scripts{
 <script src="~/Scripts/jquery-3.2.1.min.js"></script>

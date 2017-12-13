@@ -1,0 +1,15 @@
+﻿@using Bulgarian_Apparel.Web.Models.Users
+@model ICollection<UserViewModel>
+@{
+    ViewBag.Title = "Members - Bulgarian Apparel";
+}
+
+<div class="row jumbotron">
+    <h2>All Users</h2>
+    @foreach (var user in Model)
+    {
+        <div class="col-md-4">
+            <h3>@Html.ActionLink(@user.UserName, "Details", new { id = user.Id })</h3>
+        </div>
+    }
+</div>

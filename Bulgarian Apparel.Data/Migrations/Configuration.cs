@@ -11,12 +11,13 @@ namespace Bulgarian_Apparel.Data.Migrations
     public sealed class Configuration : DbMigrationsConfiguration<MsSqlDbContext>
     {
         const string AdministratorUserName = "antonii.g@mail.bg";
+        const string AccountantUserName = "accountant@apparel.bg";
         const string AdministratorPassword = "123456";
 
         public Configuration()
         {
             this.AutomaticMigrationsEnabled = true;
-            this.AutomaticMigrationDataLossAllowed = true;
+            this.AutomaticMigrationDataLossAllowed = false;
         }
 
         protected override void Seed(MsSqlDbContext context)
@@ -31,8 +32,35 @@ namespace Bulgarian_Apparel.Data.Migrations
             //  this.seedPaymentTypes(context);
             //  this.SeedSampleItems(context);
             //  this.SeedNewProductModel(context);
-            
+           // this.SeedAccountantRole(context);
+
+
             base.Seed(context);
+        }
+
+        private void SeedAccountantRole(MsSqlDbContext context)
+        {
+           
+                var roleName = "Accountant";
+
+                var roleStore = new RoleStore<IdentityRole>(context);
+                var roleManager = new RoleManager<IdentityRole>(roleStore);
+                var role = new IdentityRole { Name = roleName };
+                roleManager.Create(role);
+
+                var userStore = new UserStore<User>(context);
+                var userManager = new UserManager<User>(userStore);
+                var user = new User
+                {
+                    UserName = AccountantUserName,
+                    Email = AccountantUserName,
+                    EmailConfirmed = true,
+                    CreatedOn = DateTime.Now
+                };
+
+                userManager.Create(user, AdministratorPassword);
+                userManager.AddToRole(user.Id, roleName);
+            
         }
 
         private void SeedPaymentTypes(MsSqlDbContext context)

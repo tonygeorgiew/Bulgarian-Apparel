@@ -46,6 +46,20 @@
             return this.UoW.Commit();
         }
 
+        public int Delete(Product product)
+        {
+            this.productsRepo.Delete(product);
+
+            return this.UoW.Commit();
+        }
+
+        public int Update(Product product)
+        {
+            this.productsRepo.Update(product);
+
+            return this.UoW.Commit();
+        }
+
         public IQueryable<Product> ProducttById(Guid id)
         {
             var query = this.productsRepo.All.Where(p => p.Id == id).Include( p => p.Images );
@@ -77,20 +91,6 @@
         public IQueryable<Product> ProductWithImagesById(Guid id)
         {
             return this.ProducttById(id).Include(i=>i.Images);
-        }
-
-        public int Delete(Product product)
-        {
-            this.productsRepo.Delete(product);
-
-            return this.UoW.Commit();
-        }
-
-        public int Update(Product product)
-        {
-            this.productsRepo.Update(product);
-
-            return this.UoW.Commit();
         }
     }
 }

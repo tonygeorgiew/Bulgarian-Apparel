@@ -162,3 +162,7 @@ C:\Users\admin\source\repos\Bulgarian Apparel\Bulgarian Apparel.Web\bin\Bulgaria
 C:\Users\admin\source\repos\Bulgarian Apparel\Bulgarian Apparel.Web\bin\Bulgarian Apparel.Providers.dll.config
 C:\Users\admin\source\repos\Bulgarian Apparel\Bulgarian Apparel.Web\obj\Debug\Bulgarian Apparel.Web.dll
 C:\Users\admin\source\repos\Bulgarian Apparel\Bulgarian Apparel.Web\obj\Debug\Bulgarian Apparel.Web.pdb
+C:\Users\admin\source\repos\Bulgarian Apparel\Bulgarian Apparel.Web\bin\Microsoft.AspNet.SignalR.Core.dll
+C:\Users\admin\source\repos\Bulgarian Apparel\Bulgarian Apparel.Web\bin\Microsoft.AspNet.SignalR.SystemWeb.dll
+C:\Users\admin\source\repos\Bulgarian Apparel\Bulgarian Apparel.Web\bin\Microsoft.AspNet.SignalR.Core.xml
+C:\Users\admin\source\repos\Bulgarian Apparel\Bulgarian Apparel.Web\bin\Microsoft.AspNet.SignalR.SystemWeb.xml

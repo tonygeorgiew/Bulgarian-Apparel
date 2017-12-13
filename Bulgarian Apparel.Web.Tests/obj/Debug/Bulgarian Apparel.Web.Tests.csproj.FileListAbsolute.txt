@@ -81,3 +81,5 @@ C:\Users\admin\source\repos\Bulgarian Apparel\Bulgarian Apparel.Web.Tests\bin\De
 C:\Users\admin\source\repos\Bulgarian Apparel\Bulgarian Apparel.Web.Tests\bin\Debug\Ninject.Extensions.Factory.xml
 C:\Users\admin\source\repos\Bulgarian Apparel\Bulgarian Apparel.Web.Tests\obj\Debug\Bulgarian Apparel.Web.Tests.dll
 C:\Users\admin\source\repos\Bulgarian Apparel\Bulgarian Apparel.Web.Tests\obj\Debug\Bulgarian Apparel.Web.Tests.pdb
+C:\Users\admin\source\repos\Bulgarian Apparel\Bulgarian Apparel.Web.Tests\bin\Debug\Microsoft.AspNet.SignalR.Core.dll
+C:\Users\admin\source\repos\Bulgarian Apparel\Bulgarian Apparel.Web.Tests\bin\Debug\Microsoft.AspNet.SignalR.Core.xml

@@ -178,6 +178,26 @@
     <Compile Include="Migrations\201712101632441_order item now has order id 2.Designer.cs">
       <DependentUpon>201712101632441_order item now has order id 2.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201712131521239_Seed Accountant Role and User.cs" />
+    <Compile Include="Migrations\201712131521239_Seed Accountant Role and User.Designer.cs">
+      <DependentUpon>201712131521239_Seed Accountant Role and User.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201712131527343_Seed Accountant Role and User2.cs" />
+    <Compile Include="Migrations\201712131527343_Seed Accountant Role and User2.Designer.cs">
+      <DependentUpon>201712131527343_Seed Accountant Role and User2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201712131529586_Seed Accountant Role and User3.cs" />
+    <Compile Include="Migrations\201712131529586_Seed Accountant Role and User3.Designer.cs">
+      <DependentUpon>201712131529586_Seed Accountant Role and User3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201712131535235_Seed Accountant Role and User4.cs" />
+    <Compile Include="Migrations\201712131535235_Seed Accountant Role and User4.Designer.cs">
+      <DependentUpon>201712131535235_Seed Accountant Role and User4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201712131653251_Wishlists.cs" />
+    <Compile Include="Migrations\201712131653251_Wishlists.Designer.cs">
+      <DependentUpon>201712131653251_Wishlists.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="MsSqlDbContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -293,6 +313,21 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201712101632441_order item now has order id 2.resx">
       <DependentUpon>201712101632441_order item now has order id 2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712131521239_Seed Accountant Role and User.resx">
+      <DependentUpon>201712131521239_Seed Accountant Role and User.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712131527343_Seed Accountant Role and User2.resx">
+      <DependentUpon>201712131527343_Seed Accountant Role and User2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712131529586_Seed Accountant Role and User3.resx">
+      <DependentUpon>201712131529586_Seed Accountant Role and User3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712131535235_Seed Accountant Role and User4.resx">
+      <DependentUpon>201712131535235_Seed Accountant Role and User4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712131653251_Wishlists.resx">
+      <DependentUpon>201712131653251_Wishlists.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

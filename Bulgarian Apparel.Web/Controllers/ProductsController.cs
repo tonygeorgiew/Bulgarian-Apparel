@@ -3,7 +3,9 @@ using AutoMapper.QueryableExtensions;
 using Bulgarian_Apparel.Data.Models;
 using Bulgarian_Apparel.Services;
 using Bulgarian_Apparel.Services.Contracts;
+using Bulgarian_Apparel.Services.Data.Contracts;
 using Bulgarian_Apparel.Web.Areas.Admin.Models;
+using Bulgarian_Apparel.Web.Infrastructure;
 using Bulgarian_Apparel.Web.Models.Common;
 using Bulgarian_Apparel.Web.Models.Products;
 using Microsoft.Ajax.Utilities;
@@ -19,18 +21,21 @@ namespace Bulgarian_Apparel.Web.Controllers
 {
     public class ProductsController : Controller
     {
-
+        private readonly IUsersService usersService;
         private readonly IProductsService productsService;
         private readonly IItemsService itemsService;
+        private readonly IWishlistsService wishesService;
         private readonly ISizesService sizesService;
         private readonly IColorsService colorsService;
         private readonly ICategoriesService categoriesService;
         private readonly IMapper mapper;
 
-        public ProductsController(IProductsService productsService, IItemsService itemsService, ISizesService sizesService, IColorsService colorsService, ICategoriesService categoriesService, IMapper mapper)
+        public ProductsController(IUsersService usersService,IProductsService productsService, IItemsService itemsService, IWishlistsService wishesService, ISizesService sizesService, IColorsService colorsService, ICategoriesService categoriesService, IMapper mapper)
         {
+            this.usersService = usersService;
             this.productsService = productsService;
             this.itemsService = itemsService;
+            this.wishesService = wishesService;
             this.sizesService = sizesService;
             this.colorsService = colorsService;
             this.categoriesService = categoriesService;
@@ -63,20 +68,40 @@ namespace Bulgarian_Apparel.Web.Controllers
             return View(catalogue);
         }
 
-      public ActionResult ViewProduct(string id)
-      {
+        public ActionResult ViewProduct(string id)
+        {
+              id = id.ToUpper();
+              var product = this.productsService.ProducttByStringId(id).Single();
+              var item = this.itemsService.GetAll().Single(i => i.ProductId == product.Id);
+        
+              var productVM = new ProductFormViewModel()
+              {
+                  Product = this.mapper.Map<ProductViewModel>(product)
+              };
+        
+              this.mapper.Map(item, productVM.Product);
+        
+              return View(productVM);
+        }
+
+        public ActionResult AddToWishlist(string id)
+        {
             id = id.ToUpper();
             var product = this.productsService.ProducttByStringId(id).Single();
-            var item = this.itemsService.GetAll().Single(i => i.ProductId == product.Id);
+            var customerId = this.User.Identity.GetUserId();
+            var customer = this.usersService.GetAll().Single(u => u.Id == customerId);
 
-            var productVM = new ProductFormViewModel()
+            var wish = new WishlistItem()
             {
-                Product = this.mapper.Map<ProductViewModel>(product)
+                Product = product,
+                Customer = customer
             };
 
-            this.mapper.Map(item, productVM.Product);
+            this.wishesService.Add(wish);
 
-            return View(productVM);
-      }
+
+            ///make this return some http code so that you can make a modal success/fail popup ;)   
+            return RedirectToAction("Index");
+        }
     }
 }

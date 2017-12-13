@@ -15,6 +15,7 @@ namespace Bulgarian_Apparel.Data.Models
         }
 
         public virtual User Customer { get; set; }
+
         public ICollection<OrderItem> OrderItems { get; set; }
     }
 }

@@ -25,7 +25,7 @@
                 <p>$ <span id="product-price">@item.Price</span></p>
             </div>
             <button class="btn btn-primary view" data-id="@item.ProductId" data-name="@item.Name" data-summary="@item.Description" data-price="@item.Price" data-image="@item.ImageResources[2]" data-category="@item.Category.CategoryName">View product</button>
-            <button class="btn btn-primary">Add to wishlist</button>
+            <button class="btn">@Html.ActionLink("Add to wishlist", "AddToWishlist", new { id = item.ProductId })</button>
             <button class="btn btn-primary" onclick="window.location.pathname='@Url.Action("ViewProduct", "Products", new { id = item.ProductId })'">Details</button>
         </div>
     }

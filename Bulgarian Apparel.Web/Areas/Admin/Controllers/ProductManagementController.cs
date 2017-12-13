@@ -14,10 +14,9 @@ using System.Web.Mvc;
 
 namespace Bulgarian_Apparel.Web.Areas.Admin.Controllers
 {
-
+    [Authorize(Roles = "Admin")]
     public class ProductManagementController : Controller
     {
-
         private readonly IProductsService productsService;
         private readonly IItemsService itemsService;
         private readonly ISizesService sizesService;
@@ -41,7 +40,7 @@ namespace Bulgarian_Apparel.Web.Areas.Admin.Controllers
             return View();
         }
 
-        [Authorize]
+        [Authorize(Roles = "Admin")]
         [HttpGet]
         public ActionResult AddProduct()
         {
@@ -85,7 +84,7 @@ namespace Bulgarian_Apparel.Web.Areas.Admin.Controllers
             return this.View(newProductAddVM);
         }
 
-        [Authorize]
+        [Authorize(Roles = "Admin")]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult AddProduct(AddProductViewModel productt)
@@ -153,7 +152,7 @@ namespace Bulgarian_Apparel.Web.Areas.Admin.Controllers
 
         }
 
-        [Authorize]
+        [Authorize(Roles = "Admin")]
         public ActionResult RemoveProduct()
         {
             var products = this.productsService.GetAll().ProjectTo<DeleteProductViewModel>().ToList();
@@ -163,7 +162,7 @@ namespace Bulgarian_Apparel.Web.Areas.Admin.Controllers
         }
 
 
-        [Authorize]
+        [Authorize(Roles = "Admin")]
         public ActionResult RemoveProductById(string Id)
         {
             var products = this.productsService.GetAll().ProjectTo<DeleteProductViewModel>().ToList();
@@ -172,7 +171,7 @@ namespace Bulgarian_Apparel.Web.Areas.Admin.Controllers
             return Content(Id);
         }
 
-        [Authorize]
+        [Authorize(Roles = "Admin")]
         public ActionResult UpdateProduct()
         {
             var sizes = this.sizesService.GetAll().ProjectTo<SizeViewModel>().ToList();
@@ -220,7 +219,7 @@ namespace Bulgarian_Apparel.Web.Areas.Admin.Controllers
             return this.View(updateTemplate);
         }
 
-        [Authorize]
+        [Authorize(Roles = "Admin")]
         [HttpGet]
         public ActionResult GetProductToUpdateByGuid(string id)
         {
@@ -278,7 +277,7 @@ namespace Bulgarian_Apparel.Web.Areas.Admin.Controllers
             return this.PartialView("_ProductInformation", updateTemplate);
         }
 
-        [Authorize]
+        [Authorize(Roles = "Admin")]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult UpdateProduct(UpdateProductInformationViewModel updateProductViewModel)
@@ -340,7 +339,7 @@ namespace Bulgarian_Apparel.Web.Areas.Admin.Controllers
             return this.RedirectToAction("ViewProduct", "Products", new { area = "", id = productDbModel.Id });
         }
 
-        [Authorize]
+        [Authorize(Roles = "Admin")]
         [HttpGet]
         public ActionResult Search(string query)
         {
@@ -362,9 +361,8 @@ namespace Bulgarian_Apparel.Web.Areas.Admin.Controllers
             return this.PartialView("~/Areas/Admin/Views/Shared/_ProductsResult.cshtml", result);
         }
 
-      
 
-        [Authorize]
+        [Authorize(Roles = "Admin")]
         public ActionResult SearchById(string query)
         {
             if (string.IsNullOrWhiteSpace(query))

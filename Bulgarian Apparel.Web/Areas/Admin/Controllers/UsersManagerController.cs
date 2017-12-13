@@ -2,13 +2,13 @@
 using Bulgarian_Apparel.Auth;
 using Bulgarian_Apparel.Services;
 using Bulgarian_Apparel.Web.Areas.Admin.Models;
+using Bulgarian_Apparel.Web.Models.Users;
 using System;
 using System.Linq;
 using System.Web.Mvc;
 
 namespace Bulgarian_Apparel.Web.Areas.Admin.Controllers
 {
-
     [Authorize(Roles = "Admin")]
     public class UsersManagerController : Controller
     {

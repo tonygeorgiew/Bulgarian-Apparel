@@ -39,6 +39,7 @@
 
         public IDbSet<PaymentType> PaymentTypes { get; set; }
 
+        public IDbSet<WishlistItem> WishlistItems { get; set; }
 
         public static MsSqlDbContext Create()
         {

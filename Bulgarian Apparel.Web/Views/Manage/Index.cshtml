@@ -13,15 +13,9 @@
         <dt>My orders: </dt>
         <dd>@Html.ActionLink("See all details", "MyOrdersDetails", "Orders")
         </dd>
-        <dt>Products operations: </dt>
+        <dt>Users: </dt>
         <dd>
-           @Html.ActionLink("Add new", "AddProduct", "ProductManagement", new { Area = "Admin" }, new { })
-        </dd>
-        <dd>
-            @Html.ActionLink("Update existing", "UpdateProduct", "ProductManagement", new { Area = "Admin" }, new { })
-        </dd>
-        <dd>
-            @Html.ActionLink("Remove existing", "RemoveProduct", "ProductManagement", new { Area = "Admin" }, new { })
+            @Html.ActionLink("View Users", "Index", "UsersManager", new { Area = "Admin" }, new { })
         </dd>
         <dt>Password:</dt>
         <dd>

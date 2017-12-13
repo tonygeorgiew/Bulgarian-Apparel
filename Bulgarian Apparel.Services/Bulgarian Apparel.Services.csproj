@@ -74,11 +74,13 @@
     <Compile Include="Data\Contracts\IShoppingCartService.cs" />
     <Compile Include="Data\Contracts\IColorsService.cs" />
     <Compile Include="Data\ItemsService.cs" />
+    <Compile Include="Data\Contracts\IWishlistsService.cs" />
     <Compile Include="Data\OrdersItemsService.cs" />
     <Compile Include="Data\OrdersService.cs" />
     <Compile Include="Data\PaymentTypesService.cs" />
     <Compile Include="Data\PostsService.cs" />
     <Compile Include="Data\ProductsService.cs" />
+    <Compile Include="Data\WishlistsService.cs" />
     <Compile Include="Logic\Contracts\IMappingService.cs" />
     <Compile Include="Logic\MappingService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
