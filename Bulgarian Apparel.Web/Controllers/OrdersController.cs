@@ -37,7 +37,7 @@ namespace Bulgarian_Apparel.Web.Controllers
         // GET: Orders
         public ActionResult Index()
         {
-            return View();
+            return this.View();
         }
 
         public ActionResult MyOrdersDetails()
@@ -47,7 +47,7 @@ namespace Bulgarian_Apparel.Web.Controllers
 
 
 
-            return View(myOrders);
+            return this.View(myOrders);
         }
 
         // GET: Orders
@@ -88,10 +88,10 @@ namespace Bulgarian_Apparel.Web.Controllers
                 this.ordersService.Add(order);
                 this.shoppingCartService.Delete(userCart);
 
-                return View("Success", null, order.Id.ToString());
+                return this.View("Success", null, order.Id.ToString());
             }
 
-            return View("Error");
+            return this.View("Error");
         }
 
         [HttpPost]
@@ -105,7 +105,7 @@ namespace Bulgarian_Apparel.Web.Controllers
             {
 
                 //add order to User's(antonii.g) cart thats at the Cart/Details;
-                return Content(productForm.Product.ProductId.ToString());
+                return this.Content(productForm.Product.ProductId.ToString());
             }
 
             if (!string.IsNullOrEmpty(addtocart))
@@ -126,10 +126,10 @@ namespace Bulgarian_Apparel.Web.Controllers
                     UserId = userId
                 };
                 
-                return View("Index");
+                return this.View("Index");
             }
 
-            return Content("skipped ifs");
+            return this.Content("skipped ifs");
         }
 
     }

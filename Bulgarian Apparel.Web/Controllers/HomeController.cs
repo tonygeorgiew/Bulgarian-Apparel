@@ -38,25 +38,25 @@ namespace Bulgarian_Apparel.Web.Controllers
                 mappedHotProducts.Add(mapper.Map<HotProductViewModel>(hotProducts[randomProductPicker.Next(0, hotProducts.Count)]));
             }
 
-            return View(mappedHotProducts);
+            return this.View(mappedHotProducts);
         }
 
         public ActionResult About()
         {
             ViewBag.Message = "Your application description page.";
 
-            return View();
+            return this.View();
         }
 
         public ActionResult Contact()
         {
             ViewBag.Message = "Your contact page.";
 
-            return View();
+            return this.View();
         }
         public ActionResult View1()
         {
-            return View();
+            return this.View();
         }
     }
 }

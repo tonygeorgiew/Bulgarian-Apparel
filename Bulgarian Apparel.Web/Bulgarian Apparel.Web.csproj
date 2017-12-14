@@ -260,13 +260,13 @@
     <Compile Include="Areas\Admin\Models\UpdateProductViewModel.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\CartController.cs" />
-    <Compile Include="Controllers\ChatController.cs" />
+    <Compile Include="Controllers\CommunicationsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\OrdersController.cs" />
     <Compile Include="Controllers\ProductsController.cs" />
     <Compile Include="Controllers\UsersController.cs" />
-    <Compile Include="Hubs\Chat.cs" />
+    <Compile Include="Hubs\CommunicationsHub.cs" />
     <Compile Include="Models\Cart\CartItemViewModel.cs" />
     <Compile Include="Models\Cart\CartViewModel.cs" />
     <Compile Include="Models\Common\ColorViewModel.cs" />
@@ -678,7 +678,7 @@
     <Content Include="Views\Users\Index.cshtml" />
     <Content Include="Views\Users\Details.cshtml" />
     <Content Include="Views\Users\Error.cshtml" />
-    <Content Include="Views\Chat\Index.cshtml" />
+    <Content Include="Views\Communications\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

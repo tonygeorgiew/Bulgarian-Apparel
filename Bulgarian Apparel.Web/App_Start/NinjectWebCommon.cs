@@ -57,7 +57,7 @@ namespace Bulgarian_Apparel.Web.App_Start
                 kernel.Bind<Func<IKernel>>().ToMethod(ctx => () => new Bootstrapper().Kernel);
                 kernel.Bind<IHttpModule>().To<HttpApplicationInitializationHttpModule>();
 
-                RegisterServicesAndProviders(kernel);
+                RegisterServices(kernel);
                 return kernel;
             }
             catch
@@ -71,7 +71,7 @@ namespace Bulgarian_Apparel.Web.App_Start
         /// Load your modules or register your services here!
         /// </summary>
         /// <param name="kernel">The kernel.</param>
-        private static void RegisterServicesAndProviders(IKernel kernel)
+        private static void RegisterServices(IKernel kernel)
         {
             kernel.Bind(x =>
             {
@@ -97,10 +97,9 @@ namespace Bulgarian_Apparel.Web.App_Start
 
             kernel.Bind(typeof(DbContext), typeof(MsSqlDbContext)).To<MsSqlDbContext>().InRequestScope();
             kernel.Bind(typeof(IEfRepository<>)).To(typeof(EfRepository<>));
-            kernel.Bind<IUnitOfWork>().To<UnitOfWork>();
             kernel.Bind<IMapper>().ToMethod(x => Mapper.Instance).InSingletonScope();
-
             kernel.Bind<IAuthProvider>().To<AuthProvider>();
+            kernel.Bind<IUnitOfWork>().To<UnitOfWork>();
         }        
     }
 }

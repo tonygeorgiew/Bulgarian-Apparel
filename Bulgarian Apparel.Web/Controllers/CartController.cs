@@ -36,7 +36,7 @@ namespace Bulgarian_Apparel.Web.Controllers
         // GET: Cart
         public ActionResult Index()
         {
-            return View();
+            return this.View();
         }
 
         
@@ -47,10 +47,10 @@ namespace Bulgarian_Apparel.Web.Controllers
             {
                 var userCart = this.shoppingCartService.GetAll().Where(o => o.IsDeleted == false).Single(c => c.UserId == userId);
 
-                return View(userCart);
+                return this.View(userCart);
             }
 
-            return View("Empty");
+            return this.View("Empty");
         }
 
         [HttpPost]
@@ -156,14 +156,14 @@ namespace Bulgarian_Apparel.Web.Controllers
                 TotalPrice = totalPrice
             };
 
-            return View(orderForm);
+            return this.View(orderForm);
         }
 
         public ActionResult CheckoutNow(OrderViewModel order)
         {
 
 
-            return View();
+            return this.View();
 
         }
 
@@ -174,7 +174,7 @@ namespace Bulgarian_Apparel.Web.Controllers
             var userStringId = this.User.Identity.GetUserId();
             var userCart = this.shoppingCartService.GetCartForUserId(userStringId).Single() ?? null;
 
-            if(userCart != null)
+            if (userCart != null)
             {
                 this.shoppingCartService.Delete(userCart);
             }

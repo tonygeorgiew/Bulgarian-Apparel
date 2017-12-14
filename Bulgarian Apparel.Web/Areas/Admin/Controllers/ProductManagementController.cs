@@ -37,7 +37,7 @@ namespace Bulgarian_Apparel.Web.Areas.Admin.Controllers
         // GET: Admin/ProductManagement
         public ActionResult Index()
         {
-            return View();
+            return this.View();
         }
 
         [Authorize(Roles = "Admin")]
@@ -87,7 +87,7 @@ namespace Bulgarian_Apparel.Web.Areas.Admin.Controllers
         [Authorize(Roles = "Admin")]
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult AddProduct(AddProductViewModel productt)
+        public ActionResult AddProduct(AddProductViewModel newProduct)
         {
             if (!ModelState.IsValid)
             {
@@ -95,7 +95,7 @@ namespace Bulgarian_Apparel.Web.Areas.Admin.Controllers
             }
 
             var colors = new List<Color>();
-            foreach (var color in productt.SelectedColors)
+            foreach (var color in newProduct.SelectedColors)
             {
                 if (!string.IsNullOrWhiteSpace(color))
                 {
@@ -105,7 +105,7 @@ namespace Bulgarian_Apparel.Web.Areas.Admin.Controllers
             }
 
             var sizes = new List<Size>();
-            foreach (var size in productt.SelectedSizes)
+            foreach (var size in newProduct.SelectedSizes)
             {
                 if (!string.IsNullOrWhiteSpace(size))
                 {
@@ -115,19 +115,19 @@ namespace Bulgarian_Apparel.Web.Areas.Admin.Controllers
 
             var itemdbModel = new Item()
             {
-                Price = productt.Price,
+                Price = newProduct.Price,
                 Sizes = sizes,
                 Colors = colors
             };
 
 
-            var category = this.categoriesService.CategoryByStringId(productt.CategoriesId).Single();
+            var category = this.categoriesService.CategoryByStringId(newProduct.CategoriesId).Single();
             var productdbModel = new Product()
             {
-                Name = productt.Name,
-                Description = productt.Description,
-                Stock = productt.Stock,
-                Supplier = productt.Supplier,
+                Name = newProduct.Name,
+                Description = newProduct.Description,
+                Stock = newProduct.Stock,
+                Supplier = newProduct.Supplier,
                 Hot = false,
                 Category = category
             };
@@ -135,7 +135,7 @@ namespace Bulgarian_Apparel.Web.Areas.Admin.Controllers
             itemdbModel.ProductId = productdbModel.Id;
             productdbModel.ItemId = itemdbModel.Id;
 
-            foreach (var image in productt.Images)
+            foreach (var image in newProduct.Images)
             {
                 var imageToAdd = new Image()
                 {

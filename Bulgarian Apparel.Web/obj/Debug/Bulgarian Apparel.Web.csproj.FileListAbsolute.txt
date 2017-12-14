@@ -166,3 +166,5 @@ C:\Users\admin\source\repos\Bulgarian Apparel\Bulgarian Apparel.Web\bin\Microsof
 C:\Users\admin\source\repos\Bulgarian Apparel\Bulgarian Apparel.Web\bin\Microsoft.AspNet.SignalR.SystemWeb.dll
 C:\Users\admin\source\repos\Bulgarian Apparel\Bulgarian Apparel.Web\bin\Microsoft.AspNet.SignalR.Core.xml
 C:\Users\admin\source\repos\Bulgarian Apparel\Bulgarian Apparel.Web\bin\Microsoft.AspNet.SignalR.SystemWeb.xml
+C:\Users\admin\source\repos\Bulgarian Apparel\Bulgarian Apparel.Web\bin\StyleCop.dll
+C:\Users\admin\source\repos\Bulgarian Apparel\Bulgarian Apparel.Web\bin\StyleCop.xml

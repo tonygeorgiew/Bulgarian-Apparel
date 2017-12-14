@@ -63,9 +63,9 @@ namespace Bulgarian_Apparel.Web.Controllers
                 catalogue.Products.Add(catalogueProduct);
             }
 
-            catalogue.Categories = catalogue.Products.Select(p=>p.Category).DistinctBy(c=>c.CategoryName).ToList();
+            catalogue.Categories = catalogue.Products.Select(p => p.Category).DistinctBy(c => c.CategoryName).ToList();
 
-            return View(catalogue);
+            return this.View(catalogue);
         }
 
         public ActionResult ViewProduct(string id)
@@ -81,7 +81,7 @@ namespace Bulgarian_Apparel.Web.Controllers
         
               this.mapper.Map(item, productVM.Product);
         
-              return View(productVM);
+              return this.View(productVM);
         }
 
         public ActionResult AddToWishlist(string id)
@@ -100,7 +100,7 @@ namespace Bulgarian_Apparel.Web.Controllers
             this.wishesService.Add(wish);
 
 
-            ///make this return some http code so that you can make a modal success/fail popup ;)   
+            //make this return some http code so that you can make a modal success/fail popup ;)   
             return RedirectToAction("Index");
         }
     }
