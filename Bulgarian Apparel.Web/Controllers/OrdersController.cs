@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using AutoMapper.QueryableExtensions;
+using Bulgarian_Apparel.Common;
 using Bulgarian_Apparel.Data.Models;
 using Bulgarian_Apparel.Services;
 using Bulgarian_Apparel.Services.Contracts;
@@ -25,13 +26,13 @@ namespace Bulgarian_Apparel.Web.Controllers
 
         public OrdersController(IProductsService productsService, IOrdersService ordersService, IOrdersItemsService orderItemsService,IShoppingCartService shoppingCartService, IUsersService usersService, IPaymentTypesService paymentTypesService, IMapper mapper)
         {
-            this.productsService = productsService;
-            this.ordersService = ordersService;
-            this.orderItemsService = orderItemsService;
-            this.shoppingCartService = shoppingCartService;
-            this.paymentTypesService = paymentTypesService;
-            this.usersService = usersService;
-            this.mapper = mapper;
+            this.productsService = productsService ?? throw new ArgumentNullException(GlobalConstants.productsServiceCheck, nameof(productsService));
+            this.ordersService = ordersService ?? throw new ArgumentNullException(GlobalConstants.ordersServiceCheck, nameof(ordersService));
+            this.orderItemsService = orderItemsService ?? throw new ArgumentNullException(GlobalConstants.ordersItemsServiceCheck, nameof(orderItemsService));
+            this.shoppingCartService = shoppingCartService ?? throw new ArgumentNullException(GlobalConstants.shoppingCartServiceCheck, nameof(shoppingCartService));
+            this.paymentTypesService = paymentTypesService ?? throw new ArgumentNullException(GlobalConstants.paymentTypesServiceCheck, nameof(paymentTypesService));
+            this.usersService = usersService ?? throw new ArgumentNullException(GlobalConstants.usersServiceCheck, nameof(usersService));
+            this.mapper = mapper ?? throw new ArgumentNullException(GlobalConstants.mapperCheck, nameof(mapper));
         }
 
         // GET: Orders

@@ -6,6 +6,7 @@ using Bulgarian_Apparel.Web.Models.Users;
 using System;
 using System.Linq;
 using System.Web.Mvc;
+using Bulgarian_Apparel.Common;
 
 namespace Bulgarian_Apparel.Web.Areas.Admin.Controllers
 {
@@ -14,13 +15,11 @@ namespace Bulgarian_Apparel.Web.Areas.Admin.Controllers
     {
         private readonly IUsersService usersService;
         private readonly IAuthProvider authProvider;
-        private readonly string usersServiceCheck = "Users service is null";
-        private readonly string authProviderCheck = "Auth provider is null";
 
         public UsersManagerController(IUsersService usersService, IAuthProvider authProvider)
         {
-            this.usersService = usersService ?? throw new ArgumentNullException(this.usersServiceCheck, nameof(usersService));
-            this.authProvider = authProvider ?? throw new ArgumentNullException(this.authProviderCheck, nameof(authProvider));
+            this.usersService = usersService ?? throw new ArgumentNullException(GlobalConstants.usersServiceCheck, nameof(usersService));
+            this.authProvider = authProvider ?? throw new ArgumentNullException(GlobalConstants.authProviderCheck, nameof(authProvider));
         }
 
         public ActionResult Index()

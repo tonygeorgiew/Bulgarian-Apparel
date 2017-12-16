@@ -1,4 +1,5 @@
-﻿using Bulgarian_Apparel.Data.Models;
+﻿using Bulgarian_Apparel.Common;
+using Bulgarian_Apparel.Data.Models;
 using Bulgarian_Apparel.Data.SaveContext;
 using Bulgarian_Apparel.Services;
 using Bulgarian_Apparel.Services.Contracts;
@@ -24,13 +25,14 @@ namespace Bulgarian_Apparel.Web.Controllers
         private readonly IPaymentTypesService paymentTypesService;
         private readonly IUnitOfWork UoW;
 
+
         public CartController(IShoppingCartService shoppingCartService, IColorsService colorsService, ISizesService sizesService ,IPaymentTypesService paymentTypesService, IUnitOfWork UoW)
         {
-            this.shoppingCartService = shoppingCartService;
-            this.colorsService = colorsService;
-            this.sizesService = sizesService;
-            this.paymentTypesService = paymentTypesService;
-            this.UoW = UoW;
+            this.shoppingCartService = shoppingCartService ?? throw new ArgumentNullException(GlobalConstants.shoppingCartServiceCheck, nameof(shoppingCartService));
+            this.colorsService = colorsService ?? throw new ArgumentNullException(GlobalConstants.colorsServiceCheck, nameof(colorsService));
+            this.sizesService = sizesService ?? throw new ArgumentNullException(GlobalConstants.sizesServiceCheck, nameof(sizesService));
+            this.paymentTypesService = paymentTypesService ?? throw new ArgumentNullException(GlobalConstants.paymentTypesServiceCheck, nameof(paymentTypesService));
+            this.UoW = UoW ?? throw new ArgumentNullException(GlobalConstants.unitOfWorkCheck, nameof(UoW));
         }
 
         // GET: Cart

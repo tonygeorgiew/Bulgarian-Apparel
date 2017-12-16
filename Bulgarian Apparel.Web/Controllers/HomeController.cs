@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using AutoMapper.QueryableExtensions;
+using Bulgarian_Apparel.Common;
 using Bulgarian_Apparel.Data.Models;
 using Bulgarian_Apparel.Services;
 using Bulgarian_Apparel.Web.Models.Home;
@@ -10,17 +11,18 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
+
 namespace Bulgarian_Apparel.Web.Controllers
 {
     public class HomeController : Controller
     {
         private readonly IProductsService productsService;
         private readonly IMapper mapper;
-
+       
         public HomeController(IProductsService productsService, IMapper mapper)
         {
-            this.productsService = productsService;
-            this.mapper = mapper;
+            this.productsService = productsService ?? throw new ArgumentNullException(GlobalConstants.productsServiceCheck, nameof(productsService));
+            this.mapper = mapper ?? throw new ArgumentNullException(GlobalConstants.mapperCheck, nameof(mapper));
         }
 
         public ActionResult Index()

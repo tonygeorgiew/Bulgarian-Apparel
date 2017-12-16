@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using AutoMapper.QueryableExtensions;
+using Bulgarian_Apparel.Common;
 using Bulgarian_Apparel.Data.Models;
 using Bulgarian_Apparel.Services;
 using Bulgarian_Apparel.Services.Contracts;
@@ -32,14 +33,14 @@ namespace Bulgarian_Apparel.Web.Controllers
 
         public ProductsController(IUsersService usersService,IProductsService productsService, IItemsService itemsService, IWishlistsService wishesService, ISizesService sizesService, IColorsService colorsService, ICategoriesService categoriesService, IMapper mapper)
         {
-            this.usersService = usersService;
-            this.productsService = productsService;
-            this.itemsService = itemsService;
-            this.wishesService = wishesService;
-            this.sizesService = sizesService;
-            this.colorsService = colorsService;
-            this.categoriesService = categoriesService;
-            this.mapper = mapper;
+            this.usersService = usersService ?? throw new ArgumentNullException(GlobalConstants.usersServiceCheck, nameof(usersService));
+            this.productsService = productsService ?? throw new ArgumentNullException(GlobalConstants.productsServiceCheck, nameof(productsService));
+            this.itemsService = itemsService ?? throw new ArgumentNullException(GlobalConstants.itemsServiceCheck, nameof(itemsService));
+            this.wishesService = wishesService ?? throw new ArgumentNullException(GlobalConstants.wishesServiceCheck, nameof(wishesService));
+            this.sizesService = sizesService ?? throw new ArgumentNullException(GlobalConstants.sizesServiceCheck, nameof(sizesService));
+            this.colorsService = colorsService ?? throw new ArgumentNullException(GlobalConstants.colorsServiceCheck, nameof(colorsService));
+            this.categoriesService = categoriesService ?? throw new ArgumentNullException(GlobalConstants.categoriesServiceCheck, nameof(categoriesService));
+            this.mapper = mapper ?? throw new ArgumentNullException(GlobalConstants.mapperCheck, nameof(mapper));
         }
 
         // GET: Products

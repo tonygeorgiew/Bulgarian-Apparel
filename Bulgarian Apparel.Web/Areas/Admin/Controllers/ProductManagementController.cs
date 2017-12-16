@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using AutoMapper.QueryableExtensions;
+using Bulgarian_Apparel.Common;
 using Bulgarian_Apparel.Data.Models;
 using Bulgarian_Apparel.Services;
 using Bulgarian_Apparel.Services.Contracts;
@@ -26,12 +27,12 @@ namespace Bulgarian_Apparel.Web.Areas.Admin.Controllers
 
         public ProductManagementController(IProductsService productsService, IItemsService itemsService, ISizesService sizesService, IColorsService colorsService, ICategoriesService categoriesService, IMapper mapper)
         {
-            this.productsService = productsService;
-            this.itemsService = itemsService;
-            this.sizesService = sizesService;
-            this.colorsService = colorsService;
-            this.categoriesService = categoriesService;
-            this.mapper = mapper;
+            this.productsService = productsService ?? throw new ArgumentNullException(GlobalConstants.productsServiceCheck, nameof(productsService));
+            this.itemsService = itemsService ?? throw new ArgumentNullException(GlobalConstants.itemsServiceCheck, nameof(itemsService));
+            this.sizesService = sizesService ?? throw new ArgumentNullException(GlobalConstants.sizesServiceCheck, nameof(sizesService));
+            this.colorsService = colorsService ?? throw new ArgumentNullException(GlobalConstants.colorsServiceCheck, nameof(colorsService));
+            this.categoriesService = categoriesService ?? throw new ArgumentNullException(GlobalConstants.categoriesServiceCheck, nameof(categoriesService));
+            this.mapper = mapper ?? throw new ArgumentNullException(GlobalConstants.mapperCheck, nameof(mapper));
         }
         
         // GET: Admin/ProductManagement

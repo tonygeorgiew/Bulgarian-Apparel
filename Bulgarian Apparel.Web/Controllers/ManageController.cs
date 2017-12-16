@@ -8,6 +8,7 @@ using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using Bulgarian_Apparel.Web.Models;
 using Bulgarian_Apparel.Auth.Managers;
+using Bulgarian_Apparel.Common;
 
 namespace Bulgarian_Apparel.Web.Controllers
 {
@@ -23,8 +24,8 @@ namespace Bulgarian_Apparel.Web.Controllers
 
         public ManageController(ApplicationUserManager userManager, ApplicationSignInManager signInManager)
         {
-            UserManager = userManager;
-            SignInManager = signInManager;
+            UserManager = userManager ?? throw new ArgumentNullException(GlobalConstants.userManagerCheck, nameof(userManager));
+            SignInManager = signInManager ?? throw new ArgumentNullException(GlobalConstants.signInManagerCheck, nameof(signInManager));
         }
 
         public ApplicationSignInManager SignInManager

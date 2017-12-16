@@ -694,6 +694,10 @@
       <Project>{1870BA7A-F320-4F90-A63A-FA751B4D5AB1}</Project>
       <Name>Bulgarian Apparel.Auth</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Bulgarian Apparel.Common\Bulgarian Apparel.Common.csproj">
+      <Project>{41de5758-e370-4d44-bda8-597aa38f3e9b}</Project>
+      <Name>Bulgarian Apparel.Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Bulgarian Apparel.Data.Models\Bulgarian Apparel.Data.Model.csproj">
       <Project>{2CD99073-7977-409B-A6B6-F5C29BF3E495}</Project>
       <Name>Bulgarian Apparel.Data.Model</Name>
