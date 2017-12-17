@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using AutoMapper.QueryableExtensions;
+using Bulgarian_Apparel.Auth;
 using Bulgarian_Apparel.Common;
 using Bulgarian_Apparel.Data.Models;
 using Bulgarian_Apparel.Services;
@@ -30,8 +31,9 @@ namespace Bulgarian_Apparel.Web.Controllers
         private readonly IColorsService colorsService;
         private readonly ICategoriesService categoriesService;
         private readonly IMapper mapper;
+        private readonly IAuthProvider authProvider;
 
-        public ProductsController(IUsersService usersService,IProductsService productsService, IItemsService itemsService, IWishlistsService wishesService, ISizesService sizesService, IColorsService colorsService, ICategoriesService categoriesService, IMapper mapper)
+        public ProductsController(IUsersService usersService,IProductsService productsService, IItemsService itemsService, IWishlistsService wishesService, ISizesService sizesService, IColorsService colorsService, ICategoriesService categoriesService, IMapper mapper, IAuthProvider authProvider)
         {
             this.usersService = usersService ?? throw new ArgumentNullException(GlobalConstants.usersServiceCheck, nameof(usersService));
             this.productsService = productsService ?? throw new ArgumentNullException(GlobalConstants.productsServiceCheck, nameof(productsService));
@@ -41,6 +43,7 @@ namespace Bulgarian_Apparel.Web.Controllers
             this.colorsService = colorsService ?? throw new ArgumentNullException(GlobalConstants.colorsServiceCheck, nameof(colorsService));
             this.categoriesService = categoriesService ?? throw new ArgumentNullException(GlobalConstants.categoriesServiceCheck, nameof(categoriesService));
             this.mapper = mapper ?? throw new ArgumentNullException(GlobalConstants.mapperCheck, nameof(mapper));
+            this.authProvider = authProvider ?? throw new ArgumentNullException(GlobalConstants.authProviderCheck, nameof(authProvider));
         }
 
         // GET: Products
@@ -71,14 +74,28 @@ namespace Bulgarian_Apparel.Web.Controllers
 
         public ActionResult ViewProduct(string id)
         {
-              id = id.ToUpper();
-              var product = this.productsService.ProducttByStringId(id).Single();
-              var item = this.itemsService.GetAll().Single(i => i.ProductId == product.Id);
-        
-              var productVM = new ProductFormViewModel()
-              {
-                  Product = this.mapper.Map<ProductViewModel>(product)
-              };
+            if(id == null)
+            {
+                return this.View("Error");
+            }
+
+            
+            var product = this.productsService
+                 .GetByStringId(id)
+                 .ProjectTo<ProductViewModel>()
+                 .SingleOrDefault();
+
+            var item = this.itemsService.GetAll().SingleOrDefault(i => i.ProductId == product.ProductId);
+
+            if (product == null)
+            {
+                return this.View("Error");
+            }
+
+            var productVM = new ProductFormViewModel()
+            {
+                Product = product
+            };
         
               this.mapper.Map(item, productVM.Product);
         
@@ -87,10 +104,20 @@ namespace Bulgarian_Apparel.Web.Controllers
 
         public ActionResult AddToWishlist(string id)
         {
-            id = id.ToUpper();
-            var product = this.productsService.ProducttByStringId(id).Single();
-            var customerId = this.User.Identity.GetUserId();
-            var customer = this.usersService.GetAll().Single(u => u.Id == customerId);
+            if (id == null)
+            {
+                return this.View("Error");
+            }
+
+          //  id = id.ToUpper();
+            var product = this.productsService.GetByStringId(id).SingleOrDefault();
+            var customerId = this.authProvider.CurrentUserId;
+            var customer = this.usersService.GetAll().SingleOrDefault(u => u.Id == customerId);
+
+            if (product == null)
+            {
+                return this.View("Error");
+            }
 
             var wish = new WishlistItem()
             {

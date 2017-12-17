@@ -60,14 +60,14 @@
             return this.UoW.Commit();
         }
 
-        public IQueryable<Product> ProducttById(Guid id)
+        public IQueryable<Product> GetById(Guid? id)
         {
             var query = this.productsRepo.All.Where(p => p.Id == id).Include( p => p.Images );
 
             return query;
         }
 
-        public IQueryable<Product> ProducttByStringId(string id)
+        public IQueryable<Product> GetByStringId(string id)
         {
             Guid productGuid = IdProccessor.GetGuidForStringId(id);
             var query = this.productsRepo.All.Where(p => p.Id == productGuid).Include(p => p.Images);
@@ -90,7 +90,7 @@
 
         public IQueryable<Product> ProductWithImagesById(Guid id)
         {
-            return this.ProducttById(id).Include(i=>i.Images);
+            return this.GetById(id).Include(i=>i.Images);
         }
     }
 }

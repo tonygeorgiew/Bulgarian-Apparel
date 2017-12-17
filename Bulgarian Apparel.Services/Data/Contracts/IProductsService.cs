@@ -8,9 +8,9 @@ namespace Bulgarian_Apparel.Services
     {
         IQueryable<Product> GetAll();
 
-        IQueryable<Product> ProducttByStringId(string id);
+        IQueryable<Product> GetByStringId(string id);
 
-        IQueryable<Product> ProducttById(Guid id);
+        IQueryable<Product> GetById(Guid? id);
 
         int Add(Product product);
 
