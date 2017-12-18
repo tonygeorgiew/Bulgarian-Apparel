@@ -10,5 +10,11 @@ namespace Bulgarian_Apparel.Services.Contracts
     public interface IOrdersItemsService
     {
         IQueryable<OrderItem> All();
+        IQueryable<OrderItem> GetByStringId(string id);
+        IQueryable<OrderItem> GetById(Guid? id);
+        IQueryable<OrderItem> GetByCustomerId(string id);
+        int Add(OrderItem order);
+        int Delete(OrderItem order);
+        int Update(OrderItem order);
     }
 }

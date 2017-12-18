@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using AutoMapper.QueryableExtensions;
+using Bulgarian_Apparel.Auth;
 using Bulgarian_Apparel.Common;
 using Bulgarian_Apparel.Data.Models;
 using Bulgarian_Apparel.Services;
@@ -23,8 +24,9 @@ namespace Bulgarian_Apparel.Web.Controllers
         private readonly IPaymentTypesService paymentTypesService;
         private readonly IUsersService usersService;
         private readonly IMapper mapper;
+        private readonly IAuthProvider authProvider;
 
-        public OrdersController(IProductsService productsService, IOrdersService ordersService, IOrdersItemsService orderItemsService,IShoppingCartService shoppingCartService, IUsersService usersService, IPaymentTypesService paymentTypesService, IMapper mapper)
+        public OrdersController(IProductsService productsService, IOrdersService ordersService, IOrdersItemsService orderItemsService,IShoppingCartService shoppingCartService, IUsersService usersService, IPaymentTypesService paymentTypesService, IMapper mapper, IAuthProvider authProvider)
         {
             this.productsService = productsService ?? throw new ArgumentNullException(GlobalConstants.productsServiceCheck, nameof(productsService));
             this.ordersService = ordersService ?? throw new ArgumentNullException(GlobalConstants.ordersServiceCheck, nameof(ordersService));
@@ -33,6 +35,7 @@ namespace Bulgarian_Apparel.Web.Controllers
             this.paymentTypesService = paymentTypesService ?? throw new ArgumentNullException(GlobalConstants.paymentTypesServiceCheck, nameof(paymentTypesService));
             this.usersService = usersService ?? throw new ArgumentNullException(GlobalConstants.usersServiceCheck, nameof(usersService));
             this.mapper = mapper ?? throw new ArgumentNullException(GlobalConstants.mapperCheck, nameof(mapper));
+            this.authProvider = authProvider ?? throw new ArgumentNullException(GlobalConstants.authProviderCheck, nameof(authProvider));
         }
 
         // GET: Orders
@@ -43,10 +46,11 @@ namespace Bulgarian_Apparel.Web.Controllers
 
         public ActionResult MyOrdersDetails()
         {
-            var userId = this.User.Identity.GetUserId();
-            var myOrders = this.orderItemsService.All().Where(oi=>oi.Customer.Id==userId).ProjectTo<OrderItemDetailsViewModel>().ToList();
-
-
+            var userId = this.authProvider.CurrentUserId;
+            var myOrders = this.orderItemsService
+                .GetByCustomerId(userId)
+                .ProjectTo<OrderItemDetailsViewModel>()
+                .ToList();
 
             return this.View(myOrders);
         }
@@ -56,11 +60,12 @@ namespace Bulgarian_Apparel.Web.Controllers
         {
             if (ModelState.IsValid)
             {
-                var userId = this.User.Identity.GetUserId();
-                var userGuid = Guid.Parse(userId);
-                var user = this.usersService.GetAll().Single(u => u.Id == userId);
+                var userId = this.authProvider.CurrentUserId;
+                var user = this.usersService.GetUserById(userId).SingleOrDefault();
                 var paymentId = Guid.Parse(orderForm.PreferedPayment);
-                var chosenPaymentMethod = this.paymentTypesService.GetAll().Single(p=>p.Id == paymentId);
+                var chosenPaymentMethod = this.paymentTypesService
+                    .GetAll()
+                    .SingleOrDefault(p => p.Id == paymentId);
                 
 
                 var order = new Order()
@@ -68,7 +73,7 @@ namespace Bulgarian_Apparel.Web.Controllers
                     Customer = user
                 };
 
-                var userCart = this.shoppingCartService.GetAll().Single(u => u.UserId == userGuid);
+                var userCart = this.shoppingCartService.GetCartForUserId(userId).SingleOrDefault();
                 foreach (var item in userCart.ShoppingCartProducts)
                 {
                     var orderItem = new OrderItem()
@@ -77,7 +82,7 @@ namespace Bulgarian_Apparel.Web.Controllers
                         Address = orderForm.ShippingAddress,
                         Customer = user,
                         PaymentType = chosenPaymentMethod,
-                        Product = this.productsService.GetAll().Single(p=>p.Id==item.ProductId),
+                        Product = this.productsService.GetById(item.ProductId).SingleOrDefault(),
                         ProductColor = item.ProductColor,
                         ProductSize = item.ProductSize,
                         Payment = item.ProductPrice

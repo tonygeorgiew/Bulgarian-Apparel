@@ -1,4 +1,5 @@
 ﻿using Bulgarian_Apparel.Services;
+using Bulgarian_Apparel.Services.Contracts;
 using Microsoft.AspNet.SignalR;
 using Microsoft.AspNet.SignalR.Hubs;
 using System.Linq;

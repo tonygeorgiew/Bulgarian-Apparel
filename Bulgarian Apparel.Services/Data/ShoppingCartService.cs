@@ -9,6 +9,7 @@ using Bulgarian_Apparel.Data.SaveContext;
 using System.Data.Entity.Infrastructure;
 using System.Data.Entity;
 using Bulgarian_Apparel.Web.Infrastructure;
+using Bulgarian_Apparel.Services.Contracts;
 
 namespace Bulgarian_Apparel.Services
 {

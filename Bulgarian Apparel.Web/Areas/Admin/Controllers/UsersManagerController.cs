@@ -7,6 +7,7 @@ using System;
 using System.Linq;
 using System.Web.Mvc;
 using Bulgarian_Apparel.Common;
+using Bulgarian_Apparel.Services.Contracts;
 
 namespace Bulgarian_Apparel.Web.Areas.Admin.Controllers
 {

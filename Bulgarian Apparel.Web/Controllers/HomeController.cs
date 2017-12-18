@@ -3,6 +3,7 @@ using AutoMapper.QueryableExtensions;
 using Bulgarian_Apparel.Common;
 using Bulgarian_Apparel.Data.Models;
 using Bulgarian_Apparel.Services;
+using Bulgarian_Apparel.Services.Contracts;
 using Bulgarian_Apparel.Web.Models.Home;
 using Bulgarian_Apparel.Web.Models.Products;
 using System;

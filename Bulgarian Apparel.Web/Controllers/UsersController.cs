@@ -1,6 +1,7 @@
 ﻿using AutoMapper.QueryableExtensions;
 using Bulgarian_Apparel.Common;
 using Bulgarian_Apparel.Services;
+using Bulgarian_Apparel.Services.Contracts;
 using Bulgarian_Apparel.Services.Data.Contracts;
 using Bulgarian_Apparel.Web.Models.Users;
 using System;
@@ -44,7 +45,8 @@ namespace Bulgarian_Apparel.Web.Controllers
             var user = this.usersService.GetUserById(id)
                 .ProjectTo<UserViewModel>()
                 .SingleOrDefault();
-            var wishlist = this.wishesService.GetAll().Select(w => w.Customer.Id == user.Id);
+            // TO DO: Implement user wishlist
+            //  var wishlist = this.wishesService.GetAll().Select(w => w.Customer.Id == user.Id);
 
             if (user == null)
             {

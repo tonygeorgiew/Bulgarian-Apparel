@@ -105,10 +105,14 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controllers\Orders\ConstructorShould.cs" />
+    <Compile Include="Controllers\Orders\MyOrdersDetailsShould.cs" />
+    <Compile Include="Controllers\Orders\ValidateOrderShould.cs" />
     <Compile Include="Controllers\Products\AddToWishlistShould.cs" />
     <Compile Include="Controllers\Products\ConstructorShould.cs" />
     <Compile Include="Controllers\Products\IndexShould.cs" />
     <Compile Include="Controllers\Products\ViewProductShould.cs" />
+    <Compile Include="Controllers\Users\IndexOrDetailsShould.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

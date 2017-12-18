@@ -36,7 +36,7 @@
 
         [TestMethod]
         public void ThrowsWhenMapperIsNull()
-        {
+            {
             // Arrange
             var usersServiceMock = new Mock<IUsersService>();
             var productsServiceMock = new Mock<IProductsService>();
@@ -98,6 +98,7 @@
 
             //Assert
             Assert.IsNotNull(controller);
+            Assert.IsInstanceOfType(controller, typeof(ProductsController));
         }
     }
 }

@@ -7,6 +7,7 @@ using Bulgarian_Apparel.Data.Models;
 using Bulgarian_Apparel.Data.Models.Contracts;
 using Bulgarian_Apparel.Data.SaveContext;
 using System.Data.Entity;
+using Bulgarian_Apparel.Services.Contracts;
 
 namespace Bulgarian_Apparel.Services
 {

@@ -2,7 +2,7 @@
 using System;
 using System.Linq;
 
-namespace Bulgarian_Apparel.Services
+namespace Bulgarian_Apparel.Services.Contracts
 {
     public interface IProductsService
     {

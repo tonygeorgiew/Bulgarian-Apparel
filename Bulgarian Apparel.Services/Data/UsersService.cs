@@ -1,6 +1,7 @@
 ﻿using Bulgarian_Apparel.Data.Models;
 using Bulgarian_Apparel.Data.Models.Contracts;
 using Bulgarian_Apparel.Data.SaveContext;
+using Bulgarian_Apparel.Services.Contracts;
 using System;
 using System.Collections.Generic;
 using System.Linq;
