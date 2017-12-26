@@ -18,6 +18,8 @@ namespace Bulgarian_Apparel.Data.Models
       
         public Category Category { get; set; }
 
+        public string Sex { get; set; }
+
         public Guid ItemId { get; set; }
 
         [Required]

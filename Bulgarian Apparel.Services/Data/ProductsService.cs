@@ -7,10 +7,8 @@
     using Bulgarian_Apparel.Services.Contracts;
     using Bulgarian_Apparel.Web.Infrastructure;
     using System;
-    using System.Collections.Generic;
     using System.Data.Entity;
     using System.Linq;
-    using System.Threading.Tasks;
 
     public class ProductsService : IProductsService
     {
@@ -63,7 +61,10 @@
 
         public IQueryable<Product> GetById(Guid? id)
         {
-            var query = this.productsRepo.All.Where(p => p.Id == id).Include( p => p.Images );
+            var query = this.productsRepo
+                .All
+                .Where(p => p.Id == id)
+                .Include( p => p.Images );
 
             return query;
         }
@@ -71,14 +72,19 @@
         public IQueryable<Product> GetByStringId(string id)
         {
             Guid productGuid = IdProccessor.GetGuidForStringId(id);
-            var query = this.productsRepo.All.Where(p => p.Id == productGuid).Include(p => p.Images);
+            var query = this.productsRepo
+                .All
+                .Where(p => p.Id == productGuid)
+                .Include(p => p.Images);
 
             return query;
         }
 
         public IQueryable<Product> GetHotProducts()
         {
-            var query = this.productsRepo.All.Where(p => p.Hot == true);
+            var query = this.productsRepo
+                .All
+                .Where(p => p.Hot == true);
 
             return query;
         }
@@ -86,12 +92,17 @@
 
         public IQueryable<Product> GetAll()
         {
-            return this.productsRepo.All.Include(i => i.Images).Include(c=>c.Category);
+            return this.productsRepo
+                .All
+                .Include(i => i.Images)
+                .Include(c=>c.Category);
         }
+        
 
         public IQueryable<Product> ProductWithImagesById(Guid id)
         {
-            return this.GetById(id).Include(i=>i.Images);
+            return this.GetById(id)
+                .Include(i=>i.Images);
         }
     }
 }

@@ -8,7 +8,7 @@ using System.Linq;
 
 namespace Bulgarian_Apparel.Web.Models.Products
 {
-    public class ProductViewModel : IHaveCustomMappings
+    public class ProductViewModel : IHaveCustomMappings, IMapFrom<Product>, IMapFrom<Item>
     {
         public Guid ProductId { get; set; }
         public string Name { get; set; }

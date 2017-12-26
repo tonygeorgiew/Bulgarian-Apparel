@@ -21,11 +21,11 @@ namespace Bulgarian_Apparel.Web.Areas.Admin.Models
         [Display(Name = "Product Brand")]
         public string Supplier { get; set; }
 
-        
-        [Display(Name = "Product Image Resources in format(/Content/Products/filename.jpg)")]
-        public IList<string> Images { get; set; }
+        [Required]
+        [Display(Name = "Product Image Resources")]
+        public List<HttpPostedFileBase> Files { get; set; }
 
-        
+
         [Display(Name = "Product is available in what colors (Ctrl + left mouse click for multiple selection)")]
         public IEnumerable<string> SelectedColors { get; set; }
         public IEnumerable<SelectListItem> Colors { get; set; }
@@ -50,13 +50,17 @@ namespace Bulgarian_Apparel.Web.Areas.Admin.Models
         
         public int Stock { get; set; }
 
+        
+        public string Sex { get; set; }
+
+
         public void CreateMappings(IMapperConfigurationExpression configuration)
         {
-            configuration.CreateMap<Product, AddProductViewModel>()
-                .ForMember(productVM => productVM.Images,
-                cfg => cfg
-                .MapFrom(src => src.Images.Select(child => child.Resource)
-                .ToArray()));
+           // configuration.CreateMap<Product, AddProductViewModel>()
+           //     .ForMember(productVM => productVM.Images,
+           //     cfg => cfg
+           //     .MapFrom(src => src.Images.Select(child => child.Resource)
+           //     .ToArray()));
 
             configuration.CreateMap<Item, AddProductViewModel>()
                 .ForMember(productViewModel => productViewModel.Sizes, cfg => cfg.MapFrom(item => item.Sizes))

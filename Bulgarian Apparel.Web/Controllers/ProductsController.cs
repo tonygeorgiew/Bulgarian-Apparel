@@ -72,18 +72,95 @@ namespace Bulgarian_Apparel.Web.Controllers
             return this.View(catalogue);
         }
 
+        [HttpGet]
+        public ActionResult NewAdditions()
+        {
+            var items = this.itemsService.GetAll().ToList();
+            var products = this.productsService.GetAll().Where(p=>p.Hot == true).ToList();
+
+            var catalogue = new CatalogueViewModel()
+            {
+                Products = new List<ProductViewModel>(),
+                Categories = new List<CategoryViewModel>(),
+            };
+
+            foreach (var product in products)
+            {
+                var catalogueProduct = this.mapper.Map<ProductViewModel>(product);
+                catalogueProduct.Category = this.mapper.Map<CategoryViewModel>(product.Category);
+                this.mapper.Map(items.Single(i => i.ProductId == catalogueProduct.ProductId), catalogueProduct);
+                catalogue.Products.Add(catalogueProduct);
+            }
+
+            catalogue.Categories = catalogue.Products.Select(p => p.Category).DistinctBy(c => c.CategoryName).ToList();
+
+            return this.View("Index", catalogue);
+        }
+
+        [HttpGet]
+        public ActionResult FemaleProducts()
+        {
+            var items = this.itemsService.GetAll().ToList();
+            var products = this.productsService.GetAll().Where(p => p.Sex == "Female").ToList();
+
+            var catalogue = new CatalogueViewModel()
+            {
+                Products = new List<ProductViewModel>(),
+                Categories = new List<CategoryViewModel>(),
+            };
+
+            foreach (var product in products)
+            {
+                var catalogueProduct = this.mapper.Map<ProductViewModel>(product);
+                catalogueProduct.Category = this.mapper.Map<CategoryViewModel>(product.Category);
+                this.mapper.Map(items.Single(i => i.ProductId == catalogueProduct.ProductId), catalogueProduct);
+                catalogue.Products.Add(catalogueProduct);
+            }
+
+            catalogue.Categories = catalogue.Products.Select(p => p.Category).DistinctBy(c => c.CategoryName).ToList();
+
+            return this.View("Index", catalogue);
+        }
+
+        [HttpGet]
+        public ActionResult MaleProducts()
+        {
+            var items = this.itemsService.GetAll().ToList();
+            var products = this.productsService.GetAll().Where(p => p.Sex == "Male").ToList();
+
+            var catalogue = new CatalogueViewModel()
+            {
+                Products = new List<ProductViewModel>(),
+                Categories = new List<CategoryViewModel>(),
+            };
+
+            foreach (var product in products)
+            {
+                var catalogueProduct = this.mapper.Map<ProductViewModel>(product);
+                catalogueProduct.Category = this.mapper.Map<CategoryViewModel>(product.Category);
+                this.mapper.Map(items.Single(i => i.ProductId == catalogueProduct.ProductId), catalogueProduct);
+                catalogue.Products.Add(catalogueProduct);
+            }
+
+            catalogue.Categories = catalogue.Products.Select(p => p.Category).DistinctBy(c => c.CategoryName).ToList();
+
+            return this.View("Index", catalogue);
+        }
+
+
         public ActionResult ViewProduct(string id)
         {
-            if(id == null)
+            if (id == null)
             {
                 return this.View("Error");
             }
 
             
-            var product = this.productsService
+            var product1 = this.productsService
                  .GetByStringId(id)
-                 .ProjectTo<ProductViewModel>()
                  .SingleOrDefault();
+            var product = this.mapper.Map<ProductViewModel>(product1);
+
 
             var item = this.itemsService.GetAll().SingleOrDefault(i => i.ProductId == product.ProductId);
 

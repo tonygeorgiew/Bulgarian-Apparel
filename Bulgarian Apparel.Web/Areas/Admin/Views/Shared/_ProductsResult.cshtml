@@ -19,13 +19,14 @@
                 @Ajax.ActionLink(
                    "Remove product",
                    "RemoveProductById",
-                   new { id = product.Id },
+                   new { id = "1111efae-389c-44b8-8acd-19f72e133300" },
                    new AjaxOptions()
                    {
                        UpdateTargetId = "log",
-                       LoadingElementId = "log2",
                        HttpMethod = "GET",
                        InsertionMode = InsertionMode.Replace,
+                       OnFailure = "OnAjaxRequestFailure",
+                       OnSuccess = "OnAjaxRequestSuccess",
                        Confirm = "Are you sure you want to delete this product from the catalogue?"
                    },
                    new { @class = "btn btn-primary" })

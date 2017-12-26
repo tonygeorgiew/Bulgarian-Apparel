@@ -268,6 +268,7 @@
     <Compile Include="Controllers\ProductsController.cs" />
     <Compile Include="Controllers\UsersController.cs" />
     <Compile Include="Hubs\CommunicationsHub.cs" />
+    <Compile Include="Infrastructure\Validation\ValidateModelAttribute.cs" />
     <Compile Include="Models\Cart\CartItemViewModel.cs" />
     <Compile Include="Models\Cart\CartViewModel.cs" />
     <Compile Include="Models\Common\ColorViewModel.cs" />
@@ -597,6 +598,7 @@
     <Content Include="Areas\Admin\Views\UsersManager\Index.cshtml" />
     <Content Include="Areas\Admin\Views\Panel\Index.cshtml" />
     <Content Include="Areas\Admin\Views\ProductManagement\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\ProductManagement\Error.cshtml" />
     <None Include="Scripts\jquery-3.2.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.2.1.js" />
     <Content Include="Scripts\jquery-3.2.1.min.js" />

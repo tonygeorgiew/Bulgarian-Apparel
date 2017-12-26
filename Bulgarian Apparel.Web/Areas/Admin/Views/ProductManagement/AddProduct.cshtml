@@ -6,7 +6,7 @@
 }
 
 <div class="jumbotron">
-    @using (Html.BeginForm())
+    @using (Html.BeginForm("AddProduct", "ProductManagement", new { area = "Admin" }, FormMethod.Post, new { encType = "multipart/form-data" }))
     {
         @Html.AntiForgeryToken()
         <div class="form-horizontal">
@@ -60,18 +60,19 @@
                   </div>
               </div>
               <div class="form-group">
-                  @Html.DisplayNameFor(m => m.Categories)
+                  @Html.LabelFor(m => m.Categories)
                   @Html.DropDownListFor(m => m.CategoriesId, new SelectList(Model.Categories, "Id", "Name"), "", new { @class = "form-control" })
               </div>
+            <div class="form-group">
+                @Html.LabelFor(m => m.Sex)
+                @Html.DropDownListFor(m => m.Sex, new SelectList(new[] { "Male","Female","Unisex"}), "", new { @class = "form-control" })
+            </div>
                   <div class="form-group">
                       <div class="col-md-10">
-                      @Html.LabelFor(m => m.Images)
-                      @Html.EditorFor(m => m.Images[0], new { htmlAttributes = new { @class = "form-control" } })
-                      @Html.ValidationMessageFor(model => model.Images, "", new { @class = "text-danger" })
-                      @Html.EditorFor(m => m.Images[1], new { htmlAttributes = new { @class = "form-control" } })
-                      @Html.ValidationMessageFor(model => model.Images, "", new { @class = "text-danger" })
-                      @Html.EditorFor(m => m.Images[2], new { htmlAttributes = new { @class = "form-control" } })
-                      @Html.ValidationMessageFor(model => model.Images, "", new { @class = "text-danger" })
+                      @Html.LabelFor(m=>m.Files)
+                      @Html.TextBoxFor(m => m.Files, new { type = "file", name = "Files" ,htmlAttributes = new { @class = "form-control" } })
+                          <input type="file" name="Files" />
+                          <input type="file" name="Files" />
                   </div>
               </div>
             <div class="form-group">

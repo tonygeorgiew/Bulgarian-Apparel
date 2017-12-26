@@ -198,6 +198,10 @@
     <Compile Include="Migrations\201712131653251_Wishlists.Designer.cs">
       <DependentUpon>201712131653251_Wishlists.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201712261418525_Add Sex Property to ProductDbModel.cs" />
+    <Compile Include="Migrations\201712261418525_Add Sex Property to ProductDbModel.Designer.cs">
+      <DependentUpon>201712261418525_Add Sex Property to ProductDbModel.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="MsSqlDbContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -328,6 +332,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201712131653251_Wishlists.resx">
       <DependentUpon>201712131653251_Wishlists.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712261418525_Add Sex Property to ProductDbModel.resx">
+      <DependentUpon>201712261418525_Add Sex Property to ProductDbModel.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

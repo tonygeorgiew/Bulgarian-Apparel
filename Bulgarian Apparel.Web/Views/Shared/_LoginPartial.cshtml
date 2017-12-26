@@ -6,6 +6,14 @@
     @Html.AntiForgeryToken()
 
     <ul class="nav navbar-nav navbar-right">
+        @if (User.IsInRole("Admin"))
+        {
+            <li>
+                <a href="@Url.Action("Index", "Panel", new { area = "Admin" })">
+                    <span id="administration-panel" class="	glyphicon glyphicon-user"></span>
+                </a>
+            </li>
+        }
         <li>
             <a href="@Url.Action("Details", "Cart", new { area = "" })">
                 <span id="shopping-cart" class="glyphicon glyphicon-shopping-cart"></span>
@@ -22,7 +30,9 @@
 else
 {
     <ul class="nav navbar-nav navbar-right">
-      <li>
+
+        
+           <li>
                 <a href="@Url.Action("Details", "Cart", new { area = "" })">
                     <span id ="shopping-cart" class="glyphicon glyphicon-shopping-cart"></span>
                 </a>

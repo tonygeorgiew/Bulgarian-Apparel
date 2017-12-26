@@ -1,14 +1,13 @@
 ﻿@using Bulgarian_Apparel.Web.Areas.Admin.Models
 @model List<DeleteProductViewModel>
 @Styles.Render("~/Content/Styles/superSimpleTableStyle.css")
-
+@Styles.Render("~/Content/Styles/jBox.css")
 
 @{
     ViewBag.Title = "RemoveProduct";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
-<div id="log"></div>
+<div id="log" style="display:none"></div>
 <hr />
 
 @using (Ajax.BeginForm("Search", new { area = "Admin" },
@@ -22,14 +21,11 @@
     <input type="text" name="query" onclick="changed()" />
     <input type="submit" />
 }
-
 <hr />
 
 <div id="results">
     @Html.Partial("_ProductsResult", Model)
 </div>
-
-
 
 <div>
     @Html.ActionLink("Back to Products Management Menu", "Index", "ProductManagement", null, new { @class = "btn btn-default" })
@@ -39,11 +35,26 @@
 
 <script src="~/Scripts/jquery-3.2.1.min.js"></script>
 <script src="~/Scripts/jquery.unobtrusive-ajax.js"></script>
+<script src="~/Scripts/jBox.js"></script>
 <script>
 function changed() {
     $("#searchForm").submit();
-
 }
-
+</script>
+<script>
+    var myModal = new jBox('Modal', {
+        content: " "
+    });
+    
+    function OnAjaxRequestSuccess(data) {
+        myModal.setContent("Product with id " + data + " successfuly deleted");
+        myModal.open();
+        console.log("This is the OnSuccessCallback: " + data);
+    }
+    function OnAjaxRequestFailure(request, error) {
+        myModal.setContent("Product with such id has not been found in the database");
+        myModal.open();
+        console.log("This is the OnFailure Callback:" + error);
+    }
 </script>
 }

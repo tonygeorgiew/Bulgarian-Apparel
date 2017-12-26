@@ -125,12 +125,10 @@
                 </td>
                 <td>
                     
-                            @Html.LabelFor(m => m.UpdateProduct.Images)
-                            @Html.EditorFor(m => m.UpdateProduct.Images[0], new { htmlAttributes = new { @class = "form-control" } })
-                           
-                            @Html.EditorFor(m => m.UpdateProduct.Images[1], new { htmlAttributes = new { @class = "form-control" } })
-                         
-                            @Html.EditorFor(m => m.UpdateProduct.Images[2], new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.LabelFor(m => m.UpdateProduct.Files)
+                    @Html.TextBoxFor(m => m.UpdateProduct.Files, new { type = "file", name = "Files", htmlAttributes = new { @class = "form-control" } })
+                    <input type="file" name="Files" />
+                    <input type="file" name="Files" />
                           
                 </td>
 

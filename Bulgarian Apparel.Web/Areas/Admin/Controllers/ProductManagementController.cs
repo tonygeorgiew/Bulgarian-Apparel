@@ -6,11 +6,15 @@ using Bulgarian_Apparel.Services;
 using Bulgarian_Apparel.Services.Contracts;
 using Bulgarian_Apparel.Web.Areas.Admin.Models;
 using Bulgarian_Apparel.Web.Infrastructure;
+using Bulgarian_Apparel.Web.Infrastructure.Validation;
 using Bulgarian_Apparel.Web.Models.Common;
 using Bulgarian_Apparel.Web.Models.Products;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Net;
+using System.Web;
 using System.Web.Mvc;
 
 namespace Bulgarian_Apparel.Web.Areas.Admin.Controllers
@@ -58,6 +62,7 @@ namespace Bulgarian_Apparel.Web.Areas.Admin.Controllers
                     Value = size.Id.ToString(),
                     Selected = size.IsSelected
                 };
+
                 listSizes.Add(selectList);
             }
 
@@ -70,6 +75,7 @@ namespace Bulgarian_Apparel.Web.Areas.Admin.Controllers
                     Value = color.Id.ToString(),
                     Selected = color.IsSelected
                 };
+
                 listColors.Add(selectList);
             }
 
@@ -88,12 +94,10 @@ namespace Bulgarian_Apparel.Web.Areas.Admin.Controllers
         [Authorize(Roles = "Admin")]
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [ValidateModel]
         public ActionResult AddProduct(AddProductViewModel newProduct)
         {
-            if (!ModelState.IsValid)
-            {
-                return this.View("Error");
-            }
+
 
             var colors = new List<Color>();
             foreach (var color in newProduct.SelectedColors)
@@ -130,27 +134,33 @@ namespace Bulgarian_Apparel.Web.Areas.Admin.Controllers
                 Stock = newProduct.Stock,
                 Supplier = newProduct.Supplier,
                 Hot = false,
-                Category = category
+                Category = category,
+                Sex = newProduct.Sex
             };
 
             itemdbModel.ProductId = productdbModel.Id;
             productdbModel.ItemId = itemdbModel.Id;
 
-            foreach (var image in newProduct.Images)
-            {
+
+
+
+           foreach (var image in newProduct.Files)
+           {
                 var imageToAdd = new Image()
                 {
-                    Resource = image
+                    FileName = Path.GetFileName(image.FileName),
+                    Resource = "/Content/Products/" + image.FileName
                 };
 
+                var directoryLocation = Server.MapPath("/Content/Products/") + imageToAdd.FileName;
+                image.SaveAs(directoryLocation);
                 productdbModel.Images.Add(imageToAdd);
-            }
+           }
 
             this.productsService.Add(productdbModel);
             this.itemsService.Add(itemdbModel);
 
-            return this.RedirectToAction("ViewProduct", "Products", new {area = "", id = productdbModel.Id });
-
+            return this.RedirectToAction("ViewProduct", "Products", new { area = "", id = productdbModel.Id });
         }
 
         [Authorize(Roles = "Admin")]
@@ -166,12 +176,17 @@ namespace Bulgarian_Apparel.Web.Areas.Admin.Controllers
         [Authorize(Roles = "Admin")]
         public ActionResult RemoveProductById(string Id)
         {
-            var products = this.productsService.GetAll().ProjectTo<DeleteProductViewModel>().ToList();
+            var product = this.productsService.GetByStringId(Id).SingleOrDefault() ?? null;
 
+            if(product == null)
+            {
+                Response.StatusCode = 400;
+                return Content("Product with such id not found in db");
+            }
 
-            return Content(Id);
+            return this.Content(Id);
         }
-
+            
         [Authorize(Roles = "Admin")]
         public ActionResult UpdateProduct()
         {
@@ -317,20 +332,27 @@ namespace Bulgarian_Apparel.Web.Areas.Admin.Controllers
                 Stock = Double.IsNaN(updateProductViewModel.UpdateProduct.Stock) ? updateProductViewModel.ProductInformation.Stock : updateProductViewModel.UpdateProduct.Stock,
                 Supplier = updateProductViewModel.UpdateProduct.Supplier ?? updateProductViewModel.ProductInformation.Supplier,
                 Hot = false,
-                Category = category
+                Category = category,
+                Sex = updateProductViewModel.UpdateProduct.Sex ?? updateProductViewModel.ProductInformation.Sex
             };
 
-          
-            foreach (var image in updateProductViewModel.UpdateProduct.Images)
+
+
+            foreach (var image in updateProductViewModel.UpdateProduct.Files)
             {
-                if (!updateProductViewModel.ProductInformation.Images.Contains(image) && !string.IsNullOrWhiteSpace(image))
+                //Check to see if current products images info contains the UPLOADED Images filename
+                // TO DO: This check isn't sufficient enough, make a more durable one
+                if (!updateProductViewModel.ProductInformation.Images.ToList().Any(im => im.Contains(image.FileName)) && image != null)
                 {
-                    var updateImage = new Image()
+                    var imageToAdd = new Image()
                     {
-                        Resource = image
+                        FileName = Path.GetFileName(image.FileName),
+                        Resource = "/Content/Products/" + image.FileName
                     };
 
-                    productDbModel.Images.Add(updateImage);
+                    var directoryLocation = Server.MapPath("/Content/Products") + imageToAdd.FileName;
+                    image.SaveAs(directoryLocation);
+                    productDbModel.Images.Add(imageToAdd);
                 }
             }
 
@@ -353,8 +375,6 @@ namespace Bulgarian_Apparel.Web.Areas.Admin.Controllers
                 
             var result = this.productsService
                 .GetAll()
-                .AsQueryable()
-                
                 .Where(product => product.Id.ToString().ToLower().Contains(query.ToLower()))
                 .ProjectTo<DeleteProductViewModel>()
                 .ToList();
@@ -373,7 +393,7 @@ namespace Bulgarian_Apparel.Web.Areas.Admin.Controllers
 
             var result = this.productsService
                 .GetAll()
-                .Single(pro => pro.Id.ToString().ToLower().Contains(query.ToLower()));
+                .SingleOrDefault(pro => pro.Id.ToString().ToLower().Contains(query.ToLower()));
             var product = mapper.Map<AddProductViewModel>(result);
 
             return this.PartialView("_ProductInformationResult", product);

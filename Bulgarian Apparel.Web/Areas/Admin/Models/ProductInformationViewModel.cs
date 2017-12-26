@@ -50,6 +50,10 @@ namespace Bulgarian_Apparel.Web.Areas.Admin.Models
         [Required]
         public int Stock { get; set; }
 
+        [Required]
+        public string Sex { get; set; }
+
+
         public void CreateMappings(IMapperConfigurationExpression configuration)
         {
             configuration.CreateMap<Product, ProductInformationViewModel>()

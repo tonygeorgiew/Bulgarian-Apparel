@@ -13,6 +13,11 @@ namespace Bulgarian_Apparel.Web.Areas.Admin.Models
 {
     public class AddProductViewModel : IMapFrom<Product>, IMapFrom<Item>, IHaveCustomMappings
     {
+        public AddProductViewModel()
+        {
+            Files = new List<HttpPostedFileBase>();
+        }
+
         [Required]
         [MinLength(3)]
         [MaxLength(30)]
@@ -26,8 +31,8 @@ namespace Bulgarian_Apparel.Web.Areas.Admin.Models
         public string Supplier { get; set; }
 
         [Required]
-        [Display(Name = "Product Image Resources in format(/Content/Products/filename.jpg)")]
-        public IList<string> Images { get; set; }
+        [Display(Name = "Product Image Resources")]
+        public List<HttpPostedFileBase> Files { get; set; }
 
         [Required]
         [Display(Name = "Product is available in what colors (Ctrl + left mouse click for multiple selection)")]
@@ -54,13 +59,18 @@ namespace Bulgarian_Apparel.Web.Areas.Admin.Models
         [Required]
         public int Stock { get; set; }
 
+        public IList<string> SelectedSex { get; set; }
+
+        [Required]
+        public string Sex { get; set; }
+
         public void CreateMappings(IMapperConfigurationExpression configuration)
         {
-            configuration.CreateMap<Product, AddProductViewModel>()
-                .ForMember(productVM => productVM.Images,
-                cfg => cfg
-                .MapFrom(src => src.Images.Select(child => child.Resource)
-                .ToArray()));
+           //configuration.CreateMap<Product, AddProductViewModel>()
+           //    .ForMember(productVM => productVM.Images,
+           //    cfg => cfg
+           //    .MapFrom(src => src.Images.Select(child => child.Resource)
+           //    .ToArray()));
 
             configuration.CreateMap<Item, AddProductViewModel>()
                 .ForMember(productViewModel => productViewModel.Sizes, cfg => cfg.MapFrom(item => item.Sizes))
