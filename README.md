@@ -1,7 +1,7 @@
 ![alt text](https://github.com/tonygeorgiew/Bulgarian-Apparel/blob/master/Preview/sizes.png)
-![alt text](https://github.com/tonygeorgiew/Bulgarian-Apparel/blob/master/Preview/adminn.png)
 ![alt text](https://github.com/tonygeorgiew/Bulgarian-Apparel/blob/master/Preview/widget.png)
 ![alt text](https://github.com/tonygeorgiew/Bulgarian-Apparel/blob/master/Preview/categories.png)
+![alt text](https://github.com/tonygeorgiew/Bulgarian-Apparel/blob/master/Preview/adminn.png)
 ![alt text](https://github.com/tonygeorgiew/Bulgarian-Apparel/blob/master/Preview/datatable.png)
 ![alt text](https://github.com/tonygeorgiew/Bulgarian-Apparel/blob/master/Preview/categories.png)
 
