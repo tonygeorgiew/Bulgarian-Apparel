@@ -1,3 +1,10 @@
+![alt text](https://github.com/tonygeorgiew/Bulgarian-Apparel/blob/master/Preview/sizes.png)
+![alt text](https://github.com/tonygeorgiew/Bulgarian-Apparel/blob/master/Preview/adminn.png)
+![alt text](https://github.com/tonygeorgiew/Bulgarian-Apparel/blob/master/Preview/widget.png)
+![alt text](https://github.com/tonygeorgiew/Bulgarian-Apparel/blob/master/Preview/categories.png)
+![alt text](https://github.com/tonygeorgiew/Bulgarian-Apparel/blob/master/Preview/datatable.png)
+![alt text](https://github.com/tonygeorgiew/Bulgarian-Apparel/blob/master/Preview/categories.png)
+
 # Bulgarian-Apparel
 E-Commerce clothing shop MVC web application with 3-Tier architecture along with dependecy injection and repository pattern.
 -
@@ -16,16 +23,6 @@ administrative part (available for administrators only) -  administrative access
 RDBMS(MS SQL).
 Entity Framework 6 + Repository Pattern with additional Service layer.
 -
-
-
-
-
-
-
-
-
-
-
 
 
 
